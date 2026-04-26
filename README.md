@@ -1,4 +1,3 @@
-# ⭐ 修改開始 ⭐
 # PHINIX Public Starter
 
 這個資料夾是 PHINIX 未來公開到 GitHub 的 `public-safe` 起點。
@@ -109,4 +108,3 @@ PHINIX 可被描述為：
 - `phinix-core-public`
 - `phinix-architecture`
 
-# ⭐ 修改結束 ⭐
