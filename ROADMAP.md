@@ -1,118 +1,101 @@
-# ⭐ 修改開始 ⭐
-# PHINIX 公開路線圖
+# Public Roadmap
 
-這份路線圖只描述適合公開討論的方向，不等於 private 主線的所有內部細節。
+This roadmap describes the direction that is safe to discuss in public. It does not expose private deployment details.
 
----
+## P0: Public starter package
 
-## P0：公開最小包
+Goal:
 
-目標：
+- define the public position
+- define collaboration rules
+- define the public/private split
 
-- 建立公開定位
-- 建立公開協作規則
-- 定義 public / private 邊界
-
-輸出：
+Outputs:
 
 - README
-- scope 文件
+- scope document
 - roadmap
 - expert call
 
----
+## P1: Three-layer runtime skeleton
 
-## P1：三層 runtime 骨架
+Goal:
 
-目標：
+- real-time layer
+- buffer layer
+- thinking layer
 
-- 即時層
-- 緩衝層
-- 思考層
+Outputs:
 
-輸出：
+- public architecture diagram
+- abstract interfaces
+- minimum event-flow model
 
-- 公開架構圖
-- 抽象接口
-- 最小事件流模型
+## P2: Stuck issue queue
 
----
+Goal:
 
-## P2：Stuck Issue Queue
+- turn failure and uncertainty into structured state
+- support deferred retry and background revisit
 
-目標：
-
-- 把卡關做成正式資料結構
-- 支援延後重試與背景回看
-
-輸出：
+Outputs:
 
 - `StuckIssue`
 - `RetryPlan`
 - `EscalationCandidate`
 
----
+## P3: Proactive companion
 
-## P3：Proactive Companion
+Goal:
 
-目標：
+- surface useful new conclusions without waiting for another prompt
+- keep reminders low-friction and low-disruption
 
-- 有新結論時可低打擾提醒
-- 不必等使用者再次開口
-
-輸出：
+Outputs:
 
 - reminder policy
 - proactive suggestion flow
 - notification channel abstraction
 
----
+## P4: Embodied companion
 
-## P4：Embodied Companion
+Goal:
 
-目標：
+- expand from glasses and companion devices to a broader embodiment layer
 
-- 從眼鏡 / companion device 擴展到更多具身節點
-
-輸出：
+Outputs:
 
 - embodiment adapter interface
 - multi-device context model
 - safety boundary design
 
----
+## P5: Humanoid robot cognition layer
 
-## P5：Humanoid Robot Cognition Layer
+Goal:
 
-目標：
+- make PHINIX a portable cognition architecture for future humanoid systems
 
-- 將 PHINIX 作為未來人形機器人的可移植主腦架構
+Likely roles:
 
-可能角色：
+- memory
+- context
+- proactive reasoning
+- governance
+- long-term consistency
 
-- 記憶層
-- 情境層
-- 主動提醒層
-- 治理層
-- 長時一致性層
+Not the same as:
 
-不直接等同於：
+- low-level motor control
+- hard real-time control
+- a thin robot SDK wrapper
 
-- 低階馬達控制器
-- 硬即時控制器
-- 單純的機器人 SDK wrapper
+## Milestones that matter
 
----
+PHINIX becomes mature only if it can progressively achieve:
 
-## 核心里程碑判準
-
-只有在以下條件逐步完成後，PHINIX 才能從概念走向成熟：
-
-1. public / private 邊界清楚
-2. live 主鏈與 background cognition 分流
-3. stuck issue queue 可運作
-4. proactive reminder 可控
-5. embodiment layer 可抽象化
-6. 主腦可跨裝置延續
-
-# ⭐ 修改結束 ⭐
+1. a clear public/private boundary
+2. separation between live interaction and background cognition
+3. an operating stuck-issue queue
+4. controlled proactive reminders
+5. an abstract embodiment layer
+6. continuity across multiple devices or bodies

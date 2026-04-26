@@ -1,9 +1,7 @@
-# ⭐ 修改開始 ⭐
-# 公開版 repo 應保持文件優先與乾淨歷史
+# Keep the public repo documentation-first and history-clean
 .DS_Store
 Thumbs.db
 *.log
 *.tmp
 *.bak
 __pycache__/
-# ⭐ 修改結束 ⭐

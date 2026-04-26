@@ -1,4 +1,3 @@
-# ⭐ 修改開始 ⭐
 # Security Policy
 
 ## Scope
@@ -39,5 +38,3 @@ Contributors should assume:
 ## Contribution rule
 
 Security-related contributions are welcome, but changes that weaken governance or embodiment safety boundaries should not be proposed as convenience improvements.
-
-# ⭐ 修改結束 ⭐

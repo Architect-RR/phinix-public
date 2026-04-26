@@ -1,29 +1,27 @@
-# ⭐ 修改開始 ⭐
 ---
-name: 專家回饋
-about: 邀請在相關領域有經驗者提供高層回饋
+name: Expert feedback
+about: Invite domain experts to provide high-level feedback
 title: "[Expert] "
 labels: expert-feedback
 assignees: ""
 ---
 
-## 你的背景
+## Your background
 
-請簡述你主要熟悉的領域。
+Briefly describe your main area of expertise.
 
-## 你回饋的主題
+## Topic of your feedback
 
-請描述你要給 PHINIX 的高層建議。
+Describe the high-level guidance you want to give PHINIX.
 
-## 你認為最大的風險
+## Biggest risk you see
 
-請直接指出你認為目前方向最大的問題。
+State the largest problem or risk you see in the current direction.
 
-## 你認為最值得優先做的事
+## Highest-priority next steps
 
-請只選 1 到 3 項最重要的事情。
+List only 1 to 3 actions you think matter most.
 
-## 若要避免走偏
+## What should not be compromised
 
-你會建議維持哪些不變原則？
-# ⭐ 修改結束 ⭐
+Which principles should remain intact to avoid drift?

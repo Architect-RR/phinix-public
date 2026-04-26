@@ -1,66 +1,47 @@
-# ⭐ 修改開始 ⭐
-# PHINIX 公開介面方向
+# Public Interface Directions
 
-這個目錄預留給未來可公開化的抽象接口與資料模型。
+This directory is reserved for abstract interfaces and data models that are safe to discuss in public.
 
-原則：
+Guiding rule:
 
-- 先公開抽象
-- 後公開低風險骨架
-- 最後才考慮公開更多實作
+- publish abstractions first
+- publish low-risk skeletons second
+- consider broader implementation only after boundaries are clear
 
----
+## Interfaces worth exposing first
 
-## 建議優先公開的接口
+### 1. Real-time runtime interface
 
-### 1. Realtime Runtime Interface
+For live input, low-latency response, and immediate output.
 
-用途：
+### 2. Buffer layer interface
 
-- 描述即時輸入、即時回覆、低延遲輸出
+For event capture, summary, state snapshots, and temporary memory.
 
-### 2. Buffer Layer Interface
+### 3. Thinking worker interface
 
-用途：
+For background tasks, result delivery, cancellation, and cooldown.
 
-- 描述事件沉澱、摘要、狀態快照、暫存記憶
+### 4. Stuck issue interface
 
-### 3. Thinking Worker Interface
+For unresolved questions, retry conditions, and escalation rules.
 
-用途：
+### 5. Proactive notifier interface
 
-- 描述背景思考任務、結果產出、取消與冷卻
+For low-risk reminders without opening unsafe direct control paths.
 
-### 4. Stuck Issue Interface
+### 6. Embodiment adapter interface
 
-用途：
+For connecting the same cognitive core to glasses, phones, robots, and future bodies.
 
-- 描述未解問題、重試條件、升級條件
+## Long-term value
 
-### 5. Proactive Notifier Interface
+If PHINIX becomes a cognition architecture for future robots, the most important public work will not be every device implementation.
 
-用途：
-
-- 描述主動提醒，但不直接開放高風險主動控制
-
-### 6. Embodiment Adapter Interface
-
-用途：
-
-- 讓未來眼鏡、手機、機器人等不同身體都能接上同一主腦
-
----
-
-## 未來方向
-
-若 PHINIX 要成為未來人形機器人的主腦架構，最重要的不是公開所有裝置實作，而是先把：
+It will be the clean separation of:
 
 - cognition
 - memory
 - governance
 - proactive reasoning
 - embodiment abstraction
-
-這幾個接口切乾淨。
-
-# ⭐ 修改結束 ⭐

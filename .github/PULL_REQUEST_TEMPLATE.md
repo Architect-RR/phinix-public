@@ -1,24 +1,22 @@
-# ⭐ 修改開始 ⭐
-## 變更內容
+## What changed
 
-請簡述這次修改了什麼。
+Briefly describe the change.
 
-## 修改原因
+## Why it changed
 
-請說明這次修改要解決什麼問題，或為何值得加入。
+Explain the problem or goal behind the change.
 
-## 是否涉及下列高敏感區域
+## Does this touch a high-sensitivity area?
 
-- [ ] 主動性與提醒邊界
-- [ ] 記憶 / 世界狀態
-- [ ] 具身控制
-- [ ] 治理 / 安全 / 對齊
+- [ ] proactive behavior or reminder boundaries
+- [ ] memory or world state
+- [ ] embodiment control
+- [ ] governance, safety, or alignment
 
-## 驗證方式
+## Validation
 
-請說明你如何確認這次修改合理。
+Describe how you checked the change.
 
-## 備註
+## Notes
 
-若這是高層提案或介面草案，請明確標示尚未實作的部分。
-# ⭐ 修改結束 ⭐
+If this is a proposal or interface draft, mark clearly what is not implemented.

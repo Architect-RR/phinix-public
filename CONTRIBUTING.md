@@ -1,97 +1,76 @@
-# ⭐ 修改開始 ⭐
-# PHINIX 公開協作指南
+# Contributing to PHINIX
 
-歡迎兩類人參與：
+This public repo welcomes two kinds of contributors:
 
-- 專家型參與者
-- 對這個方向有興趣的實作者與研究者
+- experts with relevant domain knowledge
+- builders and researchers interested in the direction
 
----
+## Useful backgrounds
 
-## 適合參與的人
+### Experts
 
-### 專家
+- AI agents, memory systems, world models
+- HCI, AR, wearable interaction
+- robotics, embodiment, human-robot interaction
+- systems architecture, local-first runtimes
+- safety, governance, alignment
 
-- AI agent / memory system / world model
-- HCI / AR / wearable interaction
-- robotics / embodiment / human-robot interaction
-- systems architecture / local-first runtime
-- safety / governance / alignment
+### General contributors
 
-### 一般參與者
+- documentation
+- architecture discussion
+- test skeletons
+- issue triage
+- demos, mockups, interaction ideas
 
-- 文件整理
-- 架構討論
-- 測試骨架
-- issue 整理
-- demo / mockup / interaction idea
+## Contribution tracks
 
----
+### A. Architecture
 
-## 建議參與軌道
+- three-layer runtime design
+- memory and world-state interfaces
+- proactive cognition flows
+- local-first runtime boundaries
 
-### 軌道 A：架構討論
+### B. Human interaction
 
-可協助：
-
-- 三層 runtime 設計
-- memory / world state 介面
-- proactive cognition 設計
-- local-first runtime 邊界
-
-### 軌道 B：人機互動
-
-可協助：
-
-- AR 眼鏡互動設計
+- AR and wearable interaction
 - companion UX
-- 主動提醒的打擾控制
-- 長時陪伴型互動節奏
+- proactive reminder pacing
+- long-term interaction rhythm
 
-### 軌道 C：具身延展
+### C. Embodiment
 
-可協助：
-
-- robot embodiment adapter
-- perception / actuation 分層
+- robot embodiment adapters
+- perception / planning / actuation boundaries
 - humanoid integration strategy
 
-### 軌道 D：治理與安全
+### D. Governance and safety
 
-可協助：
-
-- review 流程
+- review flows
 - safety posture
-- escalation 機制
-- low-risk / high-risk 邊界
+- escalation mechanics
+- low-risk / high-risk boundaries
 
----
+## Ground rules
 
-## 貢獻原則
+1. Do not overstate unfinished capabilities.
+2. Do not submit secrets, raw logs, or hardware allowlists.
+3. Do not package high-risk embodiment control as convenience features.
+4. Prefer docs, interfaces, and low-risk skeletons before risky implementation.
+5. Keep each change focused on one topic.
 
-1. 不誇大未完成能力
-2. 不提交敏感憑證、私有資料、硬體白名單
-3. 不把高風險執行能力包裝成一般功能
-4. 先文件、再介面、再低風險實作
-5. 每次變更聚焦單一主題
+## Suggested workflow
 
----
+1. Open an issue first.
+2. Propose the smallest useful change.
+3. Discuss core direction before implementing it.
+4. Use a higher review bar for governance or embodiment-related changes.
 
-## 建議協作流程
+## High-value early contributions
 
-1. 先開 issue 描述問題
-2. 再提設計草案或最小 patch
-3. 若涉及核心方向，先討論再寫碼
-4. 若涉及治理或具身控制，必須提高審查標準
-
----
-
-## 初期最需要的貢獻
-
-- 公開版架構圖
-- 三層 runtime 介面設計
-- stuck issue queue 抽象模型
-- companion / AR UX 設計建議
-- 未來 humanoid robot 主腦接口討論
-
-# ⭐ 修改結束 ⭐
+- public architecture diagrams
+- three-layer runtime interfaces
+- stuck-issue queue models
+- companion and AR UX proposals
+- future humanoid cognition interfaces

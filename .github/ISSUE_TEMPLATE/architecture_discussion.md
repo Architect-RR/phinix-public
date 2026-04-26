@@ -1,36 +1,34 @@
-# ⭐ 修改開始 ⭐
 ---
-name: 架構討論
-about: 提出 PHINIX 架構、分層、介面或治理方向的討論
+name: Architecture discussion
+about: Discuss PHINIX architecture, layering, interfaces, or governance
 title: "[Architecture] "
 labels: architecture
 assignees: ""
 ---
 
-## 你想討論什麼
+## What do you want to discuss
 
-請描述你想討論的架構主題。
+Describe the architecture topic.
 
-## 目前觀察
+## Current observation
 
-請說明你看到的問題、限制或設計張力。
+Explain the problem, limit, or design tension you see.
 
-## 建議方向
+## Suggested direction
 
-請描述你認為可行的方向。
+Describe the direction you think is viable.
 
-## 可能影響
+## Possible impact
 
-請說明它可能影響：
+Explain how it may affect:
 
-- 即時層
-- 緩衝層
-- 思考層
-- 主動性
-- 具身延展
-- 治理邊界
+- real-time layer
+- buffer layer
+- thinking layer
+- proactivity
+- embodiment
+- governance boundaries
 
-## 其他參考
+## References
 
-可補充相關論文、repo、產品或實作經驗。
-# ⭐ 修改結束 ⭐
+Add papers, repos, products, or implementation experience if relevant.

@@ -1,62 +1,49 @@
-# ⭐ 修改開始 ⭐
-# PHINIX 社群行為準則
+# Code of Conduct
 
-PHINIX 希望建立的是一個能長期合作的技術社群，而不是只靠短期熱度運作的專案。
+PHINIX aims to be a long-term technical community, not a short-term hype project.
 
----
+## We encourage
 
-## 我們鼓勵
+- honest problem statements
+- respect for contributors from different backgrounds
+- criticism aimed at design, code, validation, and evidence
+- explicit acknowledgement of uncertainty
+- technical claims backed by concrete reasoning
 
-- 誠實指出問題
-- 尊重不同背景的參與者
-- 把批評落在設計、程式、驗證與論證上
-- 承認未知與不確定性
-- 用具體證據支持技術主張
+## We do not accept
 
----
+- personal attacks
+- contemptuous or mocking replies
+- misleading capability claims
+- malicious submission of sensitive data
+- appeals to authority in place of technical argument
 
-## 我們不接受
+## Discussion rules
 
-- 人身攻擊
-- 嘲諷式回應
-- 誤導性宣稱
-- 惡意提交敏感資料
-- 以權威替代技術論證
+1. Critique the work, not the person.
+2. State assumptions and evidence clearly.
+3. Raise the validation bar for high-risk capabilities.
+4. Mark speculative ideas as proposals, not facts.
 
----
+## PHINIX-specific expectations
 
-## 討論原則
+PHINIX especially values:
 
-1. 對事不對人
-2. 優先講清楚前提與證據
-3. 若是高風險能力，必須提高驗證標準
-4. 若是 speculative idea，請明確標示為假設或提案
+- local sovereignty
+- governance
+- honesty about unfinished capability
+- restraint around embodiment risk
 
----
+That means:
 
-## PHINIX 特別重視
+- do not present research modules as production capability
+- do not disguise high-risk execution as convenience
+- do not weaken safety boundaries for demos
 
-- 本地主權
-- 可治理性
-- 對未完成能力的誠實
-- 對具身控制風險的節制
+## Enforcement
 
-這代表：
+Maintainers may:
 
-- 不應把研究模組說成已上線能力
-- 不應把高風險執行包裝成一般便利功能
-- 不應為了展示效果而降低安全邊界
-
----
-
-## 違規處理
-
-維護者可依情況：
-
-- 要求修正內容
-- 關閉不當 issue / PR
-- 限制持續破壞討論者的參與
-
-本專案重視開放，但不以犧牲長期合作品質為代價。
-
-# ⭐ 修改結束 ⭐
+- request revisions
+- close harmful issues or PRs
+- restrict repeated bad-faith participation

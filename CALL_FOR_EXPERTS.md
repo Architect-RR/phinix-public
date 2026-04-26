@@ -1,79 +1,67 @@
-# ⭐ 修改開始 ⭐
-# PHINIX 專家邀請
+# Call for Experts
 
-PHINIX 正在往以下方向收斂：
+PHINIX is converging toward:
 
-- 本地主權主腦
-- 具身 AI companion
-- 主動式長時認知系統
-- 未來人形機器人的 cognition layer
+- a local-first cognitive core
+- an embodied AI companion architecture
+- proactive long-horizon reasoning
+- a future cognition layer for humanoid robots
 
-如果你在下列領域有經驗，非常適合參與。
+If you work in one of the areas below, your feedback would be especially valuable.
 
----
+## Areas where we want expert input
 
-## 希望邀請的專家方向
+### 1. Agents, memory, and world models
 
-### 1. Agent / Memory / World Model
+Questions:
 
-希望討論：
+- How should long-term memory be separated from the real-time layer?
+- How can world-state updates avoid self-contamination and false certainty?
+- How should background reasoning avoid hurting live responsiveness?
 
-- 長時記憶如何與即時層分離
-- world state 如何避免幻覺式污染
-- 背景思考如何不拖垮 live 路徑
+### 2. Proactive AI and companion design
 
-### 2. Proactive AI / Companion Design
+Questions:
 
-希望討論：
+- When should a system proactively surface a conclusion?
+- When should it stay quiet?
+- What reminder rhythm feels like companionship rather than noise?
 
-- 何時該主動提醒
-- 何時不該打擾
-- 怎樣的節奏才像陪伴，不像噪音
+### 3. AR, wearables, and HCI
 
-### 3. AR / Wearable / HCI
+Questions:
 
-希望討論：
+- What is the right information density for waveguide or HUD output?
+- How should voice and visual interaction be blended?
+- What works best in hands-free task support?
 
-- 波導資訊密度
-- 語音與視覺混合互動
-- hands-free 任務中的最佳提示節奏
+### 4. Robotics and humanoid integration
 
-### 4. Robotics / Humanoid Integration
+Questions:
 
-希望討論：
+- How should the cognitive core be separated from the robot body?
+- Where should perception, planning, and embodiment boundaries sit?
+- Can one cognitive core persist across multiple robot bodies?
 
-- 主腦與機器人本體如何解耦
-- perception / planning / embodiment 介面怎麼切
-- 是否能讓同一主腦跨不同機器人身體存在
+### 5. Governance, safety, and alignment
 
-### 5. Governance / Safety / Alignment
+Questions:
 
-希望討論：
+- How should stuck issues escalate?
+- What should the proactive boundary be?
+- What safety gates should exist before embodied action?
+- How should long-term integrity be maintained?
 
-- stuck issue 的升級機制
-- 主動性邊界
-- 具身控制前的 safety gate
-- 長期 integrity 如何維持
+## Core questions for PHINIX
 
----
+1. How do we make proactive behavior useful without making it intrusive?
+2. How can a companion system remain coherent over long periods of use?
+3. For future humanoid systems, what belongs in the cognitive core and what belongs in body control?
+4. How do we keep a local-first system extensible without weakening its boundaries?
 
-## 我們特別想問的問題
+## Ways to participate
 
-1. 如何把主動性做得有用，而不是打擾？
-2. 如何讓一個 AI companion 在長時間內維持一致人格與治理邊界？
-3. 若未來接上人形機器人，哪些部分應該屬於「主腦」，哪些應該留在「身體控制層」？
-4. 如何讓本地主權架構仍保有足夠延展性與社群協作空間？
-
----
-
-## 參與方式
-
-- 提 issue 討論架構
-- 提 PR 修文件或介面
-- 提供高層設計建議
-- 協助拆解公開版與 private 版邊界
-
-如果你只是對這個方向有興趣，也歡迎參與。  
-PHINIX 不只需要專家，也需要能一起長期看清方向的人。
-
-# ⭐ 修改結束 ⭐
+- open issues for architecture discussion
+- submit PRs for documentation or interface work
+- provide high-level design feedback
+- help define the public/private split

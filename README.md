@@ -1,110 +1,85 @@
 # PHINIX Public Starter
 
-這個資料夾是 PHINIX 未來公開到 GitHub 的 `public-safe` 起點。
+PHINIX is a local-first AI runtime aimed at embodied companion systems, AR interfaces, and a future cognition layer for humanoid robots.
 
-它的目的不是直接公開整個主腦實作，而是先公開：
+This public repository is intentionally limited. It does not expose the full private runtime or deployment chain. It exists to share:
 
-- 專案願景
-- 高層架構
-- 社群協作方式
-- 技術路線圖
-- 可供專家與有興趣的人參與的入口
+- project vision
+- architecture direction
+- collaboration rules
+- public-safe interfaces
+- roadmap and open questions
 
----
+## Positioning
 
-## 專案定位
+PHINIX is best described as:
 
-PHINIX 可被描述為：
+**a local-first, governance-aware, embodied AI runtime that may evolve into a long-lived companion core**
 
-**一個本地主權優先、具身導向、朝數位伴侶與未來人形機器人主腦架構延展的 AI Runtime。**
+Near-term focus:
 
-短期目標不是做成萬能代理，而是先收斂成：
+- a stable core runtime
+- safe autonomy boundaries
+- memory and issue-tracking primitives
+- device-agnostic cognition interfaces
 
-- 可持續演化的主腦核心
-- 可治理的自主輔助系統
-- 可接眼鏡、手機、未來機器人身體的 cognition layer
+## Why this repo is public-safe
 
----
+The full private repo still contains material that should not be published directly:
 
-## 為什麼先公開這一包
+- bridge credentials and deployment details
+- raw interaction and training logs
+- hardware-specific bridge details
+- large build artifacts and vendor binaries
+- evolving governance internals
 
-目前完整 PHINIX repo 仍包含：
+This public repo shares the direction without exposing those parts.
 
-- 敏感 token / bridge 設定
-- 訓練與互動紀錄
-- 大量 build 產物
-- 硬體橋接細節
-- 仍在演進中的治理內核
+## What is in this repo
 
-因此不適合直接整包公開。
+- `README.md` — project overview
+- `ARCHITECTURE_OVERVIEW.md` — high-level system design
+- `PUBLIC_SCOPE.md` — what belongs in public vs private repos
+- `CONTRIBUTING.md` — how to participate
+- `CALL_FOR_EXPERTS.md` — where expert feedback is most useful
+- `ROADMAP.md` — staged evolution plan
+- `interfaces/` — public interface directions
 
-這個 `github_public/` 的設計目的，是先把適合公開的內容抽出來，讓外部能理解：
+## What PHINIX may become
 
-- 這個專案想做什麼
-- 它和一般 agent 有何不同
-- 哪些部分適合一起做
-- 哪些部分暫時不應公開
+### 1. AR cognitive copilot
 
----
+A low-latency assistance layer for glasses and other wearable devices.
 
-## 這一包包含什麼
+### 2. Local-first digital companion
 
-- `README.md`
-  - 專案總覽與定位
-- `PUBLIC_SCOPE.md`
-  - 哪些內容適合公開，哪些不適合
-- `CONTRIBUTING.md`
-  - 外部參與方式
-- `CALL_FOR_EXPERTS.md`
-  - 專家邀請方向
-- `ROADMAP.md`
-  - 演進路線圖
-- `interfaces/`
-  - 未來可公開化的介面方向
+A long-lived companion core with memory, follow-up reasoning, and proactive reminders.
 
----
+### 3. Humanoid robot cognition layer
 
-## 這個專案未來可能成為什麼
+A portable cognition and governance layer that can outlive any one device body.
 
-### 1. AR 認知副駕
+Likely roles:
 
-可作為眼鏡與 wearable 裝置上的即時認知協助層。
+- memory
+- issue tracking
+- proactive reasoning
+- governance
+- long-term consistency
 
-### 2. 本地主權數位伴侶
+## Public collaboration principles
 
-可作為一個有記憶、會回頭思考、能主動提醒的長時陪伴式主腦。
+- local sovereignty first
+- honest capability boundaries
+- no public release of sensitive embodiment chains
+- document and interface before risky implementation
+- expand access only after validation
 
-### 3. 人形機器人的 cognition layer
+## Recommended repo strategy
 
-若未來接上人形機器人，本專案最可能扮演的不是單純動作控制器，而是：
+Keep the full operational system private for now. Use this public repo for:
 
-- 記憶層
-- 問題追蹤層
-- 治理層
-- 主動認知層
-- 人機互動中的長時自我一致性核心
-
-也就是說，**機器人的「身體」可以更換，但 PHINIX 可作為較長壽命的「主腦架構」。**
-
----
-
-## 對外合作原則
-
-- 本地主權優先
-- 不誤宣稱未完成能力
-- 不把高風險執行權限直接暴露
-- 先公開高層文件、介面與低風險骨架
-- 再逐步開放更多可驗證模組
-
----
-
-## 建議公開方式
-
-建議未來將這個資料夾整理為獨立公開 repo，而不是直接把完整內部 repo 設成 public。
-
-建議公開 repo 名稱方向：
-
-- `phinix-public`
-- `phinix-core-public`
-- `phinix-architecture`
-
+- architecture review
+- interface design
+- expert discussion
+- low-risk public collaboration

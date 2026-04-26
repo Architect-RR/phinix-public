@@ -1,59 +1,47 @@
-# ⭐ 修改開始 ⭐
-# PHINIX 公開發布檢查清單
+# Publish Checklist
 
-在把這一包推上 GitHub 前，請確認：
+Before publishing this package, confirm the following.
 
----
+## Repository
 
-## Repo 層級
+- A new GitHub repository exists.
+- The repo name is final.
+- Visibility is intentionally set to public or private.
 
-- 已建立新的空 GitHub repo
-- repo 名稱已確認
-- visibility 已確認為 public 或 private
+## Content
 
----
+- No tokens, secrets, or bridge credentials are included.
+- No raw voice, dialogue, or training logs are included.
+- No APK, SDK, JDK, or vendor blobs are included.
+- No private bridge details are included.
+- No unfinished capability is described as complete.
 
-## 內容層級
+## Documentation
 
-- 不含 token / secret / bridge 憑證
-- 不含原始語音、對話與訓練資料
-- 不含 APK / SDK / JDK / vendor blobs
-- 不含 private bridge 細節
-- 不誇大未完成能力
+- README states the project clearly.
+- PUBLIC_SCOPE defines the boundary clearly.
+- CONTRIBUTING explains how to participate.
+- ROADMAP shows a realistic direction.
+- LICENSE is chosen intentionally.
 
----
+## Community setup
 
-## 文件層級
+- Issue templates are ready.
+- PR template is ready.
+- Expert invitation text is ready.
+- Code of conduct is ready.
 
-- README 已說清楚定位
-- PUBLIC_SCOPE 已說清楚公開邊界
-- CONTRIBUTING 已說清楚參與方式
-- ROADMAP 已說清楚近期方向
-- LICENSE 已確認採用
+## First public release recommendation
 
----
+Start with:
 
-## 社群層級
+- this `github_public/` package
+- cleaned architecture material
+- abstract interfaces
 
-- issue 模板已就緒
-- PR 模板已就緒
-- 專家邀請文案已就緒
-- 行為準則已就緒
+Do not start with:
 
----
-
-## 發布建議
-
-建議第一版公開時，只先放：
-
-- 這個 `github_public/` 目錄內的內容
-- 經整理後的高層架構與抽象接口
-
-不要第一版就放：
-
-- 完整 private 主腦實作
-- 具身敏感控制鏈
-- 訓練資料
-- vendor build 產物
-
-# ⭐ 修改結束 ⭐
+- the full private runtime
+- sensitive embodiment chains
+- training data
+- vendor build artifacts

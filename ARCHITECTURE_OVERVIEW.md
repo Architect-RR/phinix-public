@@ -1,110 +1,95 @@
-# ⭐ 修改開始 ⭐
-# PHINIX 公開版架構概覽
+# Architecture Overview
 
-本文件只描述適合公開討論的高層架構，不涉及 private deploy 細節與敏感 bridge 配置。
+This document describes the public high-level architecture only. It does not include private deployment details or sensitive bridge configuration.
 
----
+## Core idea
 
-## 核心觀念
+PHINIX is not just a chatbot and not just a tool-calling agent.
 
-PHINIX 不是單純聊天機器人，也不是單一工具代理。
+It is closer to:
 
-它更接近：
+- a local-first runtime
+- an embodied companion core
+- a future cognition layer for humanoid systems
 
-- 本地主權 runtime
-- 具身 companion 主腦
-- 可延展到未來人形機器人的 cognition layer
+## Suggested three-layer architecture
 
----
+### 1. Real-time layer
 
-## 建議三層架構
+Responsibilities:
 
-### 1. 即時處理層
+- receive live input
+- produce low-latency responses
+- drive immediate interaction
 
-職責：
+Typical channels:
 
-- 接收即時輸入
-- 做低延遲理解與回應
-- 驅動使用者當下互動
+- voice
+- text
+- HUD or AR output
 
-典型通道：
+### 2. Buffer layer
 
-- 語音
-- 文字
-- HUD / AR 顯示
+Responsibilities:
 
-### 2. 緩衝層
+- retain events and conversational context
+- build state snapshots
+- manage pending issues
 
-職責：
+Its job is not intelligence first. Its job is:
 
-- 保留事件與對話上下文
-- 生成狀態快照
-- 管理待處理問題
+- capture
+- structure
+- preserve
 
-這一層的重點不是智慧，而是：
+### 3. Thinking layer
 
-- 承接
-- 結構化
-- 可回看
+Responsibilities:
 
-### 3. 思考層
+- background reasoning
+- stuck-issue revisit
+- long-horizon topic tracking
+- candidate proactive outputs
 
-職責：
+This layer should not replace the real-time layer. It should run beside it.
 
-- 背景推理
-- 卡關回看
-- 長時主題追蹤
-- 主動提示候選產出
+## Stuck issue queue
 
-這一層不應直接取代即時層，而應與之分流。
+One of PHINIX's most important ideas is to treat "being stuck" as persistent state rather than a disposable failure.
 
----
+That allows the system to:
 
-## Stuck Issue Queue
+- remember where it failed
+- remember what it tried
+- revisit the problem later
+- surface useful follow-ups when new evidence appears
 
-PHINIX 的關鍵差異之一，是把「卡關」視為一種正式可持續追蹤的物件。
+## Proactive companion behavior
 
-這代表系統不是只在失敗時停止，而是可以：
+Proactivity should not mean constant interruption.
 
-- 記住哪裡失敗
-- 記住試過什麼
-- 在未來有新線索時回頭再解
-- 在適當時機主動提醒
+A healthier flow is:
 
----
+1. background conclusion appears
+2. low-friction reminder is prepared
+3. the user chooses whether to expand it
 
-## Proactive Companion
+That is closer to a companion than a noise source.
 
-PHINIX 的主動性不應直接等於「隨時打擾使用者」。
+## Why this matters for future robots
 
-比較合理的順序是：
+If PHINIX is connected to future humanoid systems, its likely role is:
 
-1. 背景新結論
-2. 低打擾提醒
-3. 使用者選擇是否展開
+- memory
+- issue tracking
+- proactive reasoning
+- governance
+- long-term consistency
 
-這樣才比較接近 companion，而不是噪音來源。
+Not:
 
----
+- low-level control
+- hard real-time motor control
+- a thin SDK wrapper
 
-## 對未來機器人的意義
-
-若未來接上人形機器人，PHINIX 最可能擔任的是：
-
-- 記憶層
-- 問題追蹤層
-- 主動認知層
-- 治理層
-- 長時一致性層
-
-而不是直接替代：
-
-- 低階控制器
-- 硬即時運動控制
-- 單純 SDK 封裝
-
-因此可把 PHINIX 視為：
-
-**跨裝置、跨身體、較長壽命的主腦結構。**
-
-# ⭐ 修改結束 ⭐
+In that sense, PHINIX is better viewed as a portable cognitive core that can outlive any one device body.
