@@ -126,18 +126,4 @@ PHINIX 的近期路線選擇是先把下列能力做成可測契約：
 4. 先做資料契約，再做 worktree executor
 5. 任何自動 patch 都必須先在隔離環境測試
 
-## 公開說法
-
-建議公開描述：
-
-> PHINIX is a local-first governed AI runtime for embodied companion systems, designed around human-in-the-loop escalation, auditability, model-asset boundaries, and sandboxed recursive improvement.
-
-不建議公開描述：
-
-- 「PHINIX 已是 AGI」
-- 「完全自動進化」
-- 「無限制自我修改」
-- 「取代所有模型」
-
-目前最可信的方向，是把 PHINIX 做成能承載不同模型與本地設備的治理型 runtime。
 
