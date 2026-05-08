@@ -41,6 +41,8 @@ This public repo shares the direction without exposing those parts.
 
 - `README.md` — project overview
 - `ARCHITECTURE_OVERVIEW.md` — high-level system design
+- `PHINIX_STATUS_REPORT_2026-05-08.zh-TW.md` — latest public-safe status report
+- `LINKEDIN_SHARE_2026-05-08.zh-TW.md` — LinkedIn-ready public summary
 - `README.zh-TW.md` — Traditional Chinese overview
 - `ARCHITECTURE_OVERVIEW.zh-TW.md` — Traditional Chinese architecture overview
 - `PUBLIC_SCOPE.md` — what belongs in public vs private repos

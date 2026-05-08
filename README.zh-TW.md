@@ -41,6 +41,8 @@ PHINIX 可以被描述為：
 
 - `README.md` / `README.zh-TW.md`
 - `ARCHITECTURE_OVERVIEW.md` / `ARCHITECTURE_OVERVIEW.zh-TW.md`
+- `PHINIX_STATUS_REPORT_2026-05-08.zh-TW.md`：最新 public-safe 狀態報告
+- `LINKEDIN_SHARE_2026-05-08.zh-TW.md`：LinkedIn 可貼上的公開摘要
 - `PUBLIC_SCOPE.md` / `PUBLIC_SCOPE.zh-TW.md`
 - `CONTRIBUTING.md` / `CONTRIBUTING.zh-TW.md`
 - `CALL_FOR_EXPERTS.md` / `CALL_FOR_EXPERTS.zh-TW.md`
