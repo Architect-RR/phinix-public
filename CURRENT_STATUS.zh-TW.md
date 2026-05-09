@@ -20,11 +20,11 @@ PHINIX 不是單純聊天機器人，也不是單一模型 wrapper。比較準�
 
 ## 最近完成的主要能力
 
-### Mentor escalation
+### Human review escalation
 
-PHINIX 已建立 mentor escalation 路徑。當 GeminiProvider 出現全 key cooldown、單次請求全部失敗或疑似低品質回應時，系統可以建立升級請求，交由人類決定後續方向。
+PHINIX 已建立人工審核升級路徑。當模型供應器或 runtime 偵測到重大失敗、連續錯誤或疑似低品質回應時，系統可以建立升級請求，交由人類決定後續方向。
 
-目前重點不是自動呼叫外部導師，而是先把問題整理成可審核事件。
+目前重點不是自動呼叫外部工具或自動修復，而是先把問題整理成可審核事件。
 
 ### UpgradeProposal
 
@@ -32,22 +32,22 @@ PHINIX 已建立 mentor escalation 路徑。當 GeminiProvider 出現全 key coo
 
 這讓 PHINIX 的自我升級流程從「發現問題」前進到「提出可審核工程提案」。
 
-### AutonomyPolicy
+### Autonomy governance
 
-PHINIX 已加入 `AutonomyMode` / `AutonomyPolicy` 的治理骨架。
+PHINIX 已加入自主性治理骨架。
 
 目前所有自動化模式都以安全邊界為前提：
 
-- `proposal_only`
-- `sandbox_auto`
-- `low_risk_auto_promote`
-- `full_auto_lab`
+- 僅建立提案
+- sandbox 內乾跑
+- 低風險變更審核後推進
+- 實驗室模式下的隔離測試
 
-`full_auto_lab` 只代表未來可在隔離 sandbox / worktree 內進行實驗室自動閉環，不代表可直接修改 production 主線。
+實驗室模式只代表未來可在隔離 sandbox / worktree 內進行測試，不代表可直接修改 production 主線。
 
 ### ModelAssetRegistry
 
-模型權重已從 repo 邊界拉出。權重、adapter、tokenizer、embedding 等大型模型資產由外部 `PHINIX_MODEL_ROOT` 管理，repo 只保存 registry、manifest 與 hash 驗證邏輯。
+模型權重已從 repo 邊界拉出。權重、adapter、tokenizer、embedding 等大型模型資產由外部模型資料夾管理，repo 只保存 registry、manifest 與 hash 驗證邏輯。
 
 這讓 repo 保持輕量，也避免模型資產與程式碼版本混在一起。
 
@@ -62,9 +62,9 @@ PHINIX 已加入 `AutonomyMode` / `AutonomyPolicy` 的治理骨架。
 已具備：
 
 - runtime / bridge / governance / audit 的骨架
-- Gemini multi-key failover 與 mentor escalation
+- 模型供應器失效偵測與人工審核升級
 - proposal-based upgrade flow
-- autonomy policy scaffolding
+- autonomy governance scaffolding
 - model asset boundary
 - sandbox upgrade data contract
 
@@ -74,11 +74,10 @@ PHINIX 已加入 `AutonomyMode` / `AutonomyPolicy` 的治理骨架。
 - 自動 patch / test / rollback 閉環
 - low-risk auto-promotion
 - production-grade live actuation gate
-- 高風險 domain package，例如 trading、medical、legal 的完整 policy layer
+- 高風險 domain package 的完整 policy layer
 
 刻意不做：
 
-- 自動 live order
 - 未經確認的高風險外部執行
 - 隱藏式自我修改
 - 直接修改 production main
