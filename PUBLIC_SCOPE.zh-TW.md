@@ -56,13 +56,14 @@ Languages: [English](PUBLIC_SCOPE.md) | **繁體中文**
 - APK build outputs
 - SDK / JDK archives
 - vendor binaries
-- reverse-engineered artifacts
+- vendor / device analysis artifacts
 
 ### 敏感實作細節
 
 - 直接具身控制鏈細節
 - 尚未穩定的治理內核
 - 容易被濫用的 device control 路徑
+- 未公開的硬體橋接與部署細節
 
 ## 建議拆分方式
 

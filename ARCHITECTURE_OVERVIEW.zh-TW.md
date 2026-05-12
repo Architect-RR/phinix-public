@@ -12,7 +12,7 @@ PHINIX 不是單純聊天機器人，也不是單純工具代理。
 
 - 本地主權 runtime
 - 具身 companion 主腦
-- 未來人形機器人的 cognition layer
+- 可跨 companion、wearable、桌面工具與未來具身系統延續的 cognition layer
 
 ## 建議的三層架構
 
@@ -78,9 +78,9 @@ PHINIX 的一個核心差異，是把「卡關」當成可持續追蹤的正式�
 
 這才比較接近 companion，而不是噪音來源。
 
-## 對未來機器人的意義
+## 對未來具身系統的意義
 
-如果未來接上人形機器人，PHINIX 比較可能扮演：
+如果未來接上更多具身系統，PHINIX 比較適合扮演：
 
 - 記憶
 - 問題追蹤
@@ -94,4 +94,4 @@ PHINIX 的一個核心差異，是把「卡關」當成可持續追蹤的正式�
 - 硬即時運動控制
 - 單純 SDK wrapper
 
-因此可以把 PHINIX 視為能夠跨裝置、跨身體延續的可攜式主腦核心。
+因此可以把 PHINIX 視為能夠跨裝置延續的可攜式 context / governance runtime，而不是單一硬體控制器。

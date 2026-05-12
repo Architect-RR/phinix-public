@@ -10,7 +10,7 @@ It is closer to:
 
 - a local-first runtime
 - an embodied companion core
-- a future cognition layer for humanoid systems
+- a portable cognition layer across companion apps, wearables, desktop tools, and future embodied systems
 
 ## Suggested three-layer architecture
 
@@ -76,9 +76,9 @@ A healthier flow is:
 
 That is closer to a companion than a noise source.
 
-## Why this matters for future robots
+## Why this matters for future embodied systems
 
-If PHINIX is connected to future humanoid systems, its likely role is:
+If PHINIX is connected to future embodied systems, its likely role is:
 
 - memory
 - issue tracking
@@ -92,4 +92,4 @@ Not:
 - hard real-time motor control
 - a thin SDK wrapper
 
-In that sense, PHINIX is better viewed as a portable cognitive core that can outlive any one device body.
+In that sense, PHINIX is better viewed as a portable context and governance runtime rather than a low-level hardware controller.

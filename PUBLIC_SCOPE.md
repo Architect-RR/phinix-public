@@ -54,13 +54,14 @@ This document defines what should live in the public GitHub repository and what 
 - APK build outputs
 - SDK and JDK archives
 - vendor binaries
-- reverse-engineered artifacts
+- vendor and device analysis artifacts
 
 ### Sensitive implementation details
 
 - direct embodiment control chain details
 - unstable governance internals
 - device control paths that are easy to misuse
+- unpublished hardware bridge and deployment details
 
 ## Suggested split
 

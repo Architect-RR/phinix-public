@@ -69,11 +69,11 @@ Outputs:
 - multi-device context model
 - safety boundary design
 
-## P5: Humanoid robot cognition layer
+## P5: Portable cognition layer
 
 Goal:
 
-- make PHINIX a portable cognition architecture for future humanoid systems
+- make PHINIX a cognition architecture that can carry context across companion apps, wearables, desktop tools, and future embodied systems
 
 Likely roles:
 
@@ -89,6 +89,22 @@ Not the same as:
 - hard real-time control
 - a thin robot SDK wrapper
 
+## P6: Governed capability improvement
+
+Goal:
+
+- turn runtime failures, low-quality responses, and stuck issues into reviewable improvement proposals
+- validate changes inside sandbox / worktree boundaries instead of modifying production directly
+- retain test evidence, audit records, and rollback plans
+
+Outputs:
+
+- codebase self-indexing
+- side-effect map
+- sandbox dry-run / worktree validation
+- local branch materialization
+- human review workflow
+
 ## Milestones that matter
 
 PHINIX becomes mature only if it can progressively achieve:
@@ -99,3 +115,4 @@ PHINIX becomes mature only if it can progressively achieve:
 4. controlled proactive reminders
 5. an abstract embodiment layer
 6. continuity across multiple devices or bodies
+7. reviewable and rollback-capable improvement workflows

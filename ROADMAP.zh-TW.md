@@ -71,11 +71,11 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 - multi-device context model
 - safety boundary design
 
-## P5：Humanoid robot cognition layer
+## P5：可攜式 cognition layer
 
 目標：
 
-- 讓 PHINIX 成為未來人形機器人的可攜式 cognition architecture
+- 讓 PHINIX 成為可跨 companion、wearable、桌面與未來具身系統延續的 cognition architecture
 
 可能角色：
 
@@ -91,6 +91,22 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 - 硬即時控制
 - 單純機器人 SDK wrapper
 
+## P6：受治理能力提升流程
+
+目標：
+
+- 把 runtime 失敗、低品質回應與卡關狀態轉成可審核改善提案
+- 在 sandbox / worktree 中驗證修正，不直接修改 production 主線
+- 保留測試結果、審計紀錄與 rollback plan
+
+輸出：
+
+- codebase self-indexing
+- side-effect map
+- sandbox dry-run / worktree validation
+- local branch materialization
+- human review workflow
+
 ## 真正重要的里程碑
 
 PHINIX 要從概念走向成熟，至少要逐步完成：
@@ -101,3 +117,4 @@ PHINIX 要從概念走向成熟，至少要逐步完成：
 4. 可控的 proactive reminders
 5. 可抽象化的 embodiment layer
 6. 可跨多裝置或多身體延續
+7. 可審核、可回滾的能力提升流程
