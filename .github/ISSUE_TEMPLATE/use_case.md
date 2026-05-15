@@ -22,6 +22,6 @@ List the core capabilities this scenario would need.
 
 Describe the main concerns.
 
-## Future embodiment angle
+## Device or embodiment angle
 
-Explain how this use case might extend to wearables or robots.
+Explain whether this use case touches companion devices, wearables, or other authorized hardware surfaces. Keep device-specific implementation details private.

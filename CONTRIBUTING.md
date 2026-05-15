@@ -1,76 +1,67 @@
 # Contributing to PHINIX
 
-This public repo welcomes two kinds of contributors:
+This public repository welcomes contributions that improve documentation, architecture clarity, interface boundaries, and public-safe review.
 
-- experts with relevant domain knowledge
-- builders and researchers interested in the direction
+## Useful Backgrounds
 
-## Useful backgrounds
+- Agent runtime architecture
+- Local-first systems
+- State management and observability
+- Human-computer interaction
+- Wearable or companion interfaces
+- Governance, audit, and risk review
+- Test and validation design
 
-### Experts
-
-- AI agents, memory systems, world models
-- HCI, AR, wearable interaction
-- robotics, embodiment, human-robot interaction
-- systems architecture, local-first runtimes
-- safety, governance, alignment
-
-### General contributors
-
-- documentation
-- architecture discussion
-- test skeletons
-- issue triage
-- demos, mockups, interaction ideas
-
-## Contribution tracks
+## Contribution Tracks
 
 ### A. Architecture
 
-- three-layer runtime design
-- memory and world-state interfaces
-- proactive cognition flows
-- local-first runtime boundaries
+- Runtime layer separation
+- State and event interfaces
+- Proposal and validation flows
+- Read-only observability
 
-### B. Human interaction
+### B. Human Interaction
 
-- AR and wearable interaction
-- companion UX
-- proactive reminder pacing
-- long-term interaction rhythm
+- Companion UX
+- Low-interruption proactive behavior
+- Viewer or panel information density
+- Accessibility and operator workflows
 
-### C. Embodiment
+### C. Device and Embodiment Boundaries
 
-- robot embodiment adapters
-- perception / planning / actuation boundaries
-- humanoid integration strategy
+- Adapter abstractions
+- Authorized-device capability descriptors
+- Separation between governed runtime and low-level control
 
-### D. Governance and safety
+### D. Governance and Safety
 
-- review flows
-- safety posture
-- escalation mechanics
-- low-risk / high-risk boundaries
+- Review workflows
+- Public/private scope checks
+- Audit summary models
+- Low-risk / high-risk boundary definitions
 
-## Ground rules
+## Ground Rules
 
 1. Do not overstate unfinished capabilities.
-2. Do not submit secrets, raw logs, or hardware allowlists.
-3. Do not package high-risk embodiment control as convenience features.
-4. Prefer docs, interfaces, and low-risk skeletons before risky implementation.
+2. Do not submit secrets, raw logs, local audit files, or hardware allowlists.
+3. Do not package high-risk device control as convenience features.
+4. Prefer documentation, interfaces, and low-risk skeletons before implementation.
 5. Keep each change focused on one topic.
+6. Mark clearly when something is a proposal, interface draft, or non-runtime example.
 
-## Suggested workflow
+## Suggested Workflow
 
-1. Open an issue first.
+1. Open an issue first for architecture or boundary changes.
 2. Propose the smallest useful change.
-3. Discuss core direction before implementing it.
-4. Use a higher review bar for governance or embodiment-related changes.
+3. Discuss risk and validation before implementation.
+4. Use a higher review bar for governance, device, or automation-related changes.
 
-## High-value early contributions
+## High-Value Early Contributions
 
-- public architecture diagrams
-- three-layer runtime interfaces
-- stuck-issue queue models
-- companion and AR UX proposals
-- future humanoid cognition interfaces
+- Public architecture diagrams
+- Runtime state interfaces
+- Stuck issue and proposal models
+- Read-only status summary schema
+- Public-safe simulation stubs
+- Documentation cleanup

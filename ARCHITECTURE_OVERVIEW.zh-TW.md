@@ -2,96 +2,109 @@
 
 Languages: [English](ARCHITECTURE_OVERVIEW.md) | **繁體中文**
 
-本文件只描述適合公開討論的高層架構，不包含 private deploy 細節或敏感 bridge 設定。
+本文件只描述適合公開討論的高層架構，不包含 private deploy 細節、硬體橋接設定、憑證、審計全文或本機維護資料。
 
 ## 核心概念
 
-PHINIX 不是單純聊天機器人，也不是單純工具代理。
+PHINIX 是 local-first governed agent runtime。它的重點不是單次回答，而是把長時任務、背景狀態、工具使用、提案、驗證與審計放在同一個可治理流程中。
 
-它更接近：
+## 公開架構層
 
-- 本地主權 runtime
-- 具身 companion 主腦
-- 可跨 companion、wearable、桌面工具與未來具身系統延續的 cognition layer
-
-## 建議的三層架構
-
-### 1. 即時處理層
+### 1. Client entry layer
 
 職責：
 
-- 接收即時輸入
-- 產生低延遲回應
-- 驅動當下互動
+- 接收文字、語音、viewer、companion 或 wearable 入口請求
+- 顯示受控結果
+- 保持 thin client
 
-典型通道：
+此層不應直接做高風險決策。
 
-- 語音
-- 文字
-- HUD / AR 輸出
-
-### 2. 緩衝層
+### 2. Runtime state layer
 
 職責：
 
-- 保留事件與對話上下文
-- 產生狀態快照
-- 管理待處理問題
+- 管理 session
+- 管理短期事件與狀態快照
+- 保存卡關、延後處理與待審核項目
+- 將背景狀態整理成可觀測資料
 
-這一層最重要的不是智慧，而是：
-
-- 承接
-- 結構化
-- 保留可回看性
-
-### 3. 思考層
+### 3. Policy and proposal layer
 
 職責：
 
-- 背景推理
-- 卡關回看
-- 長時主題追蹤
-- 主動輸出候選結果
+- 判斷請求風險
+- 建立工程提案
+- 標示禁止修改範圍
+- 決定是否進入 sandbox
+- 產生 rollback / test / audit 要求
 
-這一層不應取代即時層，而應與即時層並行。
+### 4. Sandbox validation layer
+
+職責：
+
+- dry-run
+- worktree 驗證
+- patch validation
+- test execution
+- local branch materialization
+- private audit
+
+此層仍不代表 production approval。
+
+### 5. Read-only observability layer
+
+職責：
+
+- 顯示 DANGLE / promotion / lab smoke 摘要
+- 僅輸出 stats-only summary
+- 不暴露 audit 全文
+- 不提供執行、restore、push、merge 動作
 
 ## Stuck issue queue
 
-PHINIX 的一個核心差異，是把「卡關」當成可持續追蹤的正式狀態，而不是一次性失敗。
+PHINIX 把「卡關」視為可追蹤狀態，而不是一次性錯誤。
 
 這讓系統可以：
 
-- 記住失敗發生在哪裡
-- 記住已經試過什麼
-- 之後在新線索出現時再回頭處理
-- 在適當時機主動提醒使用者
+- 記住失敗位置
+- 記住已嘗試方案
+- 在新線索出現時再回看
+- 在適當時機提出低打擾提醒
 
-## Proactive companion 行為
+## Proactive behavior
 
-主動性不應等於持續打擾。
+主動性不等於持續打擾。
 
 較健康的流程是：
 
-1. 背景產生新結論
-2. 準備低打擾提醒
-3. 由使用者選擇是否展開
+1. 背景產生候選結論
+2. 轉成可審核候選
+3. 套用 policy / cooldown
+4. 由使用者選擇是否展開
 
-這才比較接近 companion，而不是噪音來源。
+## Embodiment boundary
 
-## 對未來具身系統的意義
+如果未來接上更多裝置，PHINIX 比較適合扮演：
 
-如果未來接上更多具身系統，PHINIX 比較適合扮演：
+- memory
+- context
+- governance
+- risk review
+- proposal generation
+- audit
 
-- 記憶
-- 問題追蹤
-- 主動推理
-- 治理
-- 長時一致性
+而不是直接取代低階控制器或硬即時控制器。
 
-而不是：
+## Engineering rule
 
-- 低階控制器
-- 硬即時運動控制
-- 單純 SDK wrapper
+所有高風險能力都應遵循：
 
-因此可以把 PHINIX 視為能夠跨裝置延續的可攜式 context / governance runtime，而不是單一硬體控制器。
+```text
+proposed action
+-> policy check
+-> dry-run or simulation
+-> human/operator gate
+-> execution adapter
+-> audit
+```

@@ -1,118 +1,113 @@
 # Public Roadmap
 
-This roadmap describes the direction that is safe to discuss in public. It does not expose private deployment details.
+Languages: **English** | [繁體中文](ROADMAP.zh-TW.md)
 
-## P0: Public starter package
+This roadmap covers only public-safe engineering direction. Private deployment details, local audit outputs, credentials, device-specific paths, and unreviewed automation artifacts are intentionally excluded.
+
+## P0: Public project baseline
 
 Goal:
 
-- define the public position
-- define collaboration rules
-- define the public/private split
+- Maintain a clear public overview
+- Define public/private boundaries
+- Keep documentation professional and engineering-focused
 
 Outputs:
 
 - README
-- scope document
+- public scope
+- architecture overview
 - roadmap
-- expert call
+- security and contribution guidance
 
-## P1: Three-layer runtime skeleton
+## P1: Runtime architecture interfaces
 
 Goal:
 
-- real-time layer
-- buffer layer
-- thinking layer
+- Document the core runtime layers
+- Keep client entry points thin
+- Separate live interaction, background state, policy, and validation
 
 Outputs:
 
-- public architecture diagram
-- abstract interfaces
-- minimum event-flow model
+- runtime state model
+- event flow model
+- stuck issue model
+- proposal model
 
-## P2: Stuck issue queue
+## P2: Governed improvement flow
 
 Goal:
 
-- turn failure and uncertainty into structured state
-- support deferred retry and background revisit
+- Convert failures and low-quality states into reviewable proposals
+- Validate improvements in sandbox or worktree before promotion
+- Keep tests, rollback plans, and audit records attached to each change
 
 Outputs:
 
-- `StuckIssue`
-- `RetryPlan`
-- `EscalationCandidate`
+- proposal schema
+- sandbox validation interface
+- audit summary interface
+- promotion status model
 
-## P3: Proactive companion
+## P3: Read-only observability
 
 Goal:
 
-- surface useful new conclusions without waiting for another prompt
-- keep reminders low-friction and low-disruption
+- Surface limited runtime health status without exposing private audit data
+- Keep observability separate from execution
 
 Outputs:
 
-- reminder policy
-- proactive suggestion flow
-- notification channel abstraction
+- stats-only status summary
+- maintenance smoke summary
+- viewer / panel display model
 
-## P4: Embodied companion
+## P4: Proactive companion behavior
 
 Goal:
 
-- expand from glasses and companion devices to a broader embodiment layer
+- Support useful proactive suggestions without creating noise
+- Keep reminders reviewable, rate-limited, and cancellable
+
+Outputs:
+
+- proactive suggestion model
+- cooldown policy
+- notification boundary
+
+## P5: Embodiment adapter abstraction
+
+Goal:
+
+- Define safe interfaces for companion devices, wearables, and future hardware integrations
+- Keep cognition and governance separate from low-level control
 
 Outputs:
 
 - embodiment adapter interface
-- multi-device context model
-- safety boundary design
+- device capability descriptor
+- authorized-device boundary model
 
-## P5: Portable cognition layer
-
-Goal:
-
-- make PHINIX a cognition architecture that can carry context across companion apps, wearables, desktop tools, and future embodied systems
-
-Likely roles:
-
-- memory
-- context
-- proactive reasoning
-- governance
-- long-term consistency
-
-Not the same as:
-
-- low-level motor control
-- hard real-time control
-- a thin robot SDK wrapper
-
-## P6: Governed capability improvement
+## P6: Controlled maintenance automation
 
 Goal:
 
-- turn runtime failures, low-quality responses, and stuck issues into reviewable improvement proposals
-- validate changes inside sandbox / worktree boundaries instead of modifying production directly
-- retain test evidence, audit records, and rollback plans
+- Allow bounded lab-only maintenance loops
+- Keep automation disabled by default
+- Require status checks, stop conditions, and audit output
 
 Outputs:
 
-- codebase self-indexing
-- side-effect map
-- sandbox dry-run / worktree validation
-- local branch materialization
-- human review workflow
+- auto maintenance contract
+- dry-run report
+- bounded runner configuration
 
-## Milestones that matter
+## Non-goals for the public repo
 
-PHINIX becomes mature only if it can progressively achieve:
-
-1. a clear public/private boundary
-2. separation between live interaction and background cognition
-3. an operating stuck-issue queue
-4. controlled proactive reminders
-5. an abstract embodiment layer
-6. continuity across multiple devices or bodies
-7. reviewable and rollback-capable improvement workflows
+- Production deployment guide
+- Secret or credential handling
+- Device-specific bridge implementation
+- Local audit logs
+- Full private runtime mirror
+- High-risk execution paths

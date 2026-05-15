@@ -2,77 +2,68 @@
 
 Languages: [English](CONTRIBUTING.md) | **繁體中文**
 
-這個公開 repo 歡迎兩類參與者：
-
-- 有相關領域經驗的專家
-- 對這個方向有興趣的實作者與研究者
+這個公開 repo 歡迎能改善文件、架構清晰度、介面邊界與 public-safe review 的貢獻。
 
 ## 適合參與的背景
 
-### 專家
+- Agent runtime architecture
+- Local-first systems
+- State management and observability
+- Human-computer interaction
+- Wearable or companion interfaces
+- Governance、audit、risk review
+- Test and validation design
 
-- AI agents、memory systems、world models
-- HCI、AR、wearable interaction
-- robotics、embodiment、human-robot interaction
-- systems architecture、local-first runtimes
-- safety、governance、alignment
-
-### 一般參與者
-
-- 文件整理
-- 架構討論
-- 測試骨架
-- issue triage
-- demos、mockups、interaction ideas
-
-## 建議參與軌道
+## 建議貢獻軌道
 
 ### A. Architecture
 
-- 三層 runtime 設計
-- memory / world-state interfaces
-- proactive cognition flows
-- local-first runtime boundaries
+- Runtime layer separation
+- State and event interfaces
+- Proposal and validation flows
+- Read-only observability
 
-### B. Human interaction
+### B. Human Interaction
 
-- AR / wearable interaction
-- companion UX
-- 主動提醒節奏
-- 長時互動節律
+- Companion UX
+- Low-interruption proactive behavior
+- Viewer or panel information density
+- Accessibility and operator workflows
 
-### C. Embodiment
+### C. Device and Embodiment Boundaries
 
-- robot embodiment adapters
-- perception / planning / actuation boundaries
-- humanoid integration strategy
+- Adapter abstractions
+- Authorized-device capability descriptors
+- Governed runtime 與 low-level control 的分離
 
-### D. Governance and safety
+### D. Governance and Safety
 
-- review flows
-- safety posture
-- escalation mechanics
-- low-risk / high-risk boundaries
+- Review workflows
+- Public/private scope checks
+- Audit summary models
+- Low-risk / high-risk boundary definitions
 
 ## 貢獻原則
 
 1. 不要誇大未完成能力。
-2. 不要提交 secrets、原始 logs 或硬體白名單。
-3. 不要把高風險具身控制包裝成一般便利功能。
+2. 不要提交 secrets、raw logs、local audit files 或 hardware allowlists。
+3. 不要把高風險 device control 包裝成便利功能。
 4. 優先提交文件、介面與低風險骨架。
 5. 每次修改只聚焦單一主題。
+6. 若內容是 proposal、interface draft 或 non-runtime example，請明確標示。
 
 ## 建議流程
 
-1. 先開 issue。
+1. 架構或邊界變更先開 issue。
 2. 提出最小但有價值的修改。
-3. 若涉及核心方向，先討論再實作。
-4. 若涉及治理或具身控制，提高審查標準。
+3. 實作前先討論風險與驗證方式。
+4. 若涉及 governance、device 或 automation，採用更高審查標準。
 
-## 初期最有價值的貢獻
+## 初期高價值貢獻
 
-- 公開架構圖
-- 三層 runtime 介面
-- stuck-issue queue 模型
-- companion / AR UX 提案
-- 未來 humanoid cognition interfaces
+- Public architecture diagrams
+- Runtime state interfaces
+- Stuck issue and proposal models
+- Read-only status summary schema
+- Public-safe simulation stubs
+- Documentation cleanup

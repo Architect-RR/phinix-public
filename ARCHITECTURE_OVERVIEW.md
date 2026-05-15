@@ -1,95 +1,110 @@
 # Architecture Overview
 
-This document describes the public high-level architecture only. It does not include private deployment details or sensitive bridge configuration.
+Languages: **English** | [繁體中文](ARCHITECTURE_OVERVIEW.zh-TW.md)
 
-## Core idea
+This document describes only the public-safe architecture. It does not include private deployment details, device bridge configuration, credentials, full audit artifacts, or local maintenance data.
 
-PHINIX is not just a chatbot and not just a tool-calling agent.
+## Core Concept
 
-It is closer to:
+PHINIX is a local-first governed agent runtime. The focus is not a single response, but a controlled process for long-horizon state, tool use, proposals, validation, and audit.
 
-- a local-first runtime
-- an embodied companion core
-- a portable cognition layer across companion apps, wearables, desktop tools, and future embodied systems
+## Public Architecture Layers
 
-## Suggested three-layer architecture
-
-### 1. Real-time layer
+### 1. Client entry layer
 
 Responsibilities:
 
-- receive live input
-- produce low-latency responses
-- drive immediate interaction
+- Receive requests from text, voice, viewer, companion, or wearable entry points
+- Display controlled results
+- Stay thin-client by design
 
-Typical channels:
+This layer should not make high-risk decisions directly.
 
-- voice
-- text
-- HUD or AR output
-
-### 2. Buffer layer
+### 2. Runtime state layer
 
 Responsibilities:
 
-- retain events and conversational context
-- build state snapshots
-- manage pending issues
+- Manage sessions
+- Maintain short-term events and state snapshots
+- Track stuck issues, deferred work, and review items
+- Turn background state into observable data
 
-Its job is not intelligence first. Its job is:
-
-- capture
-- structure
-- preserve
-
-### 3. Thinking layer
+### 3. Policy and proposal layer
 
 Responsibilities:
 
-- background reasoning
-- stuck-issue revisit
-- long-horizon topic tracking
-- candidate proactive outputs
+- Classify request risk
+- Build engineering proposals
+- Mark forbidden modification scope
+- Decide whether a task may enter sandbox validation
+- Attach rollback, test, and audit requirements
 
-This layer should not replace the real-time layer. It should run beside it.
+### 4. Sandbox validation layer
 
-## Stuck issue queue
+Responsibilities:
 
-One of PHINIX's most important ideas is to treat "being stuck" as persistent state rather than a disposable failure.
+- Dry-run
+- Worktree validation
+- Patch validation
+- Test execution
+- Local branch materialization
+- Private audit
 
-That allows the system to:
+This layer is not production approval.
 
-- remember where it failed
-- remember what it tried
-- revisit the problem later
-- surface useful follow-ups when new evidence appears
+### 5. Read-only observability layer
 
-## Proactive companion behavior
+Responsibilities:
 
-Proactivity should not mean constant interruption.
+- Display DANGLE / promotion / lab smoke summaries
+- Expose stats-only status
+- Avoid full audit disclosure
+- Avoid run, restore, push, or merge actions
 
-A healthier flow is:
+## Stuck Issue Queue
 
-1. background conclusion appears
-2. low-friction reminder is prepared
-3. the user chooses whether to expand it
+PHINIX treats unresolved issues as trackable state rather than one-off errors.
 
-That is closer to a companion than a noise source.
+This allows the system to:
 
-## Why this matters for future embodied systems
+- Record where a failure happened
+- Record what was already attempted
+- Revisit the issue when new context appears
+- Surface low-interruption reminders at the right time
 
-If PHINIX is connected to future embodied systems, its likely role is:
+## Proactive Behavior
+
+Proactivity should not become noise.
+
+A healthy flow is:
+
+1. Generate a background candidate
+2. Convert it into a reviewable item
+3. Apply policy and cooldown
+4. Let the user decide whether to expand it
+
+## Embodiment Boundary
+
+For future device integrations, PHINIX is better positioned as:
 
 - memory
-- issue tracking
-- proactive reasoning
+- context
 - governance
-- long-term consistency
+- risk review
+- proposal generation
+- audit
 
-Not:
+It should not replace low-level controllers or hard real-time control loops.
 
-- low-level control
-- hard real-time motor control
-- a thin SDK wrapper
+## Engineering Rule
 
-In that sense, PHINIX is better viewed as a portable context and governance runtime rather than a low-level hardware controller.
+High-risk capabilities should follow:
+
+```text
+proposed action
+-> policy check
+-> dry-run or simulation
+-> human/operator gate
+-> execution adapter
+-> audit
+```

@@ -7,34 +7,38 @@ This public repository is intended for:
 - architecture discussion
 - public-safe documentation
 - low-risk interface design
-- community collaboration
+- public collaboration on boundaries and validation
 
-It is **not** intended to expose private deployment details, secrets, or sensitive embodiment control chains.
+It is not intended to expose private deployment details, credentials, device-specific bridge internals, or local maintenance artifacts.
 
-## Please do not disclose
+## Do Not Disclose
 
-- tokens
-- private bridge credentials
-- device identifiers
-- raw training or user interaction logs
-- unpublished hardware control details
+- Tokens or API keys
+- Private bridge credentials
+- Device identifiers
+- Raw user interaction logs
+- Local audit reports
+- Hardware allowlists
+- Unreviewed automation outputs
+- Device-specific execution paths
 
-## If you find a security concern
+## Reporting Security Concerns
 
-Please avoid opening a public issue with sensitive details.
+Do not open a public issue with sensitive details.
 
-Instead, describe the concern at a high level first and wait for maintainer guidance before posting more detail.
+Start with a high-level description and wait for maintainer guidance before sharing technical detail. If a concern involves credentials, private device paths, or local audit files, keep those details out of public channels.
 
-## Current security posture
+## Current Posture
 
-PHINIX is still evolving. Public materials may describe future-facing ideas that are not production-ready.
+PHINIX is under active engineering development. Public materials describe architecture direction and public-safe status, not production deployment guarantees.
 
 Contributors should assume:
 
-- incomplete hardening
-- changing boundaries
-- ongoing architecture refinement
+- boundaries may change
+- hardening is ongoing
+- private implementation is intentionally not mirrored
+- high-risk execution paths are outside public scope
 
-## Contribution rule
+## Contribution Rule
 
-Security-related contributions are welcome, but changes that weaken governance or embodiment safety boundaries should not be proposed as convenience improvements.
+Security-related contributions are welcome. Changes that weaken governance, auditability, device boundaries, or public/private separation should not be proposed as convenience improvements.

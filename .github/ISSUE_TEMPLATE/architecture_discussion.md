@@ -26,8 +26,9 @@ Explain how it may affect:
 - buffer layer
 - thinking layer
 - proactivity
-- embodiment
+- embodiment adapter boundaries
 - governance boundaries
+- public/private scope
 
 ## References
 

@@ -1,47 +1,54 @@
 # Public Interface Directions
 
-This directory is reserved for abstract interfaces and data models that are safe to discuss in public.
+This directory is reserved for abstract interfaces and data models that are safe to discuss publicly.
 
-Guiding rule:
+The guiding rule is:
 
-- publish abstractions first
-- publish low-risk skeletons second
-- consider broader implementation only after boundaries are clear
+```text
+publish abstractions first
+publish low-risk skeletons second
+keep deployment-specific implementations private
+```
 
-## Interfaces worth exposing first
+## Interface Families Worth Exposing First
 
-### 1. Real-time runtime interface
+### 1. Runtime state interface
 
-For live input, low-latency response, and immediate output.
+For session state, event snapshots, and status summaries.
 
-### 2. Buffer layer interface
+### 2. Stuck issue interface
 
-For event capture, summary, state snapshots, and temporary memory.
+For unresolved questions, retry conditions, escalation rules, and review states.
 
-### 3. Thinking worker interface
+### 3. Proposal interface
 
-For background tasks, result delivery, cancellation, and cooldown.
+For turning failures or improvement requests into reviewable engineering proposals.
 
-### 4. Stuck issue interface
+### 4. Sandbox validation interface
 
-For unresolved questions, retry conditions, and escalation rules.
+For dry-run results, test results, and promotion readiness.
 
-### 5. Proactive notifier interface
+### 5. Audit summary interface
 
-For low-risk reminders without opening unsafe direct control paths.
+For stats-only public-safe reporting without exposing private audit details.
 
-### 6. Embodiment adapter interface
+### 6. Proactive suggestion interface
 
-For connecting the same cognitive core to glasses, phones, robots, and future bodies.
+For low-risk reminders and suggestions without opening direct control paths.
 
-## Long-term value
+### 7. Embodiment adapter interface
 
-If PHINIX becomes a cognition architecture for future robots, the most important public work will not be every device implementation.
+For connecting a governed runtime to companion devices, wearables, and future authorized hardware surfaces.
 
-It will be the clean separation of:
+## Separation Principles
 
-- cognition
-- memory
-- governance
-- proactive reasoning
-- embodiment abstraction
+Public interface work should keep these concerns separate:
+
+- cognition and context
+- memory and retention
+- policy and permission
+- sandbox validation
+- audit and observability
+- device or embodiment adaptation
+
+The public repository should not contain device-specific execution paths, credentials, private audit logs, or production deployment details.

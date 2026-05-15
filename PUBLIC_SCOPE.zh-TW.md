@@ -2,91 +2,84 @@
 
 Languages: [English](PUBLIC_SCOPE.md) | **繁體中文**
 
-這份文件定義哪些內容適合放在公開 GitHub repo，哪些應留在 private repo。
+這份文件定義哪些內容適合放在 PHINIX public repository，哪些必須保留在 private repo。
 
 ## 適合公開的內容
 
 ### 文件
 
-- 專案願景
-- 高層架構圖
-- 路線圖
-- 公開協作規則
-- 非敏感 checkpoint 摘要
+- 專案概覽
+- 高層架構
+- 公開 roadmap
+- 貢獻規則
+- 安全回報流程
+- public-safe 狀態摘要
 
 ### 抽象介面
 
-- runtime 分層接口
-- memory / world state 結構
-- stuck issue / proactive suggestion 模型
-- embodiment adapter 抽象接口
+- runtime state interfaces
+- event and message shapes
+- stuck issue and retry models
+- proposal and audit summary models
+- embodiment adapter abstractions
+- read-only status summaries
 
 ### 低風險範例
 
 - mock data
-- 非敏感測試骨架
-- 不綁硬體的 simulation stubs
-- 公開開發筆記與輔助腳本
+- simulation stubs
+- interface skeletons
+- documentation examples
 
-### 社群材料
+### 協作材料
 
-- issue 模板
-- PR 模板
-- 設計討論
-- 專家回饋入口
+- issue templates
+- PR template
+- architecture discussion prompts
+- public-safe review topics
 
-## 應保留 private 的內容
+## 必須保留 private 的內容
 
-### 憑證與設定
+### 憑證與本機設定
 
-- token
+- tokens
 - API keys
 - bridge credentials
-- 本機環境設定
+- local machine configuration
 
 ### 私有操作資料
 
-- 原始對話紀錄
-- 原始語音資料
-- 裝置識別資訊
-- 硬體白名單與授權細節
+- raw conversation logs
+- raw audio or image captures
+- device identifiers
+- hardware allowlists
+- local audit reports
+- lab maintenance artifacts
 
-### 大型產物與 vendor blobs
+### 大型或 vendor-specific assets
 
 - APK build outputs
-- SDK / JDK archives
+- SDK or JDK archives
 - vendor binaries
-- vendor / device analysis artifacts
+- device analysis artifacts
+- model weights
 
 ### 敏感實作細節
 
-- 直接具身控制鏈細節
-- 尚未穩定的治理內核
-- 容易被濫用的 device control 路徑
-- 未公開的硬體橋接與部署細節
+- device-specific bridge internals
+- direct actuation paths
+- unreviewed automation outputs
+- private maintenance loops
+- high-risk domain execution details
 
-## 建議拆分方式
+## 公開發布規則
 
-### Public repo
-
-- 公開文件
-- 清理後的抽象接口
-- 可重用的低風險骨架
-
-### Private repo
-
-- 完整運作 runtime
-- 敏感 bridge
-- 訓練與評測資料
-- build toolchains
-- 部署設定
-- 硬體專屬實作
-
-## 發布原則
-
-公開內容應該符合：
+公開內容應該：
 
 - 可理解
-- 可討論
-- 可安全協作
+- 可審查
+- 可安全討論
 - 對未完成能力保持誠實
+- 不包含憑證與私有操作資料
+
+不確定時，實作細節留在 private，只公開 interface 或 architecture summary。
