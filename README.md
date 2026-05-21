@@ -1,12 +1,13 @@
+<!-- # ⭐ 修改開始 ⭐ -->
 # PHINIX Public Overview
 
 PHINIX is a private-first, local-first governed agent runtime project.
 
-This public repository contains only the engineering-safe project overview, architecture notes, collaboration boundaries, and interface direction. The complete private runtime, device bridge details, local credentials, hardware configuration, audit artifacts, and deployment-specific implementation remain outside this repository.
+This public repository contains the engineering-safe project overview, public/private boundaries, architecture notes, roadmap, and interface direction. The private runtime, device bridge implementation, credentials, hardware configuration, raw audit artifacts, and deployment-specific implementation remain outside this repository.
 
 ## Current Position
 
-PHINIX is not a chatbot wrapper. The project is organized around a governed runtime pattern:
+PHINIX is not a chatbot wrapper. It is organized around a governed runtime pattern:
 
 ```text
 inputs
@@ -19,6 +20,38 @@ inputs
 ```
 
 The practical goal is to make agent behavior observable, reviewable, testable, and reversible before it can affect higher-risk systems.
+
+## Completed Public-Safe Capability Areas
+
+The private engineering track has completed the following capability areas at a public-safe level of description:
+
+| Area | Completed capability | Public boundary |
+|---|---|---|
+| Human review escalation | Failure, low-quality output, and risk signals can be converted into reviewable escalation items. | Public repo describes the pattern only; private review data and audit records stay private. |
+| Proposal-based improvement flow | Improvement requests can be represented as structured proposals with scope, forbidden edits, tests, risk notes, and rollback expectations. | Public repo does not expose private patch content or local maintenance reports. |
+| Sandbox validation workflow | Work can be evaluated through dry-run, worktree validation, patch checks, tests, and promotion-readiness gates. | This is not public production execution or deployment approval. |
+| Read-only observability | Runtime and maintenance status can be summarized through stats-only views. | Full audit logs, raw results, local errors, and branch details are not mirrored publicly. |
+| Lab-only maintenance contract | Bounded maintenance loops are defined for private lab use with stop conditions and audit expectations. | No public auto-runner, scheduler, push, merge, or release automation is exposed here. |
+| Model asset boundary | Large model assets are kept outside the repository boundary and tracked through registry / manifest / hash-style governance. | Weights, adapters, tokenizers, embeddings, and vendor assets are not published here. |
+| Companion / wearable governance | Device-facing directions are treated as thin-client or adapter boundaries governed by local authorization. | Device-specific bridge details, credentials, allowlists, and hardware paths remain private. |
+| Codebase introspection schema layer | A private plan/read-model layer now exists for codebase index style introspection. | It is schema/read-model only; it does not expose private scanner outputs or invoke runtime scanners from this public repo. |
+| Source verification schema layer | A private plan/result-schema layer now exists for source verification and citation-aware governance. | It is plan/schema only; runtime RAG, live LLM calls, source fetching, and citation checking remain deferred to separate gated phases. |
+| Maintenance completion mapping | The private project now maintains explicit completion, maintenance-state, runtime-deferred, and next-action maps. | Public docs only summarize the operating model, not private maintenance notes. |
+
+## What Is Not Claimed
+
+This public repository does not claim that PHINIX currently exposes:
+
+- production-grade autonomous actuation
+- public runtime RAG or live LLM execution
+- production deployment instructions
+- device-specific bridge implementation
+- complete private runtime source
+- raw audit logs or local maintenance data
+- model weights or model asset manifests
+- unreviewed automation outputs
+
+When a capability is described as plan, schema, read-model, or governance-hint level, it means the current artifact defines reviewable structure and boundaries. It does not mean the runtime execution layer is publicly available or enabled.
 
 ## Public Repository Contents
 
@@ -43,14 +76,16 @@ This repository intentionally does not include:
 
 The private project is currently focused on:
 
-- Runtime and side-effect observability
-- Proposal-based improvement flow
-- Sandbox validation before promotion
-- Lab-only maintenance smoke tests
-- Read-only status summaries
-- Strict public/private boundary control
+- runtime and side-effect observability
+- proposal-based improvement flow
+- sandbox validation before promotion
+- schema-first and plan-first capability governance
+- source-verification and citation-boundary planning
+- lab-only maintenance smoke tests
+- read-only status summaries
+- strict public/private boundary control
 
-Public updates will stay at the level of architecture, interfaces, and verifiable engineering status. Private implementation details are intentionally summarized rather than mirrored.
+Public updates stay at the level of architecture, interface shape, and verifiable engineering status. Private implementation details are intentionally summarized rather than mirrored.
 
 ## Documentation
 
@@ -67,10 +102,11 @@ Traditional Chinese documents are available for key public pages where useful.
 
 Issues and pull requests should focus on:
 
-- Architecture feedback
-- Interface design
-- Public-safe documentation
-- Risk and governance review
-- Low-risk examples or simulation stubs
+- architecture feedback
+- interface design
+- public-safe documentation
+- risk and governance review
+- low-risk examples or simulation stubs
 
-Do not submit secrets, private device details, production credentials, local audit files, or unreviewed automation outputs.
+Do not submit secrets, private device details, production credentials, local audit files, raw model assets, or unreviewed automation outputs.
+<!-- # ⭐ 修改結束 ⭐ -->

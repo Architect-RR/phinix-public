@@ -1,8 +1,9 @@
+<!-- # ⭐ 修改開始 ⭐ -->
 # PHINIX 目前狀態
 
-更新日期：2026-05-15
+更新日期：2026-05-21
 
-PHINIX 是一個 private-first、local-first 的受治理 agent runtime 專案。公開 repo 只保留 public-safe 的方向、架構摘要與狀態說明；完整 runtime、硬體橋接、部署細節、憑證設定、審計資料與私有維護文件仍保留在 private repo。
+PHINIX 是一個 private-first、local-first 的受治理 agent runtime 專案。公開 repo 只保留 public-safe 的方向、架構摘要與狀態說明；完整 runtime、硬體橋接、部署細節、憑證設定、原始審計資料與私有維護文件仍保留在 private repo。
 
 ## 對外用詞
 
@@ -13,6 +14,7 @@ PHINIX 是一個 private-first、local-first 的受治理 agent runtime 專案�
 - 「read-only status」而不是公開完整審計內容。
 - 「proposal-based improvement」而不是未審核變更。
 - 「local-first runtime」而不是單一聊天機器人或模型 wrapper。
+- 「plan / schema layer」不等於 runtime execution 已公開或啟用。
 
 ## 現階段定位
 
@@ -27,6 +29,7 @@ PHINIX 不是單純聊天機器人，也不是單一模型 wrapper。比較準�
 - 工具與行動必須經過 policy gate。
 - 高風險動作需要審計、回滾與人工確認。
 - 維護與能力提升流程必須可測、可關閉、可追蹤。
+- 公開描述必須區分「已完成治理結構」與「尚未公開或尚未啟用 runtime layer」。
 
 ## 最近完成的主要能力
 
@@ -56,12 +59,12 @@ PHINIX 不是單純聊天機器人，也不是單一模型 wrapper。比較準�
 
 私有 runtime 已建立 lab-only 維護流程：
 
-- Lab stress harness
-- Private audit writer
-- Manual CLI entry
-- Read-only status summary
-- Viewer / commander card 的 stats-only 顯示
-- Maintainer onboarding checklist
+- lab stress harness
+- private audit writer
+- manual CLI entry
+- read-only status summary
+- viewer / commander card 的 stats-only 顯示
+- maintainer onboarding checklist
 
 這些能力只輸出有限摘要，不公開 audit 全文，不提供公開執行入口。
 
@@ -75,7 +78,31 @@ PHINIX 不是單純聊天機器人，也不是單一模型 wrapper。比較準�
 
 ### Companion bridge governance
 
-Companion bridge 已加入授權攝影機來源清單與低風險取像路徑的治理設計。公開層只描述抽象方向：來源必須由本地設定或使用者明確提供，不做未授權掃描，不輸出明文憑證。
+Companion bridge 已加入授權來源與低風險輸入路徑的治理設計。公開層只描述抽象方向：來源必須由本地設定或使用者明確提供，不做未授權掃描，不輸出明文憑證。
+
+### Codebase introspection governance layer
+
+私有工程線已完成 codebase introspection 的 plan / read-model layer，用來描述如何以受控方式讀取既有索引、彙整狀態、避免直接啟動 scanner 或修改 codebase。
+
+公開邊界：這不是公開 scanner，也不是 runtime index 執行入口。公開 repo 只描述 schema-first 的治理方向。
+
+### Source verification governance layer
+
+私有工程線已完成 source verification 的 plan / result-schema layer，用來描述未來 source validation、citation requirement、source authority 與 anti-hallucination guardrails 的治理邊界。
+
+公開邊界：這不是公開 RAG engine、不是 live LLM caller、不是 citation checker，也不是 fact-checking service。runtime RAG / LLM / fetch / citation checking 仍需獨立 gated phase。
+
+### Template reuse and maintenance completion mapping
+
+私有工程線已完成多個 governance template 的二次使用驗證，並建立 maintenance completion map，用來追蹤：
+
+- 哪些 phase 已完成
+- 哪些只是 plan / schema / read-model layer
+- 哪些 runtime layer deferred
+- 哪些 local maintenance state 不應進入公開 repo
+- 下一個 phase 的啟動條件
+
+公開邊界：公開層只說明維護方法與完成狀態摘要，不公開 private maintenance notes、內部測試輸出或原始維護資料。
 
 ## 目前能力邊界
 
@@ -88,12 +115,18 @@ Companion bridge 已加入授權攝影機來源清單與低風險取像路徑的
 - lab-only smoke test 與 private audit
 - stats-only read-only status
 - public/private 分離策略
+- plan-first / schema-first 的能力治理方法
+- codebase introspection 的 private plan / read-model layer
+- source verification 的 private plan / result-schema layer
+- maintenance completion / maintenance-state / deferred runtime 的追蹤方法
 
 尚未公開或尚未完成：
 
 - production-grade live actuation gate
 - 高風險 domain package 的完整 policy layer
-- public-safe interface package
+- public-safe interface package 實作
+- runtime RAG / live LLM source verification
+- citation checker / verifier service
 - 完整公開 demo
 - production deployment guide
 
@@ -105,6 +138,7 @@ Companion bridge 已加入授權攝影機來源清單與低風險取像路徑的
 - 未審核的 push / PR / release
 - 把使用者資料無邊界送入訓練或外部模型
 - 未授權掃描、撞庫或憑證繞過
+- 把 plan/schema 層成果誤寫成 runtime 已啟用
 
 ## 近期路線
 
@@ -112,14 +146,16 @@ Companion bridge 已加入授權攝影機來源清單與低風險取像路徑的
 
 1. 持續清理 public/private 邊界。
 2. 把適合公開的抽象 interface 從 private runtime 中萃取出來。
-3. 補足 public-safe 的事件模型、狀態模型與提案模型。
+3. 補足 public-safe 的事件模型、狀態模型、提案模型與驗證結果模型。
 4. 將 lab-only 維護流程維持在 private repo，公開層只保留摘要。
+5. 繼續把 plan / schema / read-model 與 runtime execution 明確分層。
 
 中期路線：
 
 - 將高風險行動統一進 `proposed_action -> policy check -> dry-run/simulation -> human gate -> execution adapter -> audit`。
 - 把能力提升限制在 sandbox / worktree，通過測試與審核後才 promotion。
-- 將眼鏡、companion、CLI、dashboard 都視為 thin client，共用同一個 PHINIX core。
+- 將 companion、wearable、CLI、dashboard 都視為 thin client，共用同一個 PHINIX core。
+- 以獨立 gated phase 逐步處理 runtime RAG、LLM call、citation checking、handler 與 UI surface。
 
 ## 產品方向
 
@@ -140,4 +176,5 @@ PHINIX 的主線不是「更會聊天」，而是讓 AI runtime 能可靠地觀�
 
 目前最重要的工程方向是：
 
-> 把能力擴張放在治理、審計、權限、回滾與 sandbox 之後。
+> 把能力擴張放在治理、審計、權限、回滾與 sandbox 之後；把 plan / schema 層成果和 runtime execution 清楚分開。
+<!-- # ⭐ 修改結束 ⭐ -->
