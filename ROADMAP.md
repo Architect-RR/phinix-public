@@ -103,6 +103,20 @@ Outputs:
 - dry-run report
 - bounded runner configuration
 
+## P7: Boundary hardening and memory governance
+
+Goal:
+
+- Keep non-harm semantic boundaries testable before any high-risk runtime surface
+- Keep private workspace hygiene separate from public release materials
+- Treat memory and speculative capability notes as human-governance documents unless a later gated phase implements runtime support
+
+Outputs:
+
+- harm-boundary regression summary
+- public/private release checklist
+- human-readable memory governance summary
+
 ## Non-goals for the public repo
 
 - Production deployment guide
@@ -111,3 +125,4 @@ Outputs:
 - Local audit logs
 - Full private runtime mirror
 - High-risk execution paths
+- Machine-loadable private runtime configuration

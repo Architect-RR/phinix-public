@@ -34,6 +34,7 @@ Responsibilities:
 Responsibilities:
 
 - Classify request risk
+- Enforce non-harm semantic boundaries before high-risk execution can be considered
 - Build engineering proposals
 - Mark forbidden modification scope
 - Decide whether a task may enter sandbox validation
@@ -108,3 +109,5 @@ proposed action
 -> execution adapter
 -> audit
 ```
+
+Design-only notes, memory policies, and speculative capability ideas should remain human-readable governance material until a separate gated phase implements, tests, and documents runtime behavior.

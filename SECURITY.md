@@ -21,6 +21,8 @@ It is not intended to expose private deployment details, credentials, device-spe
 - Hardware allowlists
 - Unreviewed automation outputs
 - Device-specific execution paths
+- Sensitive prompt corpora or private boundary-test probes
+- Private workspace inventories, vault paths, or local memory archives
 
 ## Reporting Security Concerns
 
@@ -38,6 +40,7 @@ Contributors should assume:
 - hardening is ongoing
 - private implementation is intentionally not mirrored
 - high-risk execution paths are outside public scope
+- boundary-hardening summaries do not imply runtime actuation is enabled
 
 ## Contribution Rule
 

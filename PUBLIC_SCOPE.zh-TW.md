@@ -14,6 +14,7 @@ Languages: [English](PUBLIC_SCOPE.md) | **繁體中文**
 - 貢獻規則
 - 安全回報流程
 - public-safe 狀態摘要
+- public-safe boundary-hardening 摘要
 
 ### 抽象介面
 
@@ -23,6 +24,7 @@ Languages: [English](PUBLIC_SCOPE.md) | **繁體中文**
 - proposal and audit summary models
 - embodiment adapter abstractions
 - read-only status summaries
+- human-readable memory governance summaries
 
 ### 低風險範例
 
@@ -55,6 +57,7 @@ Languages: [English](PUBLIC_SCOPE.md) | **繁體中文**
 - hardware allowlists
 - local audit reports
 - lab maintenance artifacts
+- private workspace inventories 或 vault details
 
 ### 大型或 vendor-specific assets
 
@@ -71,6 +74,8 @@ Languages: [English](PUBLIC_SCOPE.md) | **繁體中文**
 - unreviewed automation outputs
 - private maintenance loops
 - high-risk domain execution details
+- machine-loadable private runtime configuration
+- boundary testing 使用的敏感 prompt corpus
 
 ## 公開發布規則
 

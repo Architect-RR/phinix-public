@@ -34,9 +34,12 @@ private engineering track 已完成下列能力區塊；此處只以 public-safe
 | Lab-only maintenance contract | private lab use 的 bounded maintenance loop 已定義 stop conditions 與 audit expectations。 | 不提供公開 auto-runner、scheduler、push、merge 或 release automation。 |
 | Model asset boundary | 大型模型資產維持在 repo 邊界外，透過 registry / manifest / hash 類治理追蹤。 | 不公開 weights、adapters、tokenizers、embeddings 或 vendor assets。 |
 | Companion / wearable governance | 裝置面方向被視為 thin-client 或 adapter boundary，需本機授權治理。 | device-specific bridge details、credentials、allowlists 與 hardware paths 保持 private。 |
+| Non-harm semantic boundary layer | private policy/test coverage 已涵蓋直接、間接、授權覆蓋與裝置媒介型的 harm-boundary wording。 | 這是 governance 與 regression-test layer；不是公開 autonomous actuation 或部署批准。 |
 | Codebase introspection schema layer | private 端已有 codebase index 類 introspection 的 plan/read-model layer。 | 只到 schema/read-model；不公開 private scanner outputs，也不在公開 repo 啟動 runtime scanner。 |
 | Source verification schema layer | private 端已有 source verification 與 citation-aware governance 的 plan/result-schema layer。 | 只到 plan/schema；runtime RAG、live LLM calls、source fetching 與 citation checking 仍留給獨立 gated phases。 |
 | Maintenance completion mapping | private 專案已建立 completion、maintenance-state、runtime-deferred 與 next-action maps。 | 公開文件只摘要 operating model，不公開 private maintenance notes。 |
+| Private workspace hygiene | private-only notes、本機 artifacts 與 public mirror content 透過明確 inventory 與 release-boundary rules 分離。 | 公開文件只描述規則；private vault paths、raw checkpoints 與 local artifact names 不公開。 |
+| Memory governance policy | 長期記憶、工程計算邊界案例與 research notes 以人類治理文件記錄。 | 這不是 machine-loadable runtime configuration，也不代表相關能力已實作。 |
 
 ## 不宣稱已完成的部分
 
@@ -50,6 +53,7 @@ private engineering track 已完成下列能力區塊；此處只以 public-safe
 - raw audit logs 或本機維護資料
 - model weights 或 model asset manifests
 - 未審核的 automation outputs
+- 可執行高風險物理、金融、醫療或裝置控制行為的公開批准
 
 若某項能力被描述為 plan、schema、read-model 或 governance-hint layer，意思是目前 artifact 定義了可審核結構與邊界；不代表 runtime execution layer 已公開或啟用。
 
@@ -81,6 +85,8 @@ private 專案目前聚焦：
 - promotion 前的 sandbox validation
 - schema-first 與 plan-first capability governance
 - source verification 與 citation boundary planning
+- non-harm semantic boundary regression testing
+- private workspace hygiene 與 memory-governance documentation
 - lab-only maintenance smoke tests
 - read-only status summaries
 - 嚴格 public/private boundary control

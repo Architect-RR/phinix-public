@@ -34,9 +34,12 @@ The private engineering track has completed the following capability areas at a 
 | Lab-only maintenance contract | Bounded maintenance loops are defined for private lab use with stop conditions and audit expectations. | No public auto-runner, scheduler, push, merge, or release automation is exposed here. |
 | Model asset boundary | Large model assets are kept outside the repository boundary and tracked through registry / manifest / hash-style governance. | Weights, adapters, tokenizers, embeddings, and vendor assets are not published here. |
 | Companion / wearable governance | Device-facing directions are treated as thin-client or adapter boundaries governed by local authorization. | Device-specific bridge details, credentials, allowlists, and hardware paths remain private. |
+| Non-harm semantic boundary layer | Private policy/test coverage now includes direct, indirect, authorization-override, and device-mediated harm-boundary wording. | This is a governance and regression-test layer; it is not public autonomous actuation or deployment approval. |
 | Codebase introspection schema layer | A private plan/read-model layer now exists for codebase index style introspection. | It is schema/read-model only; it does not expose private scanner outputs or invoke runtime scanners from this public repo. |
 | Source verification schema layer | A private plan/result-schema layer now exists for source verification and citation-aware governance. | It is plan/schema only; runtime RAG, live LLM calls, source fetching, and citation checking remain deferred to separate gated phases. |
 | Maintenance completion mapping | The private project now maintains explicit completion, maintenance-state, runtime-deferred, and next-action maps. | Public docs only summarize the operating model, not private maintenance notes. |
+| Private workspace hygiene | Private-only notes, local artifacts, and public-mirror content are separated through explicit inventory and release-boundary rules. | Public docs describe the rule; private vault paths, raw checkpoints, and local artifact names stay private. |
+| Memory governance policy | Long-term memory, engineering calculation edge cases, and research notes are documented as human-governance policy. | It is not a machine-loadable runtime configuration and does not imply those capabilities are implemented. |
 
 ## What Is Not Claimed
 
@@ -50,6 +53,7 @@ This public repository does not claim that PHINIX currently exposes:
 - raw audit logs or local maintenance data
 - model weights or model asset manifests
 - unreviewed automation outputs
+- public approval to execute high-risk physical, financial, medical, or device-control actions
 
 When a capability is described as plan, schema, read-model, or governance-hint level, it means the current artifact defines reviewable structure and boundaries. It does not mean the runtime execution layer is publicly available or enabled.
 
@@ -81,6 +85,8 @@ The private project is currently focused on:
 - sandbox validation before promotion
 - schema-first and plan-first capability governance
 - source-verification and citation-boundary planning
+- non-harm semantic boundary regression testing
+- private workspace hygiene and memory-governance documentation
 - lab-only maintenance smoke tests
 - read-only status summaries
 - strict public/private boundary control

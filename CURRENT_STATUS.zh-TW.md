@@ -1,7 +1,7 @@
 <!-- # ⭐ 修改開始 ⭐ -->
 # PHINIX 目前狀態
 
-更新日期：2026-05-21
+更新日期：2026-05-26
 
 PHINIX 是一個 private-first、local-first 的受治理 agent runtime 專案。公開 repo 只保留 public-safe 的方向、架構摘要與狀態說明；完整 runtime、硬體橋接、部署細節、憑證設定、原始審計資料與私有維護文件仍保留在 private repo。
 
@@ -15,6 +15,7 @@ PHINIX 是一個 private-first、local-first 的受治理 agent runtime 專案�
 - 「proposal-based improvement」而不是未審核變更。
 - 「local-first runtime」而不是單一聊天機器人或模型 wrapper。
 - 「plan / schema layer」不等於 runtime execution 已公開或啟用。
+- 「policy / test layer」不等於 real hardware、real LLM 或 autonomous actuation 已公開或啟用。
 
 ## 現階段定位
 
@@ -80,6 +81,12 @@ PHINIX 不是單純聊天機器人，也不是單一模型 wrapper。比較準�
 
 Companion bridge 已加入授權來源與低風險輸入路徑的治理設計。公開層只描述抽象方向：來源必須由本地設定或使用者明確提供，不做未授權掃描，不輸出明文憑證。
 
+### Non-harm semantic boundary layer
+
+私有工程線已補強 harm-boundary 的 policy / test layer，覆蓋直接傷害、間接傷害、授權覆蓋與裝置媒介型風險敘述。這條線的目的不是讓 PHINIX 執行高風險行為，而是讓治理層在更早的位置拒絕或轉向安全替代方案。
+
+公開邊界：公開 repo 只描述 non-harm boundary 的治理方向與 regression-test 類型；不公開敏感 prompt corpus，不公開 device-control 細節，也不宣稱 real-runtime actuation 已啟用。
+
 ### Codebase introspection governance layer
 
 私有工程線已完成 codebase introspection 的 plan / read-model layer，用來描述如何以受控方式讀取既有索引、彙整狀態、避免直接啟動 scanner 或修改 codebase。
@@ -104,6 +111,12 @@ Companion bridge 已加入授權來源與低風險輸入路徑的治理設計。
 
 公開邊界：公開層只說明維護方法與完成狀態摘要，不公開 private maintenance notes、內部測試輸出或原始維護資料。
 
+### Private workspace hygiene and memory governance
+
+私有工程線已建立更清楚的 workspace hygiene 與 memory governance 文件：private-only notes、本機 artifacts、public mirror 與 memory policy 各自有分層邊界。這讓公開 repo 能保持乾淨，同時避免把人類治理文件誤當成 machine-loadable runtime config。
+
+公開邊界：公開層只摘要治理原則；不公開 private vault 路徑、raw checkpoint、local artifact name、內部工作指令或本機記憶檔。
+
 ## 目前能力邊界
 
 已具備：
@@ -119,10 +132,13 @@ Companion bridge 已加入授權來源與低風險輸入路徑的治理設計。
 - codebase introspection 的 private plan / read-model layer
 - source verification 的 private plan / result-schema layer
 - maintenance completion / maintenance-state / deferred runtime 的追蹤方法
+- harm-boundary 的 private policy / regression-test layer
+- private workspace hygiene 與 memory governance 的人類治理文件
 
 尚未公開或尚未完成：
 
 - production-grade live actuation gate
+- real hardware / full local-control runtime / autonomous actuation
 - 高風險 domain package 的完整 policy layer
 - public-safe interface package 實作
 - runtime RAG / live LLM source verification
@@ -139,6 +155,7 @@ Companion bridge 已加入授權來源與低風險輸入路徑的治理設計。
 - 把使用者資料無邊界送入訓練或外部模型
 - 未授權掃描、撞庫或憑證繞過
 - 把 plan/schema 層成果誤寫成 runtime 已啟用
+- 把 policy/test layer 誤寫成 real-world execution approval
 
 ## 近期路線
 
@@ -149,6 +166,7 @@ Companion bridge 已加入授權來源與低風險輸入路徑的治理設計。
 3. 補足 public-safe 的事件模型、狀態模型、提案模型與驗證結果模型。
 4. 將 lab-only 維護流程維持在 private repo，公開層只保留摘要。
 5. 繼續把 plan / schema / read-model 與 runtime execution 明確分層。
+6. 維持 non-harm semantic boundary 與 public/private release boundary 的回歸檢查。
 
 中期路線：
 
@@ -156,6 +174,7 @@ Companion bridge 已加入授權來源與低風險輸入路徑的治理設計。
 - 把能力提升限制在 sandbox / worktree，通過測試與審核後才 promotion。
 - 將 companion、wearable、CLI、dashboard 都視為 thin client，共用同一個 PHINIX core。
 - 以獨立 gated phase 逐步處理 runtime RAG、LLM call、citation checking、handler 與 UI surface。
+- 在任何 real hardware / local-control runtime / financial or medical action 前，先完成更嚴格的授權、審計、rollback、kill-switch 與非傷害語意邊界。
 
 ## 產品方向
 

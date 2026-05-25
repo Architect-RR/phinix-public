@@ -34,6 +34,7 @@ PHINIX 是 local-first governed agent runtime。它的重點不是單次回答�
 職責：
 
 - 判斷請求風險
+- 在考慮任何高風險 execution 前，先套用 non-harm semantic boundary
 - 建立工程提案
 - 標示禁止修改範圍
 - 決定是否進入 sandbox
@@ -108,3 +109,5 @@ proposed action
 -> execution adapter
 -> audit
 ```
+
+Design-only notes、memory policies 與 speculative capability ideas 在獨立 gated phase 實作、測試並文件化 runtime behavior 前，都應維持為人類可讀的治理材料。

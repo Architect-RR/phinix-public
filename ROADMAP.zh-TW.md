@@ -103,6 +103,20 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 - dry-run report
 - bounded runner configuration
 
+## P7：Boundary hardening and memory governance
+
+目標：
+
+- 在任何高風險 runtime surface 前，讓 non-harm semantic boundary 可測、可回歸
+- 讓 private workspace hygiene 與 public release material 保持分離
+- 除非後續 gated phase 明確實作 runtime support，否則 memory 與 speculative capability notes 一律視為人類治理文件
+
+輸出：
+
+- harm-boundary regression summary
+- public/private release checklist
+- human-readable memory governance summary
+
 ## Public repo 非目標
 
 - Production deployment guide
@@ -111,3 +125,4 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 - Local audit logs
 - Full private runtime mirror
 - High-risk execution paths
+- Machine-loadable private runtime configuration

@@ -14,6 +14,7 @@ This document defines what belongs in the public PHINIX repository and what must
 - Contribution rules
 - Security contact and reporting process
 - Public-safe status summaries
+- Public-safe boundary-hardening summaries
 
 ### Abstract Interfaces
 
@@ -23,6 +24,7 @@ This document defines what belongs in the public PHINIX repository and what must
 - Proposal and audit summary models
 - Embodiment adapter abstractions
 - Read-only status summaries
+- Human-readable memory governance summaries
 
 ### Low-Risk Examples
 
@@ -55,6 +57,7 @@ This document defines what belongs in the public PHINIX repository and what must
 - Hardware allowlists
 - Local audit reports
 - Lab maintenance artifacts
+- Private workspace inventories or vault details
 
 ### Large or Vendor-Specific Assets
 
@@ -71,6 +74,8 @@ This document defines what belongs in the public PHINIX repository and what must
 - Unreviewed automation outputs
 - Private maintenance loops
 - High-risk domain execution details
+- Machine-loadable private runtime configuration
+- Sensitive prompt corpora used for boundary testing
 
 ## Public Release Rule
 
