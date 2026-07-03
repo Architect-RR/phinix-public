@@ -1,7 +1,7 @@
 <!-- # ⭐ 修改開始 ⭐ -->
 # PHINIX 目前狀態
 
-更新日期：2026-05-26
+更新日期：2026-07-03
 
 PHINIX 是一個 private-first、local-first 的受治理 agent runtime 專案。公開 repo 只保留 public-safe 的方向、架構摘要與狀態說明；完整 runtime、硬體橋接、部署細節、憑證設定、原始審計資料與私有維護文件仍保留在 private repo。
 
@@ -33,6 +33,20 @@ PHINIX 不是單純聊天機器人，也不是單一模型 wrapper。比較準�
 - 公開描述必須區分「已完成治理結構」與「尚未公開或尚未啟用 runtime layer」。
 
 ## 最近完成的主要能力
+
+### 2026-07 public-safe update
+
+私有工程線在 2026-06 到 2026-07 期間，主要補強了治理可觀測性、credential hygiene、人工監督入口與 proposal-only 修復候選流程。公開 repo 只記錄這些能力的工程方向與邊界，不公開 runtime source、device bridge 細節、token、原始 log 或本機審計資料。
+
+目前可公開描述的新增進度：
+
+- Human-supervised console / journal：私有端新增受控 console 與 append-only journal 類資料層，用於把 review、批准、駁回與回溯線索整理為可審計紀錄。這不等於公開 autonomous execution。
+- Error / repair candidate tracking：私有端新增錯誤紀錄與壓力情境修復候選資料層，用於 proposal-only 的維護建議。候選不會自動套用到 production。
+- Companion credential hygiene：私有端補強 companion / wearable bridge 的 credential boundary、log hygiene 與 public/private 分離規則。credential、token、device-specific build artifact 與本機設定仍保持 private。
+- Local model evaluation boundary：私有端建立本地模型 smoke / provider E2E 類驗證流程，用於比較 latency、cold start 與 provider overhead。公開 repo 不發布模型權重、vendor asset、完整 benchmark raw output 或 production 選型宣稱。
+- Gated runtime probes：私有端補充 gated probe 與 evidence summary，用於檢查 runtime chain 的候選路徑。這些仍是 gated / operator-supervised evidence，不是公開 production runtime。
+
+這些更新共同目標是提高「可觀測、可審核、可回滾」能力，而不是擴大未審核自動化。
 
 ### Human review escalation
 

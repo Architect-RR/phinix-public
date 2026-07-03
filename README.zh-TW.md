@@ -83,6 +83,9 @@ private 專案目前聚焦：
 - runtime 與 side-effect observability
 - proposal-based improvement flow
 - promotion 前的 sandbox validation
+- human-supervised console 與 append-only journal 類審計面
+- error-ledger 與 repair-candidate tracking（proposal-only maintenance）
+- companion / wearable credential hygiene 與 log minimization
 - schema-first 與 plan-first capability governance
 - source verification 與 citation boundary planning
 - non-harm semantic boundary regression testing
@@ -92,6 +95,8 @@ private 專案目前聚焦：
 - 嚴格 public/private boundary control
 
 公開更新會維持在架構、介面形狀與可驗證工程狀態層級。private implementation details 只會摘要，不會鏡像公開。
+
+最新 public-safe 狀態：2026-07-03。近期 private 工作補強了人工監督 review surface、append-only audit-style record、companion credential hygiene 與本地模型評估邊界。這不代表 autonomous production execution 已公開或啟用。
 
 ## 文件
 

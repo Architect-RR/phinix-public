@@ -83,6 +83,9 @@ The private project is currently focused on:
 - runtime and side-effect observability
 - proposal-based improvement flow
 - sandbox validation before promotion
+- human-supervised console and append-only journal style audit surfaces
+- error-ledger and repair-candidate tracking for proposal-only maintenance
+- companion / wearable credential hygiene and log minimization
 - schema-first and plan-first capability governance
 - source-verification and citation-boundary planning
 - non-harm semantic boundary regression testing
@@ -92,6 +95,8 @@ The private project is currently focused on:
 - strict public/private boundary control
 
 Public updates stay at the level of architecture, interface shape, and verifiable engineering status. Private implementation details are intentionally summarized rather than mirrored.
+
+Latest public-safe status: 2026-07-03. Recent private work strengthened human-supervised review surfaces, append-only audit-style records, companion credential hygiene, and local model evaluation boundaries. This does not mean autonomous production execution is publicly available or enabled.
 
 ## Documentation
 
