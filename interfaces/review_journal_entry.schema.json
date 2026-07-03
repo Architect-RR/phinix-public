@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Architect-RR/phinix-public/interfaces/review_journal_entry.schema.json",
+  "title": "PHINIX Public Review Journal Entry",
+  "description": "Public-safe shape for human-supervised review traces. This excludes raw private console data and operator notes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "entry_id",
+    "timestamp",
+    "actor_role",
+    "decision",
+    "summary",
+    "public_boundary"
+  ],
+  "properties": {
+    "x_phinix_marker": {
+      "type": "string",
+      "const": "# ⭐ 修改開始/結束 ⭐ public-safe schema skeleton"
+    },
+    "schema": {
+      "type": "string",
+      "const": "phinix_public_review_journal_entry"
+    },
+    "entry_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor_role": {
+      "type": "string",
+      "enum": [
+        "operator",
+        "reviewer",
+        "maintainer",
+        "system_summary"
+      ]
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "approve",
+        "reject",
+        "defer",
+        "request_validation",
+        "record_only"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_action": {
+      "type": "string"
+    },
+    "public_boundary": {
+      "type": "string"
+    }
+  }
+}

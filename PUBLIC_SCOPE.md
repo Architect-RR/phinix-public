@@ -1,3 +1,4 @@
+<!-- # ⭐ 修改開始 ⭐ -->
 # Public Scope
 
 Languages: **English** | [繁體中文](PUBLIC_SCOPE.zh-TW.md)
@@ -25,6 +26,8 @@ This document defines what belongs in the public PHINIX repository and what must
 - Embodiment adapter abstractions
 - Read-only status summaries
 - Human-readable memory governance summaries
+- Credential boundary summaries without secrets
+- Public-safe model evaluation summaries without raw benchmark output
 
 ### Low-Risk Examples
 
@@ -58,6 +61,7 @@ This document defines what belongs in the public PHINIX repository and what must
 - Local audit reports
 - Lab maintenance artifacts
 - Private workspace inventories or vault details
+- Raw model benchmark output
 
 ### Large or Vendor-Specific Assets
 
@@ -76,6 +80,7 @@ This document defines what belongs in the public PHINIX repository and what must
 - High-risk domain execution details
 - Machine-loadable private runtime configuration
 - Sensitive prompt corpora used for boundary testing
+- Device provisioning instructions
 
 ## Public Release Rule
 
@@ -88,3 +93,4 @@ Public content should be:
 - free of credentials and private operational data
 
 When in doubt, keep implementation details private and publish only the interface or architecture summary.
+<!-- # ⭐ 修改結束 ⭐ -->

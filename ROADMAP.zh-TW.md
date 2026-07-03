@@ -1,8 +1,9 @@
+<!-- # ⭐ 修改開始 ⭐ -->
 # Public Roadmap
 
 Languages: [English](ROADMAP.md) | **繁體中文**
 
-這份 roadmap 只描述 public-safe 的工程方向。private deployment details、local audit outputs、credentials、device-specific paths 與未審核自動化產物刻意排除。
+這份 roadmap 只描述 public-safe 的工程方向。private deployment details、local audit outputs、credentials、device-specific paths、raw benchmark output 與未審核自動化產物刻意排除。
 
 ## P0：公開專案基線
 
@@ -10,9 +11,9 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 
 - 維持清楚的 public overview
 - 定義 public/private boundaries
-- 讓文件維持專業、工程化、可審查
+- 讓文件保持專業、工程化、可審查
 
-輸出：
+產出：
 
 - README
 - public scope
@@ -24,11 +25,12 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 
 目標：
 
-- 文件化核心 runtime layers
-- 保持 client entry points thin
+- 描述核心 runtime layers
+- 讓 client entry point 保持 thin-client
 - 分離 live interaction、background state、policy 與 validation
+- 先公開抽象資料形狀，再考慮實作細節
 
-輸出：
+產出：
 
 - runtime state model
 - event flow model
@@ -39,11 +41,11 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 
 目標：
 
-- 把 failure 與 low-quality state 轉成可審核 proposal
-- 在 sandbox 或 worktree 中驗證改善，不直接 promotion
-- 每次變更保留 tests、rollback plan 與 audit record
+- 將 failure 與 low-quality state 轉成可審核 proposal
+- 在 promotion 前先經 sandbox 或 worktree validation
+- 每個 change 都保留 tests、rollback plan 與 audit record
 
-輸出：
+產出：
 
 - proposal schema
 - sandbox validation interface
@@ -56,8 +58,9 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 
 - 在不暴露 private audit data 的前提下顯示有限 runtime health status
 - 讓 observability 與 execution 分離
+- 保留 evidence、readiness 與 runtime enablement 的差異
 
-輸出：
+產出：
 
 - stats-only status summary
 - maintenance smoke summary
@@ -67,10 +70,11 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 
 目標：
 
-- 支援有用的主動建議，但避免變成噪音
+- 支援有用的 proactive suggestion，但避免產生噪音
 - reminder 必須可審核、rate-limited、可取消
+- suggestion 不得繞過 policy 或 human review
 
-輸出：
+產出：
 
 - proactive suggestion model
 - cooldown policy
@@ -81,9 +85,10 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 目標：
 
 - 定義 companion devices、wearables 與 future hardware integrations 的安全介面
-- 讓 cognition / governance 與 low-level control 分離
+- 分離 cognition / governance 與 low-level control
+- device-specific bridge path 不進 public repository
 
-輸出：
+產出：
 
 - embodiment adapter interface
 - device capability descriptor
@@ -94,10 +99,10 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 目標：
 
 - 允許 bounded lab-only maintenance loop
-- 自動化預設關閉
-- 需要 status check、stop condition 與 audit output
+- automation 預設停用
+- 需要 status checks、stop conditions 與 audit output
 
-輸出：
+產出：
 
 - auto maintenance contract
 - dry-run report
@@ -107,15 +112,57 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 
 目標：
 
-- 在任何高風險 runtime surface 前，讓 non-harm semantic boundary 可測、可回歸
-- 讓 private workspace hygiene 與 public release material 保持分離
-- 除非後續 gated phase 明確實作 runtime support，否則 memory 與 speculative capability notes 一律視為人類治理文件
+- 在任何高風險 runtime surface 前，先讓 non-harm semantic boundary 可測試
+- 讓 private workspace hygiene 與 public release material 分離
+- 除非後續 gated phase 實作 runtime support，否則 memory 與 speculative capability notes 都視為人類治理文件
 
-輸出：
+產出：
 
 - harm-boundary regression summary
 - public/private release checklist
 - human-readable memory governance summary
+
+## P8：Human-supervised operating surface
+
+目標：
+
+- 描述 review、批准、駁回與 follow-up 如何表示，但不公開 private console data
+- 讓操作面可追溯，但不把它變成公開 automation
+- 在 interface 層保留 append-only review semantics
+
+產出：
+
+- review journal entry schema
+- operator decision summary
+- human-supervised console boundary notes
+
+## P9：Public-safe evidence and model evaluation summaries
+
+目標：
+
+- 摘要 local evaluation evidence，但不公開 raw benchmark output 或 model assets
+- 分離 cold-start、steady-state、provider-overhead 與 execution-scope claims
+- 避免 evaluation evidence 被寫成 production selection claim
+
+產出：
+
+- model evaluation summary schema
+- runtime truth label guidance
+- evidence caveat checklist
+
+## P10：Credential and release-boundary hygiene
+
+目標：
+
+- 讓 credentials、provisioning details、device identifiers 與 local secrets 留在 public history 外
+- 描述 public mirror checks，但不公開 private remediation details
+- 將 credential rotation 與 provisioning 視為 private operator tasks
+
+產出：
+
+- credential boundary summary schema
+- public release checklist
+- security posture notes
 
 ## Public repo 非目標
 
@@ -126,3 +173,6 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 - Full private runtime mirror
 - High-risk execution paths
 - Machine-loadable private runtime configuration
+- Raw model benchmark output
+- Device provisioning instructions
+<!-- # ⭐ 修改結束 ⭐ -->

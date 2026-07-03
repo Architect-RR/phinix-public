@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Architect-RR/phinix-public/interfaces/runtime_state_summary.schema.json",
+  "title": "PHINIX Public Runtime State Summary",
+  "description": "Public-safe, stats-only runtime status shape. This is an interface skeleton, not a private runtime deployment contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "runtime_truth_label",
+    "generated_at",
+    "source_scope",
+    "capabilities",
+    "counters",
+    "public_boundary"
+  ],
+  "properties": {
+    "x_phinix_marker": {
+      "type": "string",
+      "const": "# ⭐ 修改開始/結束 ⭐ public-safe schema skeleton"
+    },
+    "schema": {
+      "type": "string",
+      "const": "phinix_public_runtime_state_summary"
+    },
+    "runtime_truth_label": {
+      "type": "string",
+      "enum": [
+        "public_schema",
+        "read_only",
+        "gated_evidence",
+        "private_runtime",
+        "deferred"
+      ]
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_scope": {
+      "type": "string",
+      "enum": [
+        "public_docs",
+        "private_summary",
+        "stats_only"
+      ]
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status",
+          "summary"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "public_schema",
+              "plan_only",
+              "proposal_only",
+              "read_only",
+              "gated_evidence",
+              "private_runtime",
+              "deferred"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "counters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "public_boundary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+<!-- # ⭐ 修改開始 ⭐ -->
 # Architecture Overview
 
 Languages: **English** | [繁體中文](ARCHITECTURE_OVERVIEW.zh-TW.md)
@@ -6,7 +7,24 @@ This document describes only the public-safe architecture. It does not include p
 
 ## Core Concept
 
-PHINIX is a local-first governed agent runtime. The focus is not a single response, but a controlled process for long-horizon state, tool use, proposals, validation, and audit.
+PHINIX is a local-first governed agent runtime. The focus is not a single response, but a controlled process for long-horizon state, tool use, proposals, validation, human review, and audit.
+
+## Public Architecture Flow
+
+```mermaid
+flowchart LR
+    A["Thin client entry"] --> B["Runtime state summary"]
+    B --> C["Policy and risk gate"]
+    C --> D["Proposal record"]
+    D --> E["Sandbox or dry-run validation"]
+    E --> F["Human or operator review"]
+    F --> G["Append-only review trace"]
+    G --> H["Read-only observability"]
+    C --> I["Credential and release boundary"]
+    I --> H
+```
+
+The diagram is intentionally high-level. It shows the governed shape of the runtime without exposing private implementation paths.
 
 ## Public Architecture Layers
 
@@ -53,14 +71,37 @@ Responsibilities:
 
 This layer is not production approval.
 
-### 5. Read-only observability layer
+### 5. Human-supervised operating layer
 
 Responsibilities:
 
-- Display DANGLE / promotion / lab smoke summaries
+- Record review decisions
+- Represent approval, rejection, and follow-up as explicit state
+- Preserve append-only review traces
+- Keep operator decisions separate from automatic execution
+
+This layer does not expose private console content.
+
+### 6. Read-only observability layer
+
+Responsibilities:
+
+- Display bounded health and readiness summaries
 - Expose stats-only status
 - Avoid full audit disclosure
-- Avoid run, restore, push, or merge actions
+- Avoid run, restore, push, merge, or device-control actions
+
+## Public Interface Primitives
+
+The public repository can safely discuss the following primitives:
+
+- `runtime_state_summary`
+- `proposal_record`
+- `review_journal_entry`
+- `model_eval_summary`
+- `credential_boundary_summary`
+
+These schemas describe public-safe shape only. They are not a deployment contract for the private runtime.
 
 ## Stuck Issue Queue
 
@@ -111,3 +152,4 @@ proposed action
 ```
 
 Design-only notes, memory policies, and speculative capability ideas should remain human-readable governance material until a separate gated phase implements, tests, and documents runtime behavior.
+<!-- # ⭐ 修改結束 ⭐ -->

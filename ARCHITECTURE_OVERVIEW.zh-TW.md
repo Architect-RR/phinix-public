@@ -1,12 +1,30 @@
+<!-- # ⭐ 修改開始 ⭐ -->
 # Architecture Overview
 
 Languages: [English](ARCHITECTURE_OVERVIEW.md) | **繁體中文**
 
-本文件只描述適合公開討論的高層架構，不包含 private deploy 細節、硬體橋接設定、憑證、審計全文或本機維護資料。
+這份文件只描述適合公開討論的高層架構，不包含 private deploy 細節、裝置橋接設定、憑證、完整審計產物或本機維護資料。
 
 ## 核心概念
 
-PHINIX 是 local-first governed agent runtime。它的重點不是單次回答，而是把長時任務、背景狀態、工具使用、提案、驗證與審計放在同一個可治理流程中。
+PHINIX 是 local-first governed agent runtime。重點不是單次回覆，而是面向 long-horizon state、tool use、proposal、validation、human review 與 audit 的受控流程。
+
+## 公開架構流程
+
+```mermaid
+flowchart LR
+    A["Thin client entry"] --> B["Runtime state summary"]
+    B --> C["Policy and risk gate"]
+    C --> D["Proposal record"]
+    D --> E["Sandbox or dry-run validation"]
+    E --> F["Human or operator review"]
+    F --> G["Append-only review trace"]
+    G --> H["Read-only observability"]
+    C --> I["Credential and release boundary"]
+    I --> H
+```
+
+這張圖刻意維持高層次，只呈現 runtime 的治理形狀，不揭露 private implementation paths。
 
 ## 公開架構層
 
@@ -14,9 +32,9 @@ PHINIX 是 local-first governed agent runtime。它的重點不是單次回答�
 
 職責：
 
-- 接收文字、語音、viewer、companion 或 wearable 入口請求
+- 接收 text、voice、viewer、companion 或 wearable 入口請求
 - 顯示受控結果
-- 保持 thin client
+- 設計上保持 thin-client
 
 此層不應直接做高風險決策。
 
@@ -24,69 +42,92 @@ PHINIX 是 local-first governed agent runtime。它的重點不是單次回答�
 
 職責：
 
-- 管理 session
-- 管理短期事件與狀態快照
-- 保存卡關、延後處理與待審核項目
-- 將背景狀態整理成可觀測資料
+- 管理 sessions
+- 維護短期 events 與 state snapshots
+- 追蹤 stuck issues、deferred work 與 review items
+- 將背景狀態轉成可觀測資料
 
 ### 3. Policy and proposal layer
 
 職責：
 
-- 判斷請求風險
-- 在考慮任何高風險 execution 前，先套用 non-harm semantic boundary
-- 建立工程提案
-- 標示禁止修改範圍
-- 決定是否進入 sandbox
-- 產生 rollback / test / audit 要求
+- 分類 request risk
+- 在考慮高風險 execution 前，先執行 non-harm semantic boundaries
+- 建立 engineering proposals
+- 標記 forbidden modification scope
+- 判斷 task 是否可進入 sandbox validation
+- 附上 rollback、test 與 audit requirements
 
 ### 4. Sandbox validation layer
 
 職責：
 
-- dry-run
-- worktree 驗證
-- patch validation
-- test execution
-- local branch materialization
-- private audit
+- Dry-run
+- Worktree validation
+- Patch validation
+- Test execution
+- Local branch materialization
+- Private audit
 
-此層仍不代表 production approval。
+此層不是 production approval。
 
-### 5. Read-only observability layer
+### 5. Human-supervised operating layer
 
 職責：
 
-- 顯示 DANGLE / promotion / lab smoke 摘要
-- 僅輸出 stats-only summary
-- 不暴露 audit 全文
-- 不提供執行、restore、push、merge 動作
+- 記錄 review decisions
+- 將 approval、rejection 與 follow-up 表示成明確狀態
+- 保留 append-only review traces
+- 將 operator decision 與 automatic execution 分離
+
+此層不公開 private console content。
+
+### 6. Read-only observability layer
+
+職責：
+
+- 顯示 bounded health 與 readiness summaries
+- 暴露 stats-only status
+- 避免公開完整 audit
+- 避免 run、restore、push、merge 或 device-control action
+
+## 公開介面原語
+
+公開 repository 可安全討論下列 primitives：
+
+- `runtime_state_summary`
+- `proposal_record`
+- `review_journal_entry`
+- `model_eval_summary`
+- `credential_boundary_summary`
+
+這些 schema 只描述 public-safe shape，不是 private runtime 的 deployment contract。
 
 ## Stuck issue queue
 
-PHINIX 把「卡關」視為可追蹤狀態，而不是一次性錯誤。
+PHINIX 將 unresolved issues 視為可追蹤狀態，而不是一次性錯誤。
 
 這讓系統可以：
 
-- 記住失敗位置
-- 記住已嘗試方案
-- 在新線索出現時再回看
-- 在適當時機提出低打擾提醒
+- 記錄 failure 發生位置
+- 記錄已嘗試過的處理
+- 在新 context 出現時重新檢視
+- 在合適時機提出低干擾提醒
 
 ## Proactive behavior
 
-主動性不等於持續打擾。
+Proactivity 不應變成噪音。
 
-較健康的流程是：
+健康流程：
 
-1. 背景產生候選結論
-2. 轉成可審核候選
-3. 套用 policy / cooldown
-4. 由使用者選擇是否展開
+1. 產生 background candidate
+2. 轉成 reviewable item
+3. 套用 policy 與 cooldown
+4. 由使用者決定是否展開
 
 ## Embodiment boundary
 
-如果未來接上更多裝置，PHINIX 比較適合扮演：
+對未來裝置整合而言，PHINIX 更適合作為：
 
 - memory
 - context
@@ -95,11 +136,11 @@ PHINIX 把「卡關」視為可追蹤狀態，而不是一次性錯誤。
 - proposal generation
 - audit
 
-而不是直接取代低階控制器或硬即時控制器。
+它不應取代 low-level controller 或 hard real-time control loop。
 
 ## Engineering rule
 
-所有高風險能力都應遵循：
+高風險能力應遵循：
 
 ```text
 proposed action
@@ -110,4 +151,5 @@ proposed action
 -> audit
 ```
 
-Design-only notes、memory policies 與 speculative capability ideas 在獨立 gated phase 實作、測試並文件化 runtime behavior 前，都應維持為人類可讀的治理材料。
+Design-only notes、memory policies 與 speculative capability ideas 應保持為 human-readable governance material，直到另開 gated phase 完成 runtime behavior 的實作、測試與文件化。
+<!-- # ⭐ 修改結束 ⭐ -->

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Architect-RR/phinix-public/interfaces/proposal_record.schema.json",
+  "title": "PHINIX Public Proposal Record",
+  "description": "Public-safe shape for reviewable improvement or action proposals. Proposal presence does not imply automatic execution.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "proposal_id",
+    "title",
+    "status",
+    "scope",
+    "forbidden_scope",
+    "validation_plan",
+    "rollback_plan",
+    "public_boundary"
+  ],
+  "properties": {
+    "x_phinix_marker": {
+      "type": "string",
+      "const": "# ⭐ 修改開始/結束 ⭐ public-safe schema skeleton"
+    },
+    "schema": {
+      "type": "string",
+      "const": "phinix_public_proposal_record"
+    },
+    "proposal_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "review_pending",
+        "approved_for_validation",
+        "rejected",
+        "deferred",
+        "closed"
+      ]
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation_plan": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rollback_plan": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "public_boundary": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Architect-RR/phinix-public/interfaces/model_eval_summary.schema.json",
+  "title": "PHINIX Public Model Evaluation Summary",
+  "description": "Public-safe shape for local model evaluation summaries. This excludes raw benchmark output, model weights, vendor assets, and production selection claims.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "evaluation_id",
+    "benchmark_scope",
+    "runtime_truth_label",
+    "executed",
+    "summary",
+    "caveats",
+    "public_boundary"
+  ],
+  "properties": {
+    "x_phinix_marker": {
+      "type": "string",
+      "const": "# ⭐ 修改開始/結束 ⭐ public-safe schema skeleton"
+    },
+    "schema": {
+      "type": "string",
+      "const": "phinix_public_model_eval_summary"
+    },
+    "evaluation_id": {
+      "type": "string"
+    },
+    "benchmark_scope": {
+      "type": "string",
+      "enum": [
+        "dry_run_plan",
+        "local_smoke_only",
+        "provider_e2e_candidate",
+        "public_summary_only"
+      ]
+    },
+    "runtime_truth_label": {
+      "type": "string",
+      "enum": [
+        "public_schema",
+        "gated_evidence",
+        "private_runtime",
+        "deferred"
+      ]
+    },
+    "executed": {
+      "type": "boolean"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "number",
+          "integer",
+          "string",
+          "boolean",
+          "null"
+        ]
+      }
+    },
+    "caveats": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "public_boundary": {
+      "type": "string"
+    }
+  }
+}

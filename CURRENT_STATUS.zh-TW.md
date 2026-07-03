@@ -3,6 +3,8 @@
 
 更新日期：2026-07-03
 
+Languages: [English](CURRENT_STATUS.md) | **繁體中文**
+
 PHINIX 是一個 private-first、local-first 的受治理 agent runtime 專案。公開 repo 只保留 public-safe 的方向、架構摘要與狀態說明；完整 runtime、硬體橋接、部署細節、憑證設定、原始審計資料與私有維護文件仍保留在 private repo。
 
 ## 對外用詞
@@ -45,6 +47,7 @@ PHINIX 不是單純聊天機器人，也不是單一模型 wrapper。比較準�
 - Companion credential hygiene：私有端補強 companion / wearable bridge 的 credential boundary、log hygiene 與 public/private 分離規則。credential、token、device-specific build artifact 與本機設定仍保持 private。
 - Local model evaluation boundary：私有端建立本地模型 smoke / provider E2E 類驗證流程，用於比較 latency、cold start 與 provider overhead。公開 repo 不發布模型權重、vendor asset、完整 benchmark raw output 或 production 選型宣稱。
 - Gated runtime probes：私有端補充 gated probe 與 evidence summary，用於檢查 runtime chain 的候選路徑。這些仍是 gated / operator-supervised evidence，不是公開 production runtime。
+- Public interface skeletons：公開 repo 已補上抽象 JSON schema skeleton，用於描述可審查的狀態、proposal、review、model evaluation 與 credential boundary summary。這些 schema 是公開文件，不是 private runtime deployment contract。
 
 這些更新共同目標是提高「可觀測、可審核、可回滾」能力，而不是擴大未審核自動化。
 
