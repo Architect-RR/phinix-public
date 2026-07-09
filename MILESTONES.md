@@ -1,0 +1,40 @@
+<!-- # ⭐ 修改開始 ⭐ -->
+# PHINIX Public Milestones
+
+This file records public-safe milestones only. It is intentionally concise and does not mirror private runtime source, local audit logs, device-specific configuration, credentials, raw benchmark output, or deployment details.
+
+## 2026-07-09 — Governance and operator-surface refresh
+
+Public-safe summary:
+
+- Human-supervised operation remains the default boundary: review, approval, rejection, follow-up, and rollback expectations stay explicit.
+- Self-correction work is represented as observable error state, reflection records, repair candidates, and retained proposal evidence. This does not mean automatic production mutation.
+- Companion and wearable work continues to be described as a thin-client boundary around a governed local core. Public documents do not expose bridge internals, tokens, provisioning steps, or device identifiers.
+- Local model work is treated as evaluation evidence with cold-start, latency, provider-overhead, and runtime-scope caveats. It is not published as a production model-selection claim.
+- Vision and world-state work is described as state/context wiring and reviewable evidence flow, not as public autonomous actuation.
+- Public/private release discipline remains part of the product surface: public artifacts describe architecture, interface shapes, and boundaries; private implementation details remain private.
+
+Runtime truth label:
+
+`public_safe_milestone_summary`
+
+Not claimed:
+
+- production autonomous execution
+- public deployment instructions
+- public live hardware control
+- public runtime RAG or live LLM source-verification service
+- public model weights, benchmark logs, device bridge code, credentials, or local audit files
+
+## 2026-07-03 — Public surface refresh
+
+Public-safe summary:
+
+- Refreshed the public overview, architecture notes, scope boundaries, roadmap, status page, and abstract interface skeletons.
+- Clarified that plan, schema, dry-run, read-only, and proposal-only artifacts are not runtime enablement claims.
+- Added public-safe interface directions for runtime state, proposals, review journal entries, local model evaluation summaries, and credential boundary summaries.
+
+Runtime truth label:
+
+`public_schema_and_documentation_refresh`
+<!-- # ⭐ 修改結束 ⭐ -->

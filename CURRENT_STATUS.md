@@ -1,7 +1,7 @@
 <!-- # ⭐ 修改開始 ⭐ -->
 # PHINIX Current Status
 
-Updated: 2026-07-03
+Updated: 2026-07-09
 
 Languages: **English** | [繁體中文](CURRENT_STATUS.zh-TW.md)
 
@@ -47,6 +47,12 @@ Current public-safe summaries:
 - Local model evaluation boundary: private work added local model smoke and provider E2E style evaluation flows for latency, cold start, and provider overhead. The public repository does not publish model weights, vendor assets, raw benchmark output, or production selection claims.
 - Gated runtime probes: private work added gated probes and evidence summaries for runtime-chain candidates. These remain operator-supervised evidence, not public production runtime.
 - Public interface skeletons: this public repository now includes abstract JSON schema skeletons for reviewable status and boundary summaries. These schemas are public documentation, not private runtime deployment contracts.
+
+### 2026-07-09 milestone note
+
+The latest public-safe milestone records incremental progress around operator-supervised self-correction, retained proposal evidence, companion / wearable credential boundaries, local model evaluation caveats, and vision / world-state context wiring. This is a low-key status update, not a production runtime announcement.
+
+See [Public Milestones](MILESTONES.md).
 
 ## Current Public Capability Boundary
 

@@ -116,7 +116,7 @@ The private project is currently focused on:
 
 Public updates stay at the level of architecture, interface shape, and verifiable engineering status. Private implementation details are intentionally summarized rather than mirrored.
 
-Latest public-safe status: 2026-07-03. Recent private work strengthened human-supervised review surfaces, append-only audit-style records, companion credential hygiene, local model evaluation boundaries, and gated runtime probes. This does not mean autonomous production execution is publicly available or enabled.
+Latest public-safe status: 2026-07-09. Recent private work strengthened human-supervised review surfaces, append-only audit-style records, proposal-only self-correction evidence, companion credential hygiene, local model evaluation boundaries, and gated runtime probes. This does not mean autonomous production execution is publicly available or enabled.
 
 ## Documentation
 
@@ -125,6 +125,7 @@ Latest public-safe status: 2026-07-03. Recent private work strengthened human-su
 - [Roadmap](ROADMAP.md)
 - [Current Status](CURRENT_STATUS.md)
 - [Current Status, Traditional Chinese](CURRENT_STATUS.zh-TW.md)
+- [Public Milestones](MILESTONES.md)
 - [Public Interfaces](interfaces/README.md)
 - [Contributing](CONTRIBUTING.md)
 - [Security](SECURITY.md)

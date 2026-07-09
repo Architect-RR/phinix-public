@@ -116,7 +116,7 @@ private 專案目前聚焦：
 
 公開更新會維持在架構、介面形狀與可驗證工程狀態層級。private implementation details 只會摘要，不會鏡像公開。
 
-最新 public-safe 狀態：2026-07-03。近期 private 工作補強了人工監督 review surface、append-only audit-style record、companion credential hygiene、本地模型評估邊界與 gated runtime probe。這不代表 autonomous production execution 已公開或啟用。
+最新 public-safe 狀態：2026-07-09。近期 private 工作補強了人工監督 review surface、append-only audit-style record、proposal-only self-correction evidence、companion credential hygiene、本地模型評估邊界與 gated runtime probe。這不代表 autonomous production execution 已公開或啟用。
 
 ## 文件
 
@@ -125,6 +125,7 @@ private 專案目前聚焦：
 - [Roadmap](ROADMAP.zh-TW.md)
 - [目前狀態](CURRENT_STATUS.zh-TW.md)
 - [Current Status, English](CURRENT_STATUS.md)
+- [公開里程碑](MILESTONES.zh-TW.md)
 - [公開介面](interfaces/README.md)
 - [貢獻說明](CONTRIBUTING.zh-TW.md)
 - [Security](SECURITY.md)
