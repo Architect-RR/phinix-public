@@ -3,6 +3,29 @@
 
 This file records public-safe milestones only. It is intentionally concise and does not mirror private runtime source, local audit logs, device-specific configuration, credentials, raw benchmark output, or deployment details.
 
+## 2026-07-11 — Sandbox viewer boundary and access policy
+
+Public-safe summary:
+
+- Private work added a conservative world-viewer demo flow for sandbox-only calculation previews.
+- A green/yellow/red access-policy note separates self-serve sandbox calculations from actions that require explicit user request or a separate gated phase.
+- The public value is clarity: simulation-style previews can be discussed without implying runtime deployment, AR support, hardware control, or production automation.
+- No private runtime source, device bridge details, raw output, local paths, credentials, or model assets are mirrored here.
+
+Runtime truth label:
+
+`public_safe_milestone_summary`
+
+Not claimed:
+
+- production autonomous execution
+- public simulator service
+- AR deployment
+- public live hardware control
+- automatic code mutation
+- STL/STEP collision truth
+- raw local test output, private commit history, device bridge code, credentials, or local audit files
+
 ## 2026-07-10 — Proposal packaging and verified sandbox kernels
 
 Public-safe summary:

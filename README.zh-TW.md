@@ -59,6 +59,7 @@ private engineering track 已完成下列能力區塊；此處只以 public-safe
 | Source verification schema layer | private 端已有 source verification 與 citation-aware governance 的 plan/result-schema layer。 | 只到 plan/schema；runtime RAG、live LLM calls、source fetching 與 citation checking 仍留給獨立 gated phases。 |
 | Private workspace hygiene | private-only notes、本機 artifacts 與 public mirror content 透過明確 inventory 與 release-boundary rules 分離。 | 公開文件只描述規則；private vault paths、raw checkpoints 與 local artifact names 不公開。 |
 | Memory governance policy | 長期記憶、工程計算邊界案例與 research notes 以人類治理文件記錄。 | 這不是 machine-loadable runtime configuration，也不代表相關能力已實作。 |
+| Sandbox simulation and viewer boundary | private work 新增低風險 sandbox 計算、viewer-demo 與 access-policy 文件，用於 simulation-style reasoning。 | 公開說法只視為 sandbox-only preview 與 policy guidance，不是已部署 simulator、AR surface 或 hardware-control runtime。 |
 
 ## 不宣稱已完成的部分
 
@@ -110,13 +111,15 @@ private 專案目前聚焦：
 - source verification 與 citation boundary planning
 - non-harm semantic boundary regression testing
 - private workspace hygiene 與 memory-governance documentation
+- sandbox simulation 與 viewer-demo 邊界
+- agent 使用 sandbox-only 計算與預覽的存取規則
 - lab-only maintenance smoke tests
 - read-only status summaries
 - 嚴格 public/private boundary control
 
 公開更新會維持在架構、介面形狀與可驗證工程狀態層級。private implementation details 只會摘要，不會鏡像公開。
 
-最新 public-safe 狀態：2026-07-10。近期 private 工作補強了 proposal-only repair assist packaging、可驗證 sandbox calculation kernels、人工監督 review surface、companion credential hygiene、本地模型評估邊界與 gated runtime probe。這不代表 autonomous production execution、public simulator deployment 或 live hardware control 已公開或啟用。
+最新 public-safe 狀態：2026-07-11。近期 private work 補強了 proposal-only repair assist packaging、可驗證 sandbox calculation kernels、sandbox viewer-demo 邊界，以及一套供 simulation-style agent use 使用的 green/yellow/red access policy。這不代表 autonomous production execution、public simulator deployment、AR deployment 或 live hardware control 已公開或啟用。
 
 ## 文件
 

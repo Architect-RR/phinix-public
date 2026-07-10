@@ -59,6 +59,7 @@ The private engineering track has completed the following capability areas at a 
 | Source verification schema layer | A private plan/result-schema layer exists for source verification and citation-aware governance. | It is plan/schema only; runtime RAG, live LLM calls, source fetching, and citation checking remain deferred to separate gated phases. |
 | Private workspace hygiene | Private-only notes, local artifacts, and public-mirror content are separated through explicit inventory and release-boundary rules. | Public docs describe the rule; private vault paths, raw checkpoints, and local artifact names stay private. |
 | Memory governance policy | Long-term memory, engineering calculation edge cases, and research notes are documented as human-governance policy. | It is not a machine-loadable runtime configuration and does not imply those capabilities are implemented. |
+| Sandbox simulation and viewer boundary | Private work added low-risk sandbox calculation, viewer-demo, and access-policy documentation for simulation-style reasoning. | Public wording treats this as sandbox-only preview and policy guidance, not a deployed simulator, AR surface, or hardware-control runtime. |
 
 ## What Is Not Claimed
 
@@ -110,13 +111,15 @@ The private project is currently focused on:
 - source-verification and citation-boundary planning
 - non-harm semantic boundary regression testing
 - private workspace hygiene and memory-governance documentation
+- sandbox simulation and viewer-demo boundaries
+- agent-use access rules for sandbox-only calculations and previews
 - lab-only maintenance smoke tests
 - read-only status summaries
 - strict public/private boundary control
 
 Public updates stay at the level of architecture, interface shape, and verifiable engineering status. Private implementation details are intentionally summarized rather than mirrored.
 
-Latest public-safe status: 2026-07-10. Recent private work strengthened proposal-only repair assist packaging, verified sandbox calculation kernels, human-supervised review surfaces, companion credential hygiene, local model evaluation boundaries, and gated runtime probes. This does not mean autonomous production execution, public simulator deployment, or live hardware control is publicly available or enabled.
+Latest public-safe status: 2026-07-11. Recent private work strengthened proposal-only repair assist packaging, verified sandbox calculation kernels, sandbox viewer-demo boundaries, and a simple green/yellow/red access policy for simulation-style agent use. This does not mean autonomous production execution, public simulator deployment, AR deployment, or live hardware control is publicly available or enabled.
 
 ## Documentation
 
