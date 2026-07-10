@@ -1,7 +1,7 @@
 <!-- # ⭐ 修改開始 ⭐ -->
 # PHINIX 目前狀態
 
-更新日期：2026-07-09
+更新日期：2026-07-10
 
 Languages: [English](CURRENT_STATUS.md) | **繁體中文**
 
@@ -44,14 +44,16 @@ PHINIX 不是單純聊天機器人，也不是單一模型 wrapper。比較準�
 
 - Human-supervised console / journal：私有端新增受控 console 與 append-only journal 類資料層，用於把 review、批准、駁回與回溯線索整理為可審計紀錄。這不等於公開 autonomous execution。
 - Error / repair candidate tracking：私有端新增錯誤紀錄與壓力情境修復候選資料層，用於 proposal-only 的維護建議。候選不會自動套用到 production。
+- Repair assist packaging：私有端新增 proposal-only 的修復協助請求形狀，用於把已審查的修復意圖交給協作者檢視。它本身不執行、不 patch、不 merge，也不 promotion。
 - Companion credential hygiene：私有端補強 companion / wearable bridge 的 credential boundary、log hygiene 與 public/private 分離規則。credential、token、device-specific build artifact 與本機設定仍保持 private。
 - Local model evaluation boundary：私有端建立本地模型 smoke / provider E2E 類驗證流程，用於比較 latency、cold start 與 provider overhead。公開 repo 不發布模型權重、vendor asset、完整 benchmark raw output 或 production 選型宣稱。
+- Sandbox calculation kernels：私有端新增小型、測試支撐的 world-model 類計算核心。公開用詞只把它視為 sandbox calculation，不宣稱 public physics engine、deployment path 或 hardware-control runtime。
 - Gated runtime probes：私有端補充 gated probe 與 evidence summary，用於檢查 runtime chain 的候選路徑。這些仍是 gated / operator-supervised evidence，不是公開 production runtime。
 - Public interface skeletons：公開 repo 已補上抽象 JSON schema skeleton，用於描述可審查的狀態、proposal、review、model evaluation 與 credential boundary summary。這些 schema 是公開文件，不是 private runtime deployment contract。
 
-### 2026-07-09 里程碑紀錄
+### 2026-07-10 里程碑紀錄
 
-最新 public-safe 里程碑記錄了 operator-supervised self-correction、proposal evidence 留存、companion / wearable credential boundary、本機模型評估 caveat，以及 vision / world-state context wiring 的漸進整理。這是低調狀態更新，不是 production runtime announcement。
+最新 public-safe 里程碑記錄了 proposal-only repair assist packaging 與可驗證 sandbox calculation kernels 的漸進整理。這是低調工程狀態更新，不是 production runtime、public simulator 或 autonomous execution announcement。
 
 見 [公開里程碑](MILESTONES.zh-TW.md)。
 

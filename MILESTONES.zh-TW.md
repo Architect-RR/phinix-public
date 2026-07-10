@@ -3,6 +3,27 @@
 
 本檔只記錄 public-safe 里程碑。內容刻意保持簡短，不鏡像 private runtime source、本機審計 log、裝置專屬設定、憑證、原始 benchmark output 或部署細節。
 
+## 2026-07-10 — 提案封包與可驗證 sandbox 計算核心
+
+Public-safe 摘要：
+
+- Self-correction 工作新增 proposal-only 的協助請求形狀，用於把已審查的修復意圖交給人類或 AI 協作者。它仍然不可執行，也不會自動套用程式修改。
+- Sandbox world-model 工作新增小型、可驗證的計算核心，涵蓋點質量運動、場方程求解與相對論參考計算。這些是 sandbox calculation，不是公開 simulator，也不是硬體控制 runtime。
+- 公開用詞持續區分「已驗證的計算核心」與「部署宣稱」。此 repo 不鏡像 private runtime source、device bridge details、raw benchmark output、本機路徑或憑證。
+- 本次公開價值在工程紀律：修復意圖可以封裝供審查，模型式計算以測試支撐，而不是敘事能力宣稱。
+
+Runtime truth label：
+
+`public_safe_milestone_summary`
+
+不宣稱：
+
+- production autonomous execution
+- public live hardware control
+- public physics engine deployment
+- automatic code mutation
+- raw local test output、private commit history、device bridge code、credentials 或 local audit files
+
 ## 2026-07-09 — 治理與操作介面整理
 
 Public-safe 摘要：

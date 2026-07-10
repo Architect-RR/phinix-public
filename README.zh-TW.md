@@ -116,7 +116,7 @@ private 專案目前聚焦：
 
 公開更新會維持在架構、介面形狀與可驗證工程狀態層級。private implementation details 只會摘要，不會鏡像公開。
 
-最新 public-safe 狀態：2026-07-09。近期 private 工作補強了人工監督 review surface、append-only audit-style record、proposal-only self-correction evidence、companion credential hygiene、本地模型評估邊界與 gated runtime probe。這不代表 autonomous production execution 已公開或啟用。
+最新 public-safe 狀態：2026-07-10。近期 private 工作補強了 proposal-only repair assist packaging、可驗證 sandbox calculation kernels、人工監督 review surface、companion credential hygiene、本地模型評估邊界與 gated runtime probe。這不代表 autonomous production execution、public simulator deployment 或 live hardware control 已公開或啟用。
 
 ## 文件
 

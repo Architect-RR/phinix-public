@@ -3,6 +3,27 @@
 
 This file records public-safe milestones only. It is intentionally concise and does not mirror private runtime source, local audit logs, device-specific configuration, credentials, raw benchmark output, or deployment details.
 
+## 2026-07-10 — Proposal packaging and verified sandbox kernels
+
+Public-safe summary:
+
+- Self-correction work now includes a proposal-only assist-request shape for handing reviewed repair intent to a human or AI collaborator. It remains non-executable and does not apply code changes automatically.
+- Sandbox world-model work added small, verifiable calculation kernels for point-mass motion, field-equation solving, and relativity reference calculations. These are sandbox calculations, not a public simulator or hardware-control runtime.
+- Public wording continues to separate verified calculation kernels from deployment claims. No private runtime source, device bridge details, raw benchmark output, local paths, or credentials are mirrored here.
+- The public value is engineering discipline: repair intent can be packaged for review, and model-style calculations are backed by tests instead of narrative claims.
+
+Runtime truth label:
+
+`public_safe_milestone_summary`
+
+Not claimed:
+
+- production autonomous execution
+- public live hardware control
+- public physics engine deployment
+- automatic code mutation
+- raw local test output, private commit history, device bridge code, credentials, or local audit files
+
 ## 2026-07-09 — Governance and operator-surface refresh
 
 Public-safe summary:

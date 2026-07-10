@@ -1,7 +1,7 @@
 <!-- # ⭐ 修改開始 ⭐ -->
 # PHINIX Current Status
 
-Updated: 2026-07-09
+Updated: 2026-07-10
 
 Languages: **English** | [繁體中文](CURRENT_STATUS.zh-TW.md)
 
@@ -43,14 +43,16 @@ Current public-safe summaries:
 
 - Human-supervised console / journal: private work added supervised console and append-only journal style data layers for review, approval, rejection, and follow-up traces. This is not public autonomous execution.
 - Error / repair candidate tracking: private work added error records and repair candidate data layers for proposal-only maintenance suggestions. Candidates are not automatically applied to production.
+- Repair assist packaging: private work added a proposal-only package shape for reviewed repair intent. It is for collaborator review and does not execute, patch, merge, or promote code by itself.
 - Companion credential hygiene: private work strengthened companion / wearable credential boundaries, log hygiene, and public/private separation rules. Credentials, tokens, device-specific build artifacts, and local settings remain private.
 - Local model evaluation boundary: private work added local model smoke and provider E2E style evaluation flows for latency, cold start, and provider overhead. The public repository does not publish model weights, vendor assets, raw benchmark output, or production selection claims.
+- Sandbox calculation kernels: private work added small, test-backed calculation kernels for world-model style reasoning. Public wording treats these as sandbox calculations only, not as a public physics engine, deployment path, or hardware-control runtime.
 - Gated runtime probes: private work added gated probes and evidence summaries for runtime-chain candidates. These remain operator-supervised evidence, not public production runtime.
 - Public interface skeletons: this public repository now includes abstract JSON schema skeletons for reviewable status and boundary summaries. These schemas are public documentation, not private runtime deployment contracts.
 
-### 2026-07-09 milestone note
+### 2026-07-10 milestone note
 
-The latest public-safe milestone records incremental progress around operator-supervised self-correction, retained proposal evidence, companion / wearable credential boundaries, local model evaluation caveats, and vision / world-state context wiring. This is a low-key status update, not a production runtime announcement.
+The latest public-safe milestone records incremental progress around proposal-only repair assist packaging and verified sandbox calculation kernels. This is a low-key engineering status update, not a production runtime, public simulator, or autonomous execution announcement.
 
 See [Public Milestones](MILESTONES.md).
 
