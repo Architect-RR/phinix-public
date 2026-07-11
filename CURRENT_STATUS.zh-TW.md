@@ -48,13 +48,13 @@ PHINIX 不是單純聊天機器人，也不是單一模型 wrapper。比較準�
 - Companion credential hygiene：私有端補強 companion / wearable bridge 的 credential boundary、log hygiene 與 public/private 分離規則。credential、token、device-specific build artifact 與本機設定仍保持 private。
 - Local model evaluation boundary：私有端建立本地模型 smoke / provider E2E 類驗證流程，用於比較 latency、cold start 與 provider overhead。公開 repo 不發布模型權重、vendor asset、完整 benchmark raw output 或 production 選型宣稱。
 - Sandbox calculation kernels：私有端新增小型、測試支撐的 world-model 類計算核心。公開用詞只把它視為 sandbox calculation，不宣稱 public physics engine、deployment path 或 hardware-control runtime。
-- Sandbox viewer and access policy：private work 新增保守的 demo/export 與 access-policy 文件，用於 sandbox-only simulation preview。公開說法只把它視為 preview 與 governance guidance，不稱為 public simulator service、AR deployment 或 hardware-control runtime。
+- Sandbox viewer and access policy：private work 新增保守的 demo/export 與 access-policy 文件，用於 sandbox-only simulation preview，並補上 agent-safe 的 inventory/smoke 健康檢查流程與 usage-audit/總結文件。公開說法只把它視為 preview 與 governance guidance，不稱為 public simulator service、AR deployment 或 hardware-control runtime。
 - Gated runtime probes：私有端補充 gated probe 與 evidence summary，用於檢查 runtime chain 的候選路徑。這些仍是 gated / operator-supervised evidence，不是公開 production runtime。
 - Public interface skeletons：公開 repo 已補上抽象 JSON schema skeleton，用於描述可審查的狀態、proposal、review、model evaluation 與 credential boundary summary。這些 schema 是公開文件，不是 private runtime deployment contract。
 
 ### 2026-07-11 里程碑紀錄
 
-最新 public-safe 里程碑記錄 sandbox calculation kernels、viewer-demo 邊界，以及 simulation-style agent use 的保守 access policy。這是低調工程狀態更新，不是 production runtime、public simulator service、AR deployment 或 autonomous execution announcement。
+近期 private work 收口 sandbox simulation 與 viewer 文件線。公開摘要只限 sandbox-only 計算、保守 viewer-demo 邊界、inventory/smoke 健康檢查與 access-policy 文件；不代表 public simulator service、AR deployment、hardware-control runtime、real-time digital twin 或 production autonomous execution。Runtime truth：`public_safe_milestone_summary`。
 
 見 [公開里程碑](MILESTONES.zh-TW.md)。
 

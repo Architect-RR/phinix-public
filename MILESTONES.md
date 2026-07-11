@@ -3,6 +3,29 @@
 
 This file records public-safe milestones only. It is intentionally concise and does not mirror private runtime source, local audit logs, device-specific configuration, credentials, raw benchmark output, or deployment details.
 
+## 2026-07-11 — Sandbox simulation and viewer documentation track closed
+
+Public-safe summary:
+
+- Recent private work closed a sandbox simulation and viewer documentation track. It includes sandbox calculation kernels, contact-prediction handling, viewer/export/playback demos, an agent-safe inventory and smoke-check flow, and usage-audit and capability-summary documents.
+- The public-safe summary is limited to sandbox-only calculation, conservative viewer-demo boundaries, inventory/smoke health checks, and access-policy documentation.
+- This is not a public simulator service, AR deployment, hardware-control runtime, real-time digital twin, or production autonomous execution.
+- No private runtime source, raw outputs, local paths, commit history, credentials, or device details are mirrored here.
+
+Runtime truth label:
+
+`public_safe_milestone_summary`
+
+Not claimed:
+
+- production runtime
+- public simulator service
+- AR deployment
+- hardware control
+- real-time digital twin
+- STL/STEP collision truth
+- autonomous execution
+
 ## 2026-07-11 — Sandbox viewer boundary and access policy
 
 Public-safe summary:

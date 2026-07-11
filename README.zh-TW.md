@@ -119,7 +119,7 @@ private 專案目前聚焦：
 
 公開更新會維持在架構、介面形狀與可驗證工程狀態層級。private implementation details 只會摘要，不會鏡像公開。
 
-最新 public-safe 狀態：2026-07-11。近期 private work 補強了 proposal-only repair assist packaging、可驗證 sandbox calculation kernels、sandbox viewer-demo 邊界，以及一套供 simulation-style agent use 使用的 green/yellow/red access policy。這不代表 autonomous production execution、public simulator deployment、AR deployment 或 live hardware control 已公開或啟用。
+最新 public-safe 狀態：2026-07-11。近期 private work 收口 sandbox simulation 與 viewer 文件線，涵蓋 sandbox calculation kernels、接觸預測、viewer/export/playback demo、agent-safe 的 inventory/smoke 健康檢查流程與 usage-audit/總結文件。這不代表 public simulator service、AR deployment、hardware-control runtime、real-time digital twin 或 production autonomous execution 已公開或啟用。
 
 ## 文件
 

@@ -47,13 +47,13 @@ Current public-safe summaries:
 - Companion credential hygiene: private work strengthened companion / wearable credential boundaries, log hygiene, and public/private separation rules. Credentials, tokens, device-specific build artifacts, and local settings remain private.
 - Local model evaluation boundary: private work added local model smoke and provider E2E style evaluation flows for latency, cold start, and provider overhead. The public repository does not publish model weights, vendor assets, raw benchmark output, or production selection claims.
 - Sandbox calculation kernels: private work added small, test-backed calculation kernels for world-model style reasoning. Public wording treats these as sandbox calculations only, not as a public physics engine, deployment path, or hardware-control runtime.
-- Sandbox viewer and access policy: private work added conservative demo/export and access-policy documentation for sandbox-only simulation previews. Public wording treats this as preview and governance guidance only, not as a public simulator service, AR deployment, or hardware-control runtime.
+- Sandbox viewer and access policy: private work added conservative demo/export and access-policy documentation for sandbox-only simulation previews, plus an agent-safe inventory/smoke health-check flow and usage-audit/summary documents. Public wording treats this as preview and governance guidance only, not as a public simulator service, AR deployment, or hardware-control runtime.
 - Gated runtime probes: private work added gated probes and evidence summaries for runtime-chain candidates. These remain operator-supervised evidence, not public production runtime.
 - Public interface skeletons: this public repository now includes abstract JSON schema skeletons for reviewable status and boundary summaries. These schemas are public documentation, not private runtime deployment contracts.
 
 ### 2026-07-11 milestone note
 
-The latest public-safe milestone records incremental progress around sandbox calculation kernels, viewer-demo boundaries, and a conservative access policy for simulation-style agent use. This is a low-key engineering status update, not a production runtime, public simulator service, AR deployment, or autonomous execution announcement.
+Recent private work closed a sandbox simulation and viewer documentation track. The public-safe summary is limited to sandbox-only calculation, conservative viewer-demo boundaries, inventory/smoke health checks, and access-policy documentation. This is not a public simulator service, AR deployment, hardware-control runtime, real-time digital twin, or production autonomous execution. Runtime truth: `public_safe_milestone_summary`.
 
 See [Public Milestones](MILESTONES.md).
 

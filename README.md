@@ -119,7 +119,7 @@ The private project is currently focused on:
 
 Public updates stay at the level of architecture, interface shape, and verifiable engineering status. Private implementation details are intentionally summarized rather than mirrored.
 
-Latest public-safe status: 2026-07-11. Recent private work strengthened proposal-only repair assist packaging, verified sandbox calculation kernels, sandbox viewer-demo boundaries, and a simple green/yellow/red access policy for simulation-style agent use. This does not mean autonomous production execution, public simulator deployment, AR deployment, or live hardware control is publicly available or enabled.
+Latest public-safe status: 2026-07-11. Recent private work closed a sandbox simulation and viewer documentation track, covering sandbox calculation kernels, contact prediction, viewer/export/playback demos, an agent-safe inventory/smoke health-check flow, and usage-audit/summary documents. This does not mean a public simulator service, AR deployment, hardware-control runtime, real-time digital twin, or production autonomous execution is publicly available or enabled.
 
 ## Documentation
 

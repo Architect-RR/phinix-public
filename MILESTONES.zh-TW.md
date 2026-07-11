@@ -3,6 +3,29 @@
 
 本檔只記錄 public-safe 里程碑。內容刻意保持簡短，不鏡像 private runtime source、本機審計 log、裝置專屬設定、憑證、原始 benchmark output 或部署細節。
 
+## 2026-07-11 — Sandbox simulation 與 viewer 文件線收口
+
+Public-safe 摘要：
+
+- 近期 private work 收口 sandbox simulation 與 viewer 文件線，涵蓋 sandbox calculation kernels、接觸預測處理、viewer/export/playback demo、agent-safe 的 inventory/smoke 健康檢查流程，以及 usage-audit 與能力總結文件。
+- 公開摘要只限 sandbox-only 計算、保守 viewer-demo 邊界、inventory/smoke 健康檢查與 access-policy 文件。
+- 不代表 public simulator service、AR deployment、hardware-control runtime、real-time digital twin 或 production autonomous execution。
+- 不鏡像 private runtime source、raw output、本機路徑、commit 歷史、憑證或裝置細節。
+
+Runtime truth label：
+
+`public_safe_milestone_summary`
+
+不宣稱：
+
+- production runtime
+- public simulator service
+- AR deployment
+- hardware control
+- real-time digital twin
+- STL/STEP collision truth
+- autonomous execution
+
 ## 2026-07-11 — Sandbox viewer 邊界與 access policy
 
 Public-safe 摘要：
