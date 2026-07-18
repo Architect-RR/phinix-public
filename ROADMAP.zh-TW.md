@@ -1,178 +1,48 @@
 <!-- # ⭐ 修改開始 ⭐ -->
-# Public Roadmap
+# 公開文件 Roadmap
 
 Languages: [English](ROADMAP.md) | **繁體中文**
 
-這份 roadmap 只描述 public-safe 的工程方向。private deployment details、local audit outputs、credentials、device-specific paths、raw benchmark output 與未審核自動化產物刻意排除。
+這份 roadmap 是證據目標的先後順序，不是交付承諾。私有實作細節與時程刻意不公開。
 
-## P0：公開專案基線
+## 目前：誠實的公開基線
 
-目標：
+- 公開 repository 只保留文件與抽象 schema。
+- 將私有實作證據與公開可用性分開。
+- 先說明已知限制，再描述未來能力。
+- 移除重複或偏宣傳的用語。
 
-- 維持清楚的 public overview
-- 定義 public/private boundaries
-- 讓文件保持專業、工程化、可審查
+## 下一步：可重現性
 
-產出：
+- 為低風險公開範例定義乾淨環境設定清單。
+- 只有在私有 workspace 之外可以重現時，才發布不含敏感資訊的 smoke test。
+- 固定依賴版本並記錄支援環境。
+- 記錄失敗與恢復行為，不只記錄成功輸出。
 
-- README
-- public scope
-- architecture overview
-- roadmap
-- security and contribution guidance
+狀態：尚未交付。
 
-## P1：Runtime architecture interfaces
+## 後續：有限範圍的公開 Demo
 
-目標：
+- 提供使用 mock data，且不依賴裝置、憑證或私有 runtime 的小型 demo。
+- 所有 side effect 預設關閉。
+- 公開 acceptance criteria 與預期 failure mode。
+- 清楚區分計算輸出與真實世界事實。
 
-- 描述核心 runtime layers
-- 讓 client entry point 保持 thin-client
-- 分離 live interaction、background state、policy 與 validation
-- 先公開抽象資料形狀，再考慮實作細節
+狀態：只有設計方向。
 
-產出：
+## 延後：Runtime 與裝置發布決策
 
-- runtime state model
-- event flow model
-- stuck issue model
-- proposal model
+- 評估是否有任何 runtime 子集具備足夠安全性與可維護性，可考慮公開。
+- 必須先有明確 support matrix、security review 與 rollback path。
+- 硬體、穿戴、模型與外部 API 整合分別管理與 gate。
 
-## P2：Governed improvement flow
+狀態：尚無公開發布決策。
 
-目標：
+## 非目標
 
-- 將 failure 與 low-quality state 轉成可審核 proposal
-- 在 promotion 前先經 sandbox 或 worktree validation
-- 每個 change 都保留 tests、rollback plan 與 audit record
-
-產出：
-
-- proposal schema
-- sandbox validation interface
-- audit summary interface
-- promotion status model
-
-## P3：Read-only observability
-
-目標：
-
-- 在不暴露 private audit data 的前提下顯示有限 runtime health status
-- 讓 observability 與 execution 分離
-- 保留 evidence、readiness 與 runtime enablement 的差異
-
-產出：
-
-- stats-only status summary
-- maintenance smoke summary
-- viewer / panel display model
-
-## P4：Proactive companion behavior
-
-目標：
-
-- 支援有用的 proactive suggestion，但避免產生噪音
-- reminder 必須可審核、rate-limited、可取消
-- suggestion 不得繞過 policy 或 human review
-
-產出：
-
-- proactive suggestion model
-- cooldown policy
-- notification boundary
-
-## P5：Embodiment adapter abstraction
-
-目標：
-
-- 定義 companion devices、wearables 與 future hardware integrations 的安全介面
-- 分離 cognition / governance 與 low-level control
-- device-specific bridge path 不進 public repository
-
-產出：
-
-- embodiment adapter interface
-- device capability descriptor
-- authorized-device boundary model
-
-## P6：Controlled maintenance automation
-
-目標：
-
-- 允許 bounded lab-only maintenance loop
-- automation 預設停用
-- 需要 status checks、stop conditions 與 audit output
-
-產出：
-
-- auto maintenance contract
-- dry-run report
-- bounded runner configuration
-
-## P7：Boundary hardening and memory governance
-
-目標：
-
-- 在任何高風險 runtime surface 前，先讓 non-harm semantic boundary 可測試
-- 讓 private workspace hygiene 與 public release material 分離
-- 除非後續 gated phase 實作 runtime support，否則 memory 與 speculative capability notes 都視為人類治理文件
-
-產出：
-
-- harm-boundary regression summary
-- public/private release checklist
-- human-readable memory governance summary
-
-## P8：Human-supervised operating surface
-
-目標：
-
-- 描述 review、批准、駁回與 follow-up 如何表示，但不公開 private console data
-- 讓操作面可追溯，但不把它變成公開 automation
-- 在 interface 層保留 append-only review semantics
-
-產出：
-
-- review journal entry schema
-- operator decision summary
-- human-supervised console boundary notes
-
-## P9：Public-safe evidence and model evaluation summaries
-
-目標：
-
-- 摘要 local evaluation evidence，但不公開 raw benchmark output 或 model assets
-- 分離 cold-start、steady-state、provider-overhead 與 execution-scope claims
-- 避免 evaluation evidence 被寫成 production selection claim
-
-產出：
-
-- model evaluation summary schema
-- runtime truth label guidance
-- evidence caveat checklist
-
-## P10：Credential and release-boundary hygiene
-
-目標：
-
-- 讓 credentials、provisioning details、device identifiers 與 local secrets 留在 public history 外
-- 描述 public mirror checks，但不公開 private remediation details
-- 將 credential rotation 與 provisioning 視為 private operator tasks
-
-產出：
-
-- credential boundary summary schema
-- public release checklist
-- security posture notes
-
-## Public repo 非目標
-
-- Production deployment guide
-- Secret or credential handling
-- Device-specific bridge implementation
-- Local audit logs
-- Full private runtime mirror
-- High-risk execution paths
-- Machine-loadable private runtime configuration
-- Raw model benchmark output
-- Device provisioning instructions
+- 鏡像私有 runtime
+- 公開憑證、本機路徑、原始 log 或裝置識別資訊
+- 宣稱能自主修改自身程式
+- 把 sandbox 輸出當成經驗證的真實世界行為
+- 在缺少可重現性與安全證據前發布部署說明
 <!-- # ⭐ 修改結束 ⭐ -->

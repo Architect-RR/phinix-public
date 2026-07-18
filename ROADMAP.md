@@ -1,178 +1,48 @@
 <!-- # ⭐ 修改開始 ⭐ -->
-# Public Roadmap
+# Public Documentation Roadmap
 
 Languages: **English** | [繁體中文](ROADMAP.zh-TW.md)
 
-This roadmap covers only public-safe engineering direction. Private deployment details, local audit outputs, credentials, device-specific paths, raw benchmark output, and unreviewed automation artifacts are intentionally excluded.
+This roadmap is a sequence of evidence goals, not a delivery promise. Private implementation details and schedules are intentionally excluded.
 
-## P0: Public project baseline
+## Current: Honest Public Baseline
 
-Goal:
+- Keep the public repository limited to documentation and abstract schemas.
+- Separate private implementation evidence from public availability.
+- State known limitations before describing future capability.
+- Remove duplicated or promotional wording.
 
-- Maintain a clear public overview
-- Define public/private boundaries
-- Keep documentation professional and engineering-focused
+## Next: Reproducibility
 
-Outputs:
+- Define a clean-machine setup checklist for a low-risk public example.
+- Publish a non-sensitive smoke test only when it can be reproduced outside the private workspace.
+- Pin dependencies and document supported environments.
+- Record failure and recovery behavior, not only successful output.
 
-- README
-- public scope
-- architecture overview
-- roadmap
-- security and contribution guidance
+Status: not yet delivered.
 
-## P1: Runtime architecture interfaces
+## Later: Bounded Public Demonstration
 
-Goal:
+- Provide a small demo with mock data and no device, credential, or private runtime dependency.
+- Keep all side effects disabled by default.
+- Publish acceptance criteria and expected failure modes.
+- Distinguish calculation output from real-world truth.
 
-- Document the core runtime layers
-- Keep client entry points thin
-- Separate live interaction, background state, policy, and validation
-- Publish abstract data shapes before implementation details
+Status: design direction only.
 
-Outputs:
+## Deferred: Runtime and Device Release Decisions
 
-- runtime state model
-- event flow model
-- stuck issue model
-- proposal model
+- Evaluate whether any runtime subset is safe and maintainable enough for release.
+- Require an explicit support matrix, security review, and rollback path.
+- Keep hardware, wearable, model, and external API integrations separately gated.
 
-## P2: Governed improvement flow
+Status: no public release decision.
 
-Goal:
+## Non-goals
 
-- Convert failures and low-quality states into reviewable proposals
-- Validate improvements in sandbox or worktree before promotion
-- Keep tests, rollback plans, and audit records attached to each change
-
-Outputs:
-
-- proposal schema
-- sandbox validation interface
-- audit summary interface
-- promotion status model
-
-## P3: Read-only observability
-
-Goal:
-
-- Surface limited runtime health status without exposing private audit data
-- Keep observability separate from execution
-- Preserve the difference between evidence, readiness, and runtime enablement
-
-Outputs:
-
-- stats-only status summary
-- maintenance smoke summary
-- viewer / panel display model
-
-## P4: Proactive companion behavior
-
-Goal:
-
-- Support useful proactive suggestions without creating noise
-- Keep reminders reviewable, rate-limited, and cancellable
-- Prevent suggestions from bypassing policy or human review
-
-Outputs:
-
-- proactive suggestion model
-- cooldown policy
-- notification boundary
-
-## P5: Embodiment adapter abstraction
-
-Goal:
-
-- Define safe interfaces for companion devices, wearables, and future hardware integrations
-- Keep cognition and governance separate from low-level control
-- Keep device-specific bridge paths outside the public repository
-
-Outputs:
-
-- embodiment adapter interface
-- device capability descriptor
-- authorized-device boundary model
-
-## P6: Controlled maintenance automation
-
-Goal:
-
-- Allow bounded lab-only maintenance loops
-- Keep automation disabled by default
-- Require status checks, stop conditions, and audit output
-
-Outputs:
-
-- auto maintenance contract
-- dry-run report
-- bounded runner configuration
-
-## P7: Boundary hardening and memory governance
-
-Goal:
-
-- Keep non-harm semantic boundaries testable before any high-risk runtime surface
-- Keep private workspace hygiene separate from public release materials
-- Treat memory and speculative capability notes as human-governance documents unless a later gated phase implements runtime support
-
-Outputs:
-
-- harm-boundary regression summary
-- public/private release checklist
-- human-readable memory governance summary
-
-## P8: Human-supervised operating surface
-
-Goal:
-
-- Describe how review, approval, rejection, and follow-up can be represented without publishing private console data
-- Keep the operating surface accountable without turning it into public automation
-- Preserve append-only review semantics at the interface level
-
-Outputs:
-
-- review journal entry schema
-- operator decision summary
-- human-supervised console boundary notes
-
-## P9: Public-safe evidence and model evaluation summaries
-
-Goal:
-
-- Summarize local evaluation evidence without publishing raw benchmark output or model assets
-- Separate cold-start, steady-state, provider-overhead, and execution-scope claims
-- Prevent evaluation evidence from becoming a production selection claim
-
-Outputs:
-
-- model evaluation summary schema
-- runtime truth label guidance
-- evidence caveat checklist
-
-## P10: Credential and release-boundary hygiene
-
-Goal:
-
-- Keep credentials, provisioning details, device identifiers, and local secrets outside public history
-- Document public mirror checks without disclosing private remediation details
-- Treat credential rotation and provisioning as private operator tasks
-
-Outputs:
-
-- credential boundary summary schema
-- public release checklist
-- security posture notes
-
-## Non-goals for the public repo
-
-- Production deployment guide
-- Secret or credential handling
-- Device-specific bridge implementation
-- Local audit logs
-- Full private runtime mirror
-- High-risk execution paths
-- Machine-loadable private runtime configuration
-- Raw model benchmark output
-- Device provisioning instructions
+- Mirroring the private runtime
+- Publishing credentials, local paths, raw logs, or device identifiers
+- Claiming autonomous self-modification
+- Presenting sandbox output as validated real-world behavior
+- Publishing deployment instructions before reproducibility and security evidence exist
 <!-- # ⭐ 修改結束 ⭐ -->

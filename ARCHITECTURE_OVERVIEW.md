@@ -1,155 +1,76 @@
 <!-- # ⭐ 修改開始 ⭐ -->
-# Architecture Overview
+# Architecture Direction
 
 Languages: **English** | [繁體中文](ARCHITECTURE_OVERVIEW.zh-TW.md)
 
-This document describes only the public-safe architecture. It does not include private deployment details, device bridge configuration, credentials, full audit artifacts, or local maintenance data.
+This document describes a public-safe architecture direction. It is not a statement that every layer is complete, integrated, or available in this repository.
 
-## Core Concept
+## Design Goal
 
-PHINIX is a local-first governed agent runtime. The focus is not a single response, but a controlled process for long-horizon state, tool use, proposals, validation, human review, and audit.
-
-## Public Architecture Flow
+PHINIX explores a local-first agent architecture in which requests, context, policy decisions, bounded proposals, validation, and operator review remain distinguishable.
 
 ```mermaid
 flowchart LR
-    A["Thin client entry"] --> B["Runtime state summary"]
-    B --> C["Policy and risk gate"]
-    C --> D["Proposal record"]
-    D --> E["Sandbox or dry-run validation"]
-    E --> F["Human or operator review"]
-    F --> G["Append-only review trace"]
-    G --> H["Read-only observability"]
-    C --> I["Credential and release boundary"]
-    I --> H
+    A["Input adapter"] --> B["Message and state layer"]
+    B --> C["Policy and risk check"]
+    C --> D["Bounded proposal or response"]
+    D --> E["Sandbox or test"]
+    E --> F["Operator review"]
+    F --> G["Audit summary"]
+    G --> H["Optional execution adapter"]
 ```
 
-The diagram is intentionally high-level. It shows the governed shape of the runtime without exposing private implementation paths.
+The execution adapter is intentionally last. Its presence in the diagram does not mean that device control or deployment is enabled.
 
-## Public Architecture Layers
+## Layer Responsibilities
 
-### 1. Client entry layer
+### Input adapters
 
-Responsibilities:
+Accept text, voice, companion, viewer, or future device input without moving high-risk decisions into the client.
 
-- Receive requests from text, voice, viewer, companion, or wearable entry points
-- Display controlled results
-- Stay thin-client by design
+### Message and state
 
-This layer should not make high-risk decisions directly.
+Carry traceable events, session context, deferred work, and bounded status summaries.
 
-### 2. Runtime state layer
+### Policy and risk
 
-Responsibilities:
+Classify requests, deny unsafe actions, and decide whether a request may proceed to a proposal or sandbox.
 
-- Manage sessions
-- Maintain short-term events and state snapshots
-- Track stuck issues, deferred work, and review items
-- Turn background state into observable data
+### Proposal and validation
 
-### 3. Policy and proposal layer
+Represent intended work, scope, tests, rollback expectations, and validation results before any higher-risk execution.
 
-Responsibilities:
+### Review and audit
 
-- Classify request risk
-- Enforce non-harm semantic boundaries before high-risk execution can be considered
-- Build engineering proposals
-- Mark forbidden modification scope
-- Decide whether a task may enter sandbox validation
-- Attach rollback, test, and audit requirements
+Keep operator decisions and evidence separate from automatic execution. Public summaries must not expose private logs or operator data.
 
-### 4. Sandbox validation layer
+### Execution adapters
 
-Responsibilities:
+Remain optional, narrow, and separately gated. Device-specific paths, credentials, and hard real-time control should not be placed in this public repository.
 
-- Dry-run
-- Worktree validation
-- Patch validation
-- Test execution
-- Local branch materialization
-- Private audit
+## Current Implementation Truth
 
-This layer is not production approval.
+| Architecture element | Current public statement |
+|---|---|
+| Abstract schemas | Present in this repository as documentation |
+| Private modules and tests | Exist in the private engineering repository |
+| End-to-end integration | Partially evidenced in controlled cases; not proven as a whole |
+| Public runnable system | Not provided |
+| Hardware or production operation | Not established |
 
-### 5. Human-supervised operating layer
+## Engineering Boundary
 
-Responsibilities:
-
-- Record review decisions
-- Represent approval, rejection, and follow-up as explicit state
-- Preserve append-only review traces
-- Keep operator decisions separate from automatic execution
-
-This layer does not expose private console content.
-
-### 6. Read-only observability layer
-
-Responsibilities:
-
-- Display bounded health and readiness summaries
-- Expose stats-only status
-- Avoid full audit disclosure
-- Avoid run, restore, push, merge, or device-control actions
-
-## Public Interface Primitives
-
-The public repository can safely discuss the following primitives:
-
-- `runtime_state_summary`
-- `proposal_record`
-- `review_journal_entry`
-- `model_eval_summary`
-- `credential_boundary_summary`
-
-These schemas describe public-safe shape only. They are not a deployment contract for the private runtime.
-
-## Stuck Issue Queue
-
-PHINIX treats unresolved issues as trackable state rather than one-off errors.
-
-This allows the system to:
-
-- Record where a failure happened
-- Record what was already attempted
-- Revisit the issue when new context appears
-- Surface low-interruption reminders at the right time
-
-## Proactive Behavior
-
-Proactivity should not become noise.
-
-A healthy flow is:
-
-1. Generate a background candidate
-2. Convert it into a reviewable item
-3. Apply policy and cooldown
-4. Let the user decide whether to expand it
-
-## Embodiment Boundary
-
-For future device integrations, PHINIX is better positioned as:
-
-- memory
-- context
-- governance
-- risk review
-- proposal generation
-- audit
-
-It should not replace low-level controllers or hard real-time control loops.
-
-## Engineering Rule
-
-High-risk capabilities should follow:
+Higher-risk work should follow:
 
 ```text
-proposed action
+request
 -> policy check
--> dry-run or simulation
--> human/operator gate
--> execution adapter
+-> bounded proposal
+-> sandbox or test
+-> operator decision
+-> separately authorized adapter
 -> audit
 ```
 
-Design-only notes, memory policies, and speculative capability ideas should remain human-readable governance material until a separate gated phase implements, tests, and documents runtime behavior.
+This is a design rule, not evidence that the full sequence is currently available to public users.
 <!-- # ⭐ 修改結束 ⭐ -->

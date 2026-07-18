@@ -1,114 +1,57 @@
 <!-- # ⭐ 修改開始 ⭐ -->
-# PHINIX Current Status
+# PHINIX Current Evidence Status
 
-Updated: 2026-07-11
+Updated: 2026-07-18
 
 Languages: **English** | [繁體中文](CURRENT_STATUS.zh-TW.md)
 
-PHINIX is a private-first, local-first governed agent runtime project. The public repository contains only public-safe status, architecture direction, public/private boundary notes, and abstract interface shapes. The private runtime, device bridge implementation, credentials, hardware setup, raw audit artifacts, and deployment-specific implementation remain private.
+## Overall Assessment
 
-## Public Wording Rules
+PHINIX should currently be described as a private engineering prototype, not as a proven operational product.
 
-Use the following distinctions when describing the project:
+The private repository contains multiple implemented modules, automated tests, bounded sandbox demonstrations, and selected local integration evidence. These show that individual paths can work under controlled conditions. They do not establish project-wide reliability.
 
-- "Governed runtime" does not mean production autonomous execution.
-- "Sandbox validation" does not mean deployment approval.
-- "Read-only status" does not mean public access to raw audit data.
-- "Proposal-based improvement" does not mean automatic mutation.
-- "Plan / schema layer" does not mean runtime execution is public or enabled.
-- "Policy / test layer" does not mean real hardware, real LLM, or autonomous actuation is public or enabled.
+Runtime truth label: `bounded_internal_evidence_only`
 
-## Current Position
+## Confirmed Within Bounded Scope
 
-PHINIX is best described as:
+- Documentation and abstract schemas in this public repository can be reviewed without private runtime access.
+- Private targeted tests cover governance, policy, message flow, proposal/review structures, sandbox calculations, and viewer demonstrations.
+- Sandbox demo generation has been exercised through deterministic, no-browser flows.
+- Selected local model and companion/device paths have recorded controlled-session evidence.
+- Self-correction work is constrained to proposal, review, test, and retained-state mechanisms.
 
-> A local-first, governed agent runtime for companion, wearable, and long-horizon tool-use scenarios.
+These points describe scoped evidence, not a complete acceptance test.
 
-Its current engineering direction prioritizes:
+## Not Yet Established
 
-- observable state
-- explicit risk boundaries
-- policy gates
-- reviewable proposals
-- validation before promotion
-- human-supervised operation
-- reversible changes
-- public/private release discipline
+- Clean installation and setup by an external user
+- A reproducible public demo that exercises the private runtime
+- Reliable end-to-end operation over long sessions and repeated restarts
+- General compatibility across machines, models, companion devices, or wearables
+- Security, performance, and recovery characteristics suitable for deployment
+- Independent third-party validation
+- Unsupervised self-modification or autonomous promotion
 
-## 2026-07 Public-Safe Update
+## Capability Maturity
 
-The private engineering track strengthened governance observability, credential hygiene, human-supervised operation surfaces, and proposal-only repair candidate flows during 2026-06 to 2026-07. The public repository records only the engineering direction and boundaries. It does not publish runtime source, device bridge details, tokens, raw logs, or local audit records.
+| Capability area | Current public assessment |
+|---|---|
+| Architecture and governance | Designed and partially implemented privately; public material is documentation only |
+| Policy and review flow | Targeted private tests exist; full operational coverage is unproven |
+| Local LLM path | Selected local checks exist; stable service operation is unproven |
+| Companion and wearable path | Device-specific evidence exists; general support is unproven |
+| Sandbox simulation and viewer | Bounded deterministic demos exist; not a validated physical environment |
+| Self-correction | Proposal and review assistance only; no autonomous mutation claim |
+| Public distribution | Not available |
 
-Current public-safe summaries:
+## What Would Increase Confidence
 
-- Human-supervised console / journal: private work added supervised console and append-only journal style data layers for review, approval, rejection, and follow-up traces. This is not public autonomous execution.
-- Error / repair candidate tracking: private work added error records and repair candidate data layers for proposal-only maintenance suggestions. Candidates are not automatically applied to production.
-- Repair assist packaging: private work added a proposal-only package shape for reviewed repair intent. It is for collaborator review and does not execute, patch, merge, or promote code by itself.
-- Companion credential hygiene: private work strengthened companion / wearable credential boundaries, log hygiene, and public/private separation rules. Credentials, tokens, device-specific build artifacts, and local settings remain private.
-- Local model evaluation boundary: private work added local model smoke and provider E2E style evaluation flows for latency, cold start, and provider overhead. The public repository does not publish model weights, vendor assets, raw benchmark output, or production selection claims.
-- Sandbox calculation kernels: private work added small, test-backed calculation kernels for world-model style reasoning. Public wording treats these as sandbox calculations only, not as a public physics engine, deployment path, or hardware-control runtime.
-- Sandbox viewer and access policy: private work added conservative demo/export and access-policy documentation for sandbox-only simulation previews, plus an agent-safe inventory/smoke health-check flow and usage-audit/summary documents. Public wording treats this as preview and governance guidance only, not as a public simulator service, AR deployment, or hardware-control runtime.
-- Gated runtime probes: private work added gated probes and evidence summaries for runtime-chain candidates. These remain operator-supervised evidence, not public production runtime.
-- Public interface skeletons: this public repository now includes abstract JSON schema skeletons for reviewable status and boundary summaries. These schemas are public documentation, not private runtime deployment contracts.
+1. A clean-machine installation procedure with pinned dependencies.
+2. A public, non-sensitive smoke test that can be reproduced externally.
+3. Repeated end-to-end tests covering startup, failure, recovery, and shutdown.
+4. A documented support matrix for operating systems, models, and devices.
+5. Independent review of security boundaries and failure handling.
 
-### 2026-07-11 milestone note
-
-Recent private work closed a sandbox simulation and viewer documentation track. The public-safe summary is limited to sandbox-only calculation, conservative viewer-demo boundaries, inventory/smoke health checks, and access-policy documentation. This is not a public simulator service, AR deployment, hardware-control runtime, real-time digital twin, or production autonomous execution. Runtime truth: `public_safe_milestone_summary`.
-
-See [Public Milestones](MILESTONES.md).
-
-## Current Public Capability Boundary
-
-Currently appropriate to discuss publicly:
-
-- runtime / bridge / governance / audit architecture direction
-- proposal-based improvement flow
-- sandbox dry-run / worktree / patch validation concepts
-- lab-only smoke and maintenance status summaries
-- stats-only read-only status
-- public/private boundary strategy
-- plan-first / schema-first capability governance
-- non-harm semantic boundary regression direction
-- private workspace hygiene and memory governance as human policy
-- public-safe interface shapes
-
-Not public:
-
-- production-grade live actuation gate
-- real hardware or full local-control runtime details
-- autonomous actuation
-- device-specific bridge implementation
-- public runtime RAG or live LLM source verification
-- production deployment guide
-- raw audit logs
-- local benchmark output
-- credentials or provisioning details
-
-## Near-Term Public Direction
-
-Next public-safe work should focus on:
-
-1. Keeping public/private boundaries clean.
-2. Extracting abstract interfaces from private runtime concepts.
-3. Expanding public-safe event, state, proposal, review, and evidence summary schemas.
-4. Keeping lab-only maintenance flows private while publishing only summaries.
-5. Separating plan / schema / read-model artifacts from runtime execution.
-6. Maintaining non-harm and release-boundary regression checks before broader public claims.
-
-## Product Direction
-
-The product direction is deliberately conservative:
-
-- Treat companion, wearable, CLI, and dashboard surfaces as thin clients around a governed core.
-- Keep high-risk actions behind policy, validation, human review, rollback, and audit.
-- Keep local-first ownership and public/private boundaries explicit.
-- Use public artifacts to communicate architecture and collaboration surfaces, not private deployment internals.
-
-## Summary
-
-PHINIX is moving toward a runtime where AI behavior can be observed, reviewed, tested, rolled back, and audited before promotion into higher-risk contexts.
-
-Current public status:
-
-> Governed architecture and public-safe interface shape are visible; private runtime execution and deployment details remain intentionally private.
+Until that evidence exists, public wording should use terms such as `prototype`, `bounded test evidence`, `sandbox`, `proposal_only`, and `not externally reproduced`.
 <!-- # ⭐ 修改結束 ⭐ -->

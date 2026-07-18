@@ -1,155 +1,76 @@
 <!-- # ⭐ 修改開始 ⭐ -->
-# Architecture Overview
+# 架構方向
 
 Languages: [English](ARCHITECTURE_OVERVIEW.md) | **繁體中文**
 
-這份文件只描述適合公開討論的高層架構，不包含 private deploy 細節、裝置橋接設定、憑證、完整審計產物或本機維護資料。
+這份文件只描述適合公開的架構方向，不代表每一層都已完成、整合或存在於這個 repository。
 
-## 核心概念
+## 設計目標
 
-PHINIX 是 local-first governed agent runtime。重點不是單次回覆，而是面向 long-horizon state、tool use、proposal、validation、human review 與 audit 的受控流程。
-
-## 公開架構流程
+PHINIX 探索一種 local-first agent 架構，讓 request、context、policy decision、有限範圍 proposal、validation 與 operator review 保持可區分。
 
 ```mermaid
 flowchart LR
-    A["Thin client entry"] --> B["Runtime state summary"]
-    B --> C["Policy and risk gate"]
-    C --> D["Proposal record"]
-    D --> E["Sandbox or dry-run validation"]
-    E --> F["Human or operator review"]
-    F --> G["Append-only review trace"]
-    G --> H["Read-only observability"]
-    C --> I["Credential and release boundary"]
-    I --> H
+    A["Input adapter"] --> B["Message and state layer"]
+    B --> C["Policy and risk check"]
+    C --> D["Bounded proposal or response"]
+    D --> E["Sandbox or test"]
+    E --> F["Operator review"]
+    F --> G["Audit summary"]
+    G --> H["Optional execution adapter"]
 ```
 
-這張圖刻意維持高層次，只呈現 runtime 的治理形狀，不揭露 private implementation paths。
+Execution adapter 刻意放在最後。它出現在圖中，不代表已啟用裝置控制或部署能力。
 
-## 公開架構層
+## 各層職責
 
-### 1. Client entry layer
+### Input adapter
 
-職責：
+接收 text、voice、companion、viewer 或未來裝置輸入，但不把高風險決策移到 client。
 
-- 接收 text、voice、viewer、companion 或 wearable 入口請求
-- 顯示受控結果
-- 設計上保持 thin-client
+### Message and state
 
-此層不應直接做高風險決策。
+傳遞可追蹤事件、session context、deferred work 與有限狀態摘要。
 
-### 2. Runtime state layer
+### Policy and risk
 
-職責：
+分類 request、拒絕不安全行動，並判斷 request 是否可進入 proposal 或 sandbox。
 
-- 管理 sessions
-- 維護短期 events 與 state snapshots
-- 追蹤 stuck issues、deferred work 與 review items
-- 將背景狀態轉成可觀測資料
+### Proposal and validation
 
-### 3. Policy and proposal layer
+在任何較高風險執行前，先表示預定工作、scope、test、rollback expectation 與 validation result。
 
-職責：
+### Review and audit
 
-- 分類 request risk
-- 在考慮高風險 execution 前，先執行 non-harm semantic boundaries
-- 建立 engineering proposals
-- 標記 forbidden modification scope
-- 判斷 task 是否可進入 sandbox validation
-- 附上 rollback、test 與 audit requirements
+將 operator decision 與證據和自動執行分開。公開摘要不得揭露私有 log 或 operator data。
 
-### 4. Sandbox validation layer
+### Execution adapter
 
-職責：
+保持可選、狹窄且另行 gated。裝置專屬路徑、憑證與 hard real-time control 不應放入這個公開 repository。
 
-- Dry-run
-- Worktree validation
-- Patch validation
-- Test execution
-- Local branch materialization
-- Private audit
+## 目前實作事實
 
-此層不是 production approval。
+| 架構元素 | 目前公開說法 |
+|---|---|
+| 抽象 schema | 以文件形式存在於這個 repository |
+| 私有模組與測試 | 存在於私人工程 repository |
+| 端到端整合 | 部分受控情境有證據；整體尚未證實 |
+| 公開可執行系統 | 尚未提供 |
+| 硬體或正式環境運作 | 尚未建立 |
 
-### 5. Human-supervised operating layer
+## 工程邊界
 
-職責：
-
-- 記錄 review decisions
-- 將 approval、rejection 與 follow-up 表示成明確狀態
-- 保留 append-only review traces
-- 將 operator decision 與 automatic execution 分離
-
-此層不公開 private console content。
-
-### 6. Read-only observability layer
-
-職責：
-
-- 顯示 bounded health 與 readiness summaries
-- 暴露 stats-only status
-- 避免公開完整 audit
-- 避免 run、restore、push、merge 或 device-control action
-
-## 公開介面原語
-
-公開 repository 可安全討論下列 primitives：
-
-- `runtime_state_summary`
-- `proposal_record`
-- `review_journal_entry`
-- `model_eval_summary`
-- `credential_boundary_summary`
-
-這些 schema 只描述 public-safe shape，不是 private runtime 的 deployment contract。
-
-## Stuck issue queue
-
-PHINIX 將 unresolved issues 視為可追蹤狀態，而不是一次性錯誤。
-
-這讓系統可以：
-
-- 記錄 failure 發生位置
-- 記錄已嘗試過的處理
-- 在新 context 出現時重新檢視
-- 在合適時機提出低干擾提醒
-
-## Proactive behavior
-
-Proactivity 不應變成噪音。
-
-健康流程：
-
-1. 產生 background candidate
-2. 轉成 reviewable item
-3. 套用 policy 與 cooldown
-4. 由使用者決定是否展開
-
-## Embodiment boundary
-
-對未來裝置整合而言，PHINIX 更適合作為：
-
-- memory
-- context
-- governance
-- risk review
-- proposal generation
-- audit
-
-它不應取代 low-level controller 或 hard real-time control loop。
-
-## Engineering rule
-
-高風險能力應遵循：
+較高風險工作應遵循：
 
 ```text
-proposed action
+request
 -> policy check
--> dry-run or simulation
--> human/operator gate
--> execution adapter
+-> bounded proposal
+-> sandbox or test
+-> operator decision
+-> separately authorized adapter
 -> audit
 ```
 
-Design-only notes、memory policies 與 speculative capability ideas 應保持為 human-readable governance material，直到另開 gated phase 完成 runtime behavior 的實作、測試與文件化。
+這是設計規則，不是完整流程已提供給公開使用者的證據。
 <!-- # ⭐ 修改結束 ⭐ -->
