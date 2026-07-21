@@ -9,7 +9,7 @@ Languages: [English](README.md) | **繁體中文**
 
 ## 目前狀態
 
-PHINIX 的私人工程 repository 內已有原始碼、針對性測試、有限範圍的 sandbox demo，以及部分本機整合測試紀錄。
+PHINIX 的私人工程 repository 內已有原始碼、針對性測試、有限範圍的 sandbox demo、local-first retrieval 元件、agent 控制層工作，以及部分本機整合測試紀錄。
 
 這些證據有工程參考價值，但範圍有限。目前仍不足以證明外部使用者可以自行安裝、整體端到端可靠運作、在多次真實情境中穩定恢復，或普遍支援硬體與正式部署。
 
@@ -24,8 +24,10 @@ Runtime truth label：`bounded_internal_evidence_only`
 | 領域 | 目前已有證據 | 尚未證實 |
 |---|---|---|
 | 治理與訊息流程 | 私有原始碼與針對性自動測試 | 外部重現與長時間持續運作 |
+| Agent 能力控制 | 私有端有有限範圍的 catalog、授權、proposal 與 tool-loop 測試 | 一般任務完成能力、自然互動品質與無人值守運作 |
+| 本機知識與搜尋 | 私有端有本機索引與 bounded connector 測試 | 公開資料匯入、耐久使用者記憶與可靠 live search |
 | 本地模型整合 | 部分本地 provider 與延遲檢查 | 穩定長時間服務與正式模型選型 |
-| Companion 與穿戴路徑 | 特定裝置的有限測試紀錄 | 一般裝置相容性與無人值守運作 |
+| Companion 與穿戴路徑 | 特定 session、UI、build 與控制層的有限測試紀錄 | 一般裝置相容性、live wireless 可靠性與無人值守運作 |
 | Sandbox simulation 與 viewer | 可重複的計算與 HTML demo 檢查 | 完整碰撞物理、數位分身精度或真實世界控制 |
 | 自我修正流程 | Proposal、review 與狀態保留結構 | 自主修改程式或未經監督的 promotion |
 
