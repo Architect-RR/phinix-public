@@ -1,7 +1,7 @@
 <!-- # ⭐ 修改開始 ⭐ -->
 # PHINIX Current Evidence Status
 
-Updated: 2026-07-18
+Updated: 2026-07-21
 
 Languages: **English** | [繁體中文](CURRENT_STATUS.zh-TW.md)
 
@@ -18,7 +18,9 @@ Runtime truth label: `bounded_internal_evidence_only`
 - Documentation and abstract schemas in this public repository can be reviewed without private runtime access.
 - Private targeted tests cover governance, policy, message flow, proposal/review structures, sandbox calculations, and viewer demonstrations.
 - Sandbox demo generation has been exercised through deterministic, no-browser flows.
+- Private bounded-agent work includes capability catalog, authorization, proposal, sandbox-coding, and local-first retrieval paths under targeted tests.
 - Selected local model and companion/device paths have recorded controlled-session evidence.
+- Companion interaction modes and a private-network bridge control plane have UI, static, and build evidence; live wireless operation has not been established.
 - Self-correction work is constrained to proposal, review, test, and retained-state mechanisms.
 
 These points describe scoped evidence, not a complete acceptance test.
@@ -29,6 +31,8 @@ These points describe scoped evidence, not a complete acceptance test.
 - A reproducible public demo that exercises the private runtime
 - Reliable end-to-end operation over long sessions and repeated restarts
 - General compatibility across machines, models, companion devices, or wearables
+- Durable personalized memory and consistently natural multi-turn companion behavior
+- Reliable wireless companion operation across networks and repeated sessions
 - Security, performance, and recovery characteristics suitable for deployment
 - Independent third-party validation
 - Unsupervised self-modification or autonomous promotion
@@ -39,8 +43,10 @@ These points describe scoped evidence, not a complete acceptance test.
 |---|---|
 | Architecture and governance | Designed and partially implemented privately; public material is documentation only |
 | Policy and review flow | Targeted private tests exist; full operational coverage is unproven |
+| Bounded agent control | Catalog, authorization, proposal, and tool-loop paths have private tests; general competence is unproven |
+| Local knowledge and search | Local index and bounded connector paths have private tests; durable memory and reliable live search are unproven |
 | Local LLM path | Selected local checks exist; stable service operation is unproven |
-| Companion and wearable path | Device-specific evidence exists; general support is unproven |
+| Companion and wearable path | Selected session, UI, build, and control-plane evidence exists; general and live wireless support is unproven |
 | Sandbox simulation and viewer | Bounded deterministic demos exist; not a validated physical environment |
 | Self-correction | Proposal and review assistance only; no autonomous mutation claim |
 | Public distribution | Not available |

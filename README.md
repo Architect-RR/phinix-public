@@ -9,7 +9,7 @@ Languages: **English** | [繁體中文](README.zh-TW.md)
 
 ## Current Status
 
-PHINIX has source code, targeted tests, bounded sandbox demonstrations, and records from selected local integration sessions in its private engineering repository.
+PHINIX has source code, targeted tests, bounded sandbox demonstrations, local-first retrieval components, agent control-plane work, and records from selected local integration sessions in its private engineering repository.
 
 That evidence is useful but limited. It does **not** yet establish that the project can be installed by an external user, operate reliably end to end, recover across repeated real-world sessions, or support general hardware and production deployment.
 
@@ -24,8 +24,10 @@ Runtime truth label: `bounded_internal_evidence_only`
 | Area | Evidence currently available | What remains unproven |
 |---|---|---|
 | Governance and message flow | Private source and targeted automated tests | Independent reproduction and sustained operation |
+| Agent capability control | Bounded catalog, authorization, proposal, and tool-loop tests in the private repository | General task completion, natural interaction quality, and unattended operation |
+| Local knowledge and search | Private local-index and bounded connector tests | Public data import, durable user memory, and reliable live search |
 | Local model integration | Selected local provider and latency checks | Stable long-running service and production model selection |
-| Companion and wearable path | Selected device-specific test records | General device compatibility and unattended operation |
+| Companion and wearable path | Selected session, UI, build, and control-plane test records | General device compatibility, live wireless reliability, and unattended operation |
 | Sandbox simulation and viewer | Deterministic calculation and HTML demo checks | Full collision physics, digital-twin accuracy, or real-world control |
 | Self-correction workflow | Proposal, review, and retained-state structures | Autonomous code mutation or unsupervised promotion |
 

@@ -15,6 +15,7 @@ This roadmap is a sequence of evidence goals, not a delivery promise. Private im
 ## Next: Reproducibility
 
 - Define a clean-machine setup checklist for a low-risk public example.
+- Define an externally reproducible mock flow for capability selection and local evidence retrieval without private data.
 - Publish a non-sensitive smoke test only when it can be reproduced outside the private workspace.
 - Pin dependencies and document supported environments.
 - Record failure and recovery behavior, not only successful output.
@@ -35,6 +36,7 @@ Status: design direction only.
 - Evaluate whether any runtime subset is safe and maintainable enough for release.
 - Require an explicit support matrix, security review, and rollback path.
 - Keep hardware, wearable, model, and external API integrations separately gated.
+- Require separate evidence before describing companion memory, wireless wearable transport, or live search as reliable.
 
 Status: no public release decision.
 
