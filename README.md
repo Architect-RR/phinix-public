@@ -9,7 +9,7 @@ Languages: **English** | [繁體中文](README.zh-TW.md)
 
 ## Current Status
 
-PHINIX has source code, targeted tests, bounded sandbox demonstrations, local-first retrieval components, agent control-plane work, and records from selected local integration sessions in its private engineering repository.
+PHINIX has source code, targeted tests, bounded sandbox demonstrations, local-first retrieval and memory components, agent control-plane work, and records from selected local integration sessions in its private engineering repository.
 
 That evidence is useful but limited. It does **not** yet establish that the project can be installed by an external user, operate reliably end to end, recover across repeated real-world sessions, or support general hardware and production deployment.
 
@@ -25,9 +25,10 @@ Runtime truth label: `bounded_internal_evidence_only`
 |---|---|---|
 | Governance and message flow | Private source and targeted automated tests | Independent reproduction and sustained operation |
 | Agent capability control | Bounded catalog, authorization, proposal, and tool-loop tests in the private repository | General task completion, natural interaction quality, and unattended operation |
-| Local knowledge and search | Private local-index and bounded connector tests | Public data import, durable user memory, and reliable live search |
+| Local knowledge, memory, and search | Private local-index, bounded connector, persistent-store component, and synthetic restart tests | Public data import, encrypted durable user memory with real data, and reliable live search |
 | Local model integration | Selected local provider and latency checks | Stable long-running service and production model selection |
-| Companion and wearable path | Selected session, UI, build, and control-plane test records | General device compatibility, live wireless reliability, and unattended operation |
+| Companion and wearable path | Selected session, UI, build, private-network, and bounded cross-network relay records | Cable-free use, application-layer transport hardening, general compatibility, and unattended operation |
+| Vision path | Selected bounded single-frame local-model evidence | Robust multi-frame perception across varied scenes and conditions |
 | Sandbox simulation and viewer | Deterministic calculation and HTML demo checks | Full collision physics, digital-twin accuracy, or real-world control |
 | Self-correction workflow | Proposal, review, and retained-state structures | Autonomous code mutation or unsupervised promotion |
 

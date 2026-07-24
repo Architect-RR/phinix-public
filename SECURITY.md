@@ -67,6 +67,8 @@ Contributors should assume:
 - high-risk execution paths are outside public scope
 - boundary-hardening summaries do not imply runtime actuation is enabled
 - abstract schemas do not imply the private runtime exposes a public API
+- bounded private-network or relay evidence does not establish cable-free reliability, application-layer TLS, certificate pinning, or production transport security
+- memory component and restart evidence does not establish encrypted storage, safe real-user retention, or production data governance
 
 ## Contribution Rule
 

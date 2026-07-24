@@ -16,6 +16,7 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 
 - 為低風險公開範例定義乾淨環境設定清單。
 - 定義不含私有資料、可由外部重現的 capability selection 與本機證據 retrieval mock 流程。
+- 新增只使用 synthetic records 的 public-safe restart/restore 範例，並明確標示 persistence、promotion 與 deletion 邊界。
 - 只有在私有 workspace 之外可以重現時，才發布不含敏感資訊的 smoke test。
 - 固定依賴版本並記錄支援環境。
 - 記錄失敗與恢復行為，不只記錄成功輸出。
@@ -37,6 +38,8 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 - 必須先有明確 support matrix、security review 與 rollback path。
 - 硬體、穿戴、模型與外部 API 整合分別管理與 gate。
 - 在把 companion memory、無線穿戴 transport 或 live search 描述為可靠前，分別取得獨立證據。
+- 在任何 deployment-oriented 宣稱前，先完成耐久記憶的 at-rest 加密決策，以及 relay 路徑的 application-layer transport review。
+- 在把穿戴或感知路徑描述為一般可用前，先取得可重複 cable-free session 與多條件 vision 證據。
 
 狀態：尚無公開發布決策。
 

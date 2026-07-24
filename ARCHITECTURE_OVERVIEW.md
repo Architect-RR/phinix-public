@@ -40,7 +40,7 @@ Classify requests, deny unsafe actions, and decide whether a request may proceed
 
 Represent intended work, scope, tests, rollback expectations, and validation results before any higher-risk execution.
 
-Private engineering also explores a bounded capability catalog, local evidence retrieval, and sandbox coding review. These components do not imply that arbitrary tools or user data are available to the runtime.
+Private engineering also explores a bounded capability catalog, local evidence retrieval, governed memory persistence, and sandbox coding review. These components do not imply that arbitrary tools or user data are available to the runtime.
 
 ### Review and audit
 
@@ -57,8 +57,9 @@ Remain optional, narrow, and separately gated. Device-specific paths, credential
 | Abstract schemas | Present in this repository as documentation |
 | Private modules and tests | Exist in the private engineering repository |
 | Agent capability control | Bounded private implementation and targeted tests; general competence is unproven |
-| Local evidence retrieval | Private local-index and connector tests; durable personal memory is unproven |
-| Companion and wearable adapters | Selected controlled evidence and build checks; general wireless operation is unproven |
+| Local evidence and memory | Private local-index, connector, persistent-store, and synthetic restart checks; real-user encrypted durability is unproven |
+| Companion and wearable adapters | Selected controlled private-network and bounded cross-network evidence plus build checks; cable-free and hardened transport are unproven |
+| Vision adapter | Selected bounded single-frame evidence; general visual understanding is unproven |
 | End-to-end integration | Partially evidenced in controlled cases; not proven as a whole |
 | Public runnable system | Not provided |
 | Hardware or production operation | Not established |

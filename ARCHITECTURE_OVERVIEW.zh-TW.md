@@ -40,7 +40,7 @@ Execution adapter 刻意放在最後。它出現在圖中，不代表已啟用�
 
 在任何較高風險執行前，先表示預定工作、scope、test、rollback expectation 與 validation result。
 
-私人工程也探索 bounded capability catalog、本機證據 retrieval 與 sandbox coding review。這些元件不代表 runtime 已能任意使用工具或使用者資料。
+私人工程也探索 bounded capability catalog、本機證據 retrieval、受治理的記憶持久化與 sandbox coding review。這些元件不代表 runtime 已能任意使用工具或使用者資料。
 
 ### Review and audit
 
@@ -57,8 +57,9 @@ Execution adapter 刻意放在最後。它出現在圖中，不代表已啟用�
 | 抽象 schema | 以文件形式存在於這個 repository |
 | 私有模組與測試 | 存在於私人工程 repository |
 | Agent 能力控制 | 私有端有 bounded 實作與針對性測試；一般能力尚未證實 |
-| 本機證據 retrieval | 私有端有本機索引與 connector 測試；耐久個人記憶尚未證實 |
-| Companion 與穿戴 adapter | 有部分受控證據與 build 檢查；一般無線運作尚未證實 |
+| 本機證據與記憶 | 私有端有本機索引、connector、持久化 store 與 synthetic restart 檢查；真實資料的加密耐久性尚未證實 |
+| Companion 與穿戴 adapter | 有部分受控私人網路、bounded 跨網與 build 證據；cable-free 與 hardened transport 尚未證實 |
+| Vision adapter | 有特定 bounded 單幀證據；一般視覺理解尚未證實 |
 | 端到端整合 | 部分受控情境有證據；整體尚未證實 |
 | 公開可執行系統 | 尚未提供 |
 | 硬體或正式環境運作 | 尚未建立 |
