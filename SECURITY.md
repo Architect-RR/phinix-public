@@ -67,6 +67,9 @@ Contributors should assume:
 - high-risk execution paths are outside public scope
 - boundary-hardening summaries do not imply runtime actuation is enabled
 - abstract schemas do not imply the private runtime exposes a public API
+- first-leg pinned-transport implementation or build evidence does not establish a live pinned-ingress session, cable-free reliability, dual-leg application-layer TLS, or production transport security
+- cancellation-safe cleanup tests do not establish bounded shutdown when a resource never returns
+- memory component and restart evidence does not establish encrypted storage, safe real-user retention, or production data governance
 
 ## Contribution Rule
 

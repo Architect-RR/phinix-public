@@ -9,7 +9,7 @@ Languages: **English** | [繁體中文](README.zh-TW.md)
 
 ## Current Status
 
-PHINIX has source code, targeted tests, bounded sandbox demonstrations, and records from selected local integration sessions in its private engineering repository.
+PHINIX has source code, targeted tests, bounded sandbox demonstrations, local-first retrieval and memory components, agent control-plane work, and records from selected local integration sessions in its private engineering repository.
 
 That evidence is useful but limited. It does **not** yet establish that the project can be installed by an external user, operate reliably end to end, recover across repeated real-world sessions, or support general hardware and production deployment.
 
@@ -24,8 +24,11 @@ Runtime truth label: `bounded_internal_evidence_only`
 | Area | Evidence currently available | What remains unproven |
 |---|---|---|
 | Governance and message flow | Private source and targeted automated tests | Independent reproduction and sustained operation |
+| Agent capability control | Bounded catalog, authorization, proposal, and tool-loop tests in the private repository | General task completion, natural interaction quality, and unattended operation |
+| Local knowledge, memory, and search | Private local-index, bounded connector, persistent-store component, and synthetic restart tests | Public data import, encrypted durable user memory with real data, and reliable live search |
 | Local model integration | Selected local provider and latency checks | Stable long-running service and production model selection |
-| Companion and wearable path | Selected device-specific test records | General device compatibility and unattended operation |
+| Companion and wearable path | Selected session, UI, build, private-network, bounded relay, and first-leg pinned-transport implementation records | Cable-free use, live pinned ingress, end-to-end transport hardening across both relay legs, general compatibility, and unattended operation |
+| Vision path | Selected bounded single-frame local-model evidence | Robust multi-frame perception across varied scenes and conditions |
 | Sandbox simulation and viewer | Deterministic calculation and HTML demo checks | Full collision physics, digital-twin accuracy, or real-world control |
 | Self-correction workflow | Proposal, review, and retained-state structures | Autonomous code mutation or unsupervised promotion |
 
