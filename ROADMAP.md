@@ -38,7 +38,8 @@ Status: design direction only.
 - Require an explicit support matrix, security review, and rollback path.
 - Keep hardware, wearable, model, and external API integrations separately gated.
 - Require separate evidence before describing companion memory, wireless wearable transport, or live search as reliable.
-- Require encryption-at-rest decisions for durable memory and application-layer transport review for any relay path before deployment-oriented claims.
+- Treat first-leg pinned-transport implementation evidence as narrower than live transport proof; require upstream-leg hardening and bounded dual-leg live evidence before deployment-oriented claims.
+- Require encryption-at-rest decisions for durable memory and bounded shutdown behavior for non-returning resource cleanup before reliability claims.
 - Require repeated cable-free sessions and multi-condition vision evidence before describing wearable or perception paths as generally usable.
 
 Status: no public release decision.

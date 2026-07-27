@@ -58,7 +58,7 @@ Remain optional, narrow, and separately gated. Device-specific paths, credential
 | Private modules and tests | Exist in the private engineering repository |
 | Agent capability control | Bounded private implementation and targeted tests; general competence is unproven |
 | Local evidence and memory | Private local-index, connector, persistent-store, and synthetic restart checks; real-user encrypted durability is unproven |
-| Companion and wearable adapters | Selected controlled private-network and bounded cross-network evidence plus build checks; cable-free and hardened transport are unproven |
+| Companion and wearable adapters | Selected controlled relay evidence plus first-leg pinned-transport implementation/build checks; live pinned ingress, cable-free operation, and dual-leg hardened transport are unproven |
 | Vision adapter | Selected bounded single-frame evidence; general visual understanding is unproven |
 | End-to-end integration | Partially evidenced in controlled cases; not proven as a whole |
 | Public runnable system | Not provided |

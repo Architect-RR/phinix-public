@@ -27,7 +27,7 @@ Runtime truth label: `bounded_internal_evidence_only`
 | Agent capability control | Bounded catalog, authorization, proposal, and tool-loop tests in the private repository | General task completion, natural interaction quality, and unattended operation |
 | Local knowledge, memory, and search | Private local-index, bounded connector, persistent-store component, and synthetic restart tests | Public data import, encrypted durable user memory with real data, and reliable live search |
 | Local model integration | Selected local provider and latency checks | Stable long-running service and production model selection |
-| Companion and wearable path | Selected session, UI, build, private-network, and bounded cross-network relay records | Cable-free use, application-layer transport hardening, general compatibility, and unattended operation |
+| Companion and wearable path | Selected session, UI, build, private-network, bounded relay, and first-leg pinned-transport implementation records | Cable-free use, live pinned ingress, end-to-end transport hardening across both relay legs, general compatibility, and unattended operation |
 | Vision path | Selected bounded single-frame local-model evidence | Robust multi-frame perception across varied scenes and conditions |
 | Sandbox simulation and viewer | Deterministic calculation and HTML demo checks | Full collision physics, digital-twin accuracy, or real-world control |
 | Self-correction workflow | Proposal, review, and retained-state structures | Autonomous code mutation or unsupervised promotion |

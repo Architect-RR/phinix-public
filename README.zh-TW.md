@@ -27,7 +27,7 @@ Runtime truth label：`bounded_internal_evidence_only`
 | Agent 能力控制 | 私有端有有限範圍的 catalog、授權、proposal 與 tool-loop 測試 | 一般任務完成能力、自然互動品質與無人值守運作 |
 | 本機知識、記憶與搜尋 | 私有端有本機索引、bounded connector、持久化 store 元件與 synthetic restart 測試 | 公開資料匯入、使用真實資料的加密耐久記憶與可靠 live search |
 | 本地模型整合 | 部分本地 provider 與延遲檢查 | 穩定長時間服務與正式模型選型 |
-| Companion 與穿戴路徑 | 特定 session、UI、build、私人網路與 bounded 跨網 relay 紀錄 | cable-free、application-layer transport hardening、一般相容性與無人值守運作 |
+| Companion 與穿戴路徑 | 特定 session、UI、build、私人網路、bounded relay 與第一段 pinned transport 實作紀錄 | cable-free、pinned ingress live、relay 兩段端到端 transport hardening、一般相容性與無人值守運作 |
 | Vision 路徑 | 特定 bounded 單幀 local-model 證據 | 跨場景與條件的穩健多幀感知 |
 | Sandbox simulation 與 viewer | 可重複的計算與 HTML demo 檢查 | 完整碰撞物理、數位分身精度或真實世界控制 |
 | 自我修正流程 | Proposal、review 與狀態保留結構 | 自主修改程式或未經監督的 promotion |

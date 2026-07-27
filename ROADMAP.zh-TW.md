@@ -38,7 +38,8 @@ Languages: [English](ROADMAP.md) | **繁體中文**
 - 必須先有明確 support matrix、security review 與 rollback path。
 - 硬體、穿戴、模型與外部 API 整合分別管理與 gate。
 - 在把 companion memory、無線穿戴 transport 或 live search 描述為可靠前，分別取得獨立證據。
-- 在任何 deployment-oriented 宣稱前，先完成耐久記憶的 at-rest 加密決策，以及 relay 路徑的 application-layer transport review。
+- 第一段 pinned transport 的實作證據不等於 live transport 證據；任何 deployment-oriented 宣稱前，仍須完成 upstream leg hardening 與 bounded 雙段 live 證據。
+- 在可靠性宣稱前，先完成耐久記憶的 at-rest 加密決策，以及 resource cleanup 永久不返回時的 bounded shutdown 行為。
 - 在把穿戴或感知路徑描述為一般可用前，先取得可重複 cable-free session 與多條件 vision 證據。
 
 狀態：尚無公開發布決策。

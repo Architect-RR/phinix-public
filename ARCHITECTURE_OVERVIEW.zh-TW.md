@@ -58,7 +58,7 @@ Execution adapter 刻意放在最後。它出現在圖中，不代表已啟用�
 | 私有模組與測試 | 存在於私人工程 repository |
 | Agent 能力控制 | 私有端有 bounded 實作與針對性測試；一般能力尚未證實 |
 | 本機證據與記憶 | 私有端有本機索引、connector、持久化 store 與 synthetic restart 檢查；真實資料的加密耐久性尚未證實 |
-| Companion 與穿戴 adapter | 有部分受控私人網路、bounded 跨網與 build 證據；cable-free 與 hardened transport 尚未證實 |
+| Companion 與穿戴 adapter | 有部分受控 relay 與第一段 pinned transport 實作/build 證據；pinned ingress live、cable-free 與雙段 hardened transport 尚未證實 |
 | Vision adapter | 有特定 bounded 單幀證據；一般視覺理解尚未證實 |
 | 端到端整合 | 部分受控情境有證據；整體尚未證實 |
 | 公開可執行系統 | 尚未提供 |
